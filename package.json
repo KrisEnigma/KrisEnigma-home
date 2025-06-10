@@ -1,0 +1,38 @@
+{
+  "name": "krisenigma-website",
+  "version": "1.0.0",
+  "description": "Sitio web personal de KrisEnigma - Músico, Gamer y Creador de Contenido",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "serve": "node ./dist/server/entry.mjs"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/node": "^9.2.2",
+    "@astrojs/tailwind": "^6.0.2",
+    "@tailwindcss/aspect-ratio": "^0.4.2",
+    "astro": "^5.9.1",
+    "dotenv": "^16.4.7",
+    "resend": "^4.5.2",
+    "tailwindcss": "^3.4.17"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  },
+  "keywords": [
+    "astro",
+    "website",
+    "krisenigma",
+    "musician",
+    "gamer",
+    "content-creator",
+    "resend"
+  ],
+  "author": "KrisEnigma",
+  "license": "Private"
+}

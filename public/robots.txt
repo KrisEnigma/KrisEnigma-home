@@ -1,0 +1,22 @@
+# Robots.txt optimizado para SEO
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://krisenigma.com/sitemap.xml
+
+# Archivos que no queremos indexar
+Disallow: /api/
+Disallow: /_astro/
+Disallow: /assets/
+
+# Bots específicos
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Crawl-delay para evitar sobrecarga
+User-agent: *
+Crawl-delay: 1

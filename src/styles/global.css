@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Minimal custom CSS - preferir clases Tailwind siempre que sea posible */
+@layer components {
+    .profile-gradient-border::before {
+        content: '';
+        position: absolute;
+        inset: -4px;
+        padding: 4px;
+        background: linear-gradient(45deg, #00e1af, #7a53dd, #00e1af, #7a53dd);
+        background-size: 200% 200%;
+        border-radius: 50%;
+        mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        mask-composite: xor;
+        -webkit-mask-composite: xor;
+        animation: gradient-shift 3s ease-in-out infinite;
+    }
+
+    @keyframes gradient-shift {
+        0%, 100% {
+            background-position: 0% 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+    }
+
+    .section-title-enhanced {
+        color: #ffffff;
+        position: relative;
+        display: inline-block;
+        padding: 12px 32px;
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        text-shadow: 0 2px 8px rgba(0, 225, 175, 0.3);
+    }
+
+    .section-title-enhanced::before,
+    .section-title-enhanced::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        width: 50px;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, #00e1af, #7a53dd, transparent);
+        transform: translateY(-50%);
+        animation: line-glow 3s ease-in-out infinite;
+    }
+
+    .section-title-enhanced::before {
+        left: -70px;
+    }
+
+    .section-title-enhanced::after {
+        right: -70px;
+    }
+
+    @keyframes line-glow {
+        0%, 100% {
+            opacity: 0.6;
+            box-shadow: 0 0 10px rgba(0, 225, 175, 0.3);
+        }
+
+        50% {
+            opacity: 1;
+            box-shadow: 0 0 20px rgba(0, 225, 175, 0.6);
+        }
+    }
+
+    @media (max-width: 640px) {
+        .section-title-enhanced {
+            padding: 10px 24px;
+            font-size: 1.25rem;
+        }
+
+        .section-title-enhanced::before {
+            left: -50px;
+            width: 35px;
+        }
+
+        .section-title-enhanced::after {
+            right: -50px;
+            width: 35px;
+        }
+    }
+}
+
+/* Estilos globales mínimos */
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+}
