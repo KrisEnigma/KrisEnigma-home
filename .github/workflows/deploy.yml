@@ -1,4 +1,4 @@
-name: Deploy to krisenigma.com
+name: Deploy home to krisenigma.com
 
 on:
   push:
@@ -14,13 +14,6 @@ jobs:
       uses: actions/checkout@v4
       with:
         path: home
-        
-    - name: Checkout gamelist repository
-      uses: actions/checkout@v4
-      with:
-        repository: KrisEnigma/KrisEnigma-gamelist
-        path: gamelist
-        token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
         
     - name: Checkout deployment repository
       uses: actions/checkout@v4
@@ -45,61 +38,11 @@ jobs:
         pnpm install
         pnpm run build
 
-    - name: Build Next.js project (gamelist)
-      run: |
-        cd gamelist
-        pnpm install
-        pnpm run build
-
-    - name: Prepare deployment directory
-      run: |
-        cd deployment
-        # Remove all files except .git
-        find . -maxdepth 1 ! -name '.git' ! -name '.' -exec rm -rf {} +
-
     - name: Copy home build to deployment
       run: |
-        cp -r home/dist/* deployment/
-
-    - name: Copy gamelist build to deployment
-      run: |
-        if [ -d "gamelist/out/gamelist" ]; then
-          cp -r gamelist/out/gamelist deployment/
-        else
-          mkdir -p deployment/gamelist
-          cp -r gamelist/out/* deployment/gamelist/
-        fi
-
-    - name: Create Cloudflare configuration
-      run: |
         cd deployment
-        
-        # Create _headers
-        cat > _headers << 'EOF'
-        /*
-          X-Frame-Options: DENY
-          X-Content-Type-Options: nosniff
-          Referrer-Policy: strict-origin-when-cross-origin
-          Permissions-Policy: geolocation=(), microphone=(), camera=()
-
-        /gamelist/*
-          Cache-Control: public, max-age=31536000, immutable
-
-        /_next/static/*
-          Cache-Control: public, max-age=31536000, immutable
-
-        /assets/*
-          Cache-Control: public, max-age=31536000, immutable
-        EOF
-        
-        # Create _routes.json
-        cat > _routes.json << 'EOF'
-        {
-          "version": 1,
-          "include": ["/*"],
-          "exclude": []
-        }
-        EOF
+        find . -maxdepth 1 ! -name '.git' ! -name '.' ! -name 'gamelist' -exec rm -rf {} +
+        cp -r ../home/dist/* .
 
     - name: Deploy to GitHub
       run: |
@@ -107,5 +50,5 @@ jobs:
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git add .
-        git diff --staged --quiet || git commit -m "🚀 Auto-deploy from home repository - $(date '+%Y-%m-%d %H:%M:%S')"
+        git diff --staged --quiet || git commit -m "🚀 Auto-deploy home - $(date '+%Y-%m-%d %H:%M:%S')"
         git push
