@@ -10,7 +10,7 @@ export default {
             }, colors: {
                 'theme-primary': '#00e1af',
                 'theme-accent': '#7a53dd',
-            },            backgroundImage: {
+            }, backgroundImage: {
                 'theme-bg': 'url(/bg.webp)',
             },
         },

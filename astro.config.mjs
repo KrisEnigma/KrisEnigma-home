@@ -1,6 +1,5 @@
 import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
-import node from '@astrojs/node';
 import dotenv from 'dotenv';
 
 // Cargar variables de entorno
@@ -22,11 +21,6 @@ export default defineConfig({
   build: {
     assets: 'assets',
     inlineStylesheets: 'auto'
-  },
-  image: {
-    service: {
-      entrypoint: 'astro/assets/services/sharp'
-    }
   },
   vite: {
     build: {

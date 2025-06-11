@@ -5,17 +5,16 @@ const { gtagId } = Astro.props;
 
 <!-- Google Analytics 4 -->
 {gtagId && (
-  <>
-    <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${gtagId}`}></script>
-    <script is:inline define:vars={{ gtagId }}>
+  <>    <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${gtagId}`}></script>
+    <script is:inline set:html={`
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', gtagId, {
+      gtag('config', '${gtagId}', {
         page_title: document.title,
         page_location: window.location.href,
       });
-    </script>
+    `}></script>
   </>
 )}
 

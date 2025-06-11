@@ -22,7 +22,8 @@ import ProjectModal from "../components/ProjectModal.astro";
             <!-- Contenedor de la imagen -->
             <div
               class="relative w-full h-full rounded-full overflow-hidden z-10"
-            >              <img
+            >
+              <img
                 class="w-full h-full rounded-full object-cover transition-transform duration-300 hover:scale-110"
                 src="/profile.webp"
                 alt="KrisEnigma - Foto de perfil"
@@ -261,7 +262,8 @@ import ProjectModal from "../components/ProjectModal.astro";
           >
             <!-- Image container -->
             <div class="relative p-4">
-              <div class="relative overflow-hidden rounded-xl cursor-pointer">                <img
+              <div class="relative overflow-hidden rounded-xl cursor-pointer">
+                <img
                   src="/kriswave.webp"
                   loading="eager"
                   class="w-full h-80 object-cover transition-transform duration-500 ease-out hover:scale-105"
@@ -434,18 +436,20 @@ import ProjectModal from "../components/ProjectModal.astro";
           <div
             id="youtube-thumbnail"
             class="absolute inset-0 rounded-xl overflow-hidden bg-black"
-          >            <img
+          >
+            <img
               src="https://img.youtube.com/vi/v-qHDk9bTZg/maxresdefault.jpg"
               alt="YouTube video thumbnail"
               class="w-full h-full object-cover"
               loading="lazy"
             />
             <!-- Play button overlay -->
-            <div class="absolute inset-0 flex items-center justify-center">              <button
+            <div class="absolute inset-0 flex items-center justify-center">
+              <button
                 class="ytp-large-play-button ytp-button ytp-large-play-button-red-bg"
                 aria-label="Play"
                 title="Play"
-              ><svg
+                ><svg
                   height="100%"
                   version="1.1"
                   viewBox="0 0 68 48"
@@ -459,7 +463,8 @@ import ProjectModal from "../components/ProjectModal.astro";
                     fill="#f03"></path>
                   <path d="M 45,24 27,14 27,34" fill="#fff"></path>
                 </svg>
-              </button>            </div>
+              </button>
+            </div>
             <!-- Loading indicator (hidden by default) -->
             <div
               id="youtube-loading"
@@ -654,7 +659,7 @@ import ProjectModal from "../components/ProjectModal.astro";
       const currentYearElement = document.getElementById("currentYear");
       if (currentYearElement) {
         currentYearElement.textContent = new Date().getFullYear().toString();
-      }      // YouTube Lazy Loading
+      } // YouTube Lazy Loading
       const youtubeContainer = document.getElementById("youtube-container");
       const youtubeThumbnail = document.getElementById("youtube-thumbnail");
       const youtubeIframeContainer = document.getElementById(
@@ -671,12 +676,11 @@ import ProjectModal from "../components/ProjectModal.astro";
         // Crear iframe sin autoplay
         const iframe = document.createElement("iframe");
         iframe.src = "https://www.youtube.com/embed/v-qHDk9bTZg?rel=0";
-        iframe.title = "YouTube video player";
-        iframe.allow =
+        iframe.title = "YouTube video player";        iframe.allow =
           "accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
         iframe.allowFullscreen = true;
         iframe.className = "w-full h-full rounded-xl border-0";
-        iframe.frameBorder = "0";
+        iframe.style.border = "0";
 
         // Agregar iframe al contenedor primero
         if (youtubeIframeContainer) {
