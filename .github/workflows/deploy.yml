@@ -33,6 +33,8 @@ jobs:
         version: latest
 
     - name: Build Astro project (home)
+      env:
+        PUBLIC_GTAG_ID: ${{ secrets.PUBLIC_GTAG_ID }}
       run: |
         cd home
         pnpm install
