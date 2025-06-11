@@ -43,7 +43,7 @@ jobs:
     - name: Copy home build to deployment
       run: |
         cd deployment
-        find . -maxdepth 1 ! -name '.git' ! -name '.' ! -name 'gamelist' -exec rm -rf {} +
+        find . -maxdepth 1 ! -name '.git' ! -name '.' ! -name 'gamelist' ! -name 'gamesalad' -exec rm -rf {} +
         cp -r ../home/dist/* .
 
     - name: Deploy to GitHub
@@ -51,6 +51,7 @@ jobs:
         cd deployment
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
+        git pull origin main --rebase
         git add .
         git diff --staged --quiet || git commit -m "🚀 Auto-deploy home - $(date '+%Y-%m-%d %H:%M:%S')"
         git push
