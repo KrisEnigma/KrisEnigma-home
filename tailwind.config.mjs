@@ -10,9 +10,8 @@ export default {
             }, colors: {
                 'theme-primary': '#00e1af',
                 'theme-accent': '#7a53dd',
-            },
-            backgroundImage: {
-                'theme-bg': 'url(https://assets-esponsor.nyc3.cdn.digitaloceanspaces.com/public/profile_themes/backgrounds/914/uZg96WPyDj5i5KKyZzLDl1tnl8eZUVVx8NUJoMFm.jpg)',
+            },            backgroundImage: {
+                'theme-bg': 'url(/bg.webp)',
             },
         },
     }, plugins: [require('@tailwindcss/aspect-ratio'), function ({ addUtilities, addComponents }) {

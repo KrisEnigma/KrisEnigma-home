@@ -6,8 +6,6 @@ import SocialButton from "../components/SocialButton.astro";
 import LinkCard from "../components/LinkCard.astro";
 import ContactSection from "../components/ContactSection.astro";
 import ProjectModal from "../components/ProjectModal.astro";
-import profileWebp from "../assets/profile.webp";
-import kriswaveWebp from "../assets/kriswave.webp";
 ---
 
 <Layout title="KrisEnigma - Músico. Gamer. Creador de Contenido.">
@@ -24,10 +22,9 @@ import kriswaveWebp from "../assets/kriswave.webp";
             <!-- Contenedor de la imagen -->
             <div
               class="relative w-full h-full rounded-full overflow-hidden z-10"
-            >
-              <img
+            >              <img
                 class="w-full h-full rounded-full object-cover transition-transform duration-300 hover:scale-110"
-                src={profileWebp.src}
+                src="/profile.webp"
                 alt="KrisEnigma - Foto de perfil"
                 loading="eager"
               />
@@ -264,9 +261,8 @@ import kriswaveWebp from "../assets/kriswave.webp";
           >
             <!-- Image container -->
             <div class="relative p-4">
-              <div class="relative overflow-hidden rounded-xl cursor-pointer">
-                <img
-                  src={kriswaveWebp.src}
+              <div class="relative overflow-hidden rounded-xl cursor-pointer">                <img
+                  src="/kriswave.webp"
                   loading="eager"
                   class="w-full h-80 object-cover transition-transform duration-500 ease-out hover:scale-105"
                   alt="KrisEnigma Biografía"
@@ -426,21 +422,59 @@ import kriswaveWebp from "../assets/kriswave.webp";
           </div>
         </div>
       </section>
-
       <section
         class="sm:mx-auto w-full sm:max-w-lg md:max-w-xl xl:max-w-2xl px-4 mt-10"
       >
         <div
-          class="relative w-full"
+          id="youtube-container"
+          class="relative w-full cursor-pointer group"
           style="aspect-ratio: 16/9; min-height:240px;"
         >
-          <iframe
-            src="https://www.youtube.com/embed/v-qHDk9bTZg?si=ZfJOxtzAtDVioFHp"
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-            class="absolute inset-0 w-full h-full rounded-xl border-0 z-20 bg-black"
-            loading="lazy"></iframe>
+          <!-- Thumbnail placeholder -->
+          <div
+            id="youtube-thumbnail"
+            class="absolute inset-0 rounded-xl overflow-hidden bg-black"
+          >            <img
+              src="https://img.youtube.com/vi/v-qHDk9bTZg/maxresdefault.jpg"
+              alt="YouTube video thumbnail"
+              class="w-full h-full object-cover"
+              loading="lazy"
+            />
+            <!-- Play button overlay -->
+            <div class="absolute inset-0 flex items-center justify-center">              <button
+                class="ytp-large-play-button ytp-button ytp-large-play-button-red-bg"
+                aria-label="Play"
+                title="Play"
+              ><svg
+                  height="100%"
+                  version="1.1"
+                  viewBox="0 0 68 48"
+                  width="100%"
+                  class="w-17 h-12"
+                  style="width: 68px; height: 48px;"
+                >
+                  <path
+                    class="ytp-large-play-button-bg"
+                    d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z"
+                    fill="#f03"></path>
+                  <path d="M 45,24 27,14 27,34" fill="#fff"></path>
+                </svg>
+              </button>            </div>
+            <!-- Loading indicator (hidden by default) -->
+            <div
+              id="youtube-loading"
+              class="absolute inset-0 bg-black/50 flex items-center justify-center hidden"
+            >
+              <div
+                class="w-8 h-8 border-2 border-white border-t-transparent rounded-full animate-spin"
+              >
+              </div>
+            </div>
+          </div>
+
+          <!-- Iframe placeholder (will be populated when needed) -->
+          <div id="youtube-iframe-container" class="absolute inset-0 hidden">
+          </div>
         </div>
       </section>
       <section
@@ -614,13 +648,85 @@ import kriswaveWebp from "../assets/kriswave.webp";
       </div>
     </div>
   </footer>
-
   <script>
     // Actualizar año currentYear en el footer
     document.addEventListener("DOMContentLoaded", function () {
       const currentYearElement = document.getElementById("currentYear");
       if (currentYearElement) {
         currentYearElement.textContent = new Date().getFullYear().toString();
+      }      // YouTube Lazy Loading
+      const youtubeContainer = document.getElementById("youtube-container");
+      const youtubeThumbnail = document.getElementById("youtube-thumbnail");
+      const youtubeIframeContainer = document.getElementById(
+        "youtube-iframe-container"
+      );
+
+      let youtubeLoaded = false;
+
+      function loadYouTubeVideo() {
+        if (youtubeLoaded) return;
+
+        youtubeLoaded = true;
+
+        // Crear iframe sin autoplay
+        const iframe = document.createElement("iframe");
+        iframe.src = "https://www.youtube.com/embed/v-qHDk9bTZg?rel=0";
+        iframe.title = "YouTube video player";
+        iframe.allow =
+          "accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+        iframe.allowFullscreen = true;
+        iframe.className = "w-full h-full rounded-xl border-0";
+        iframe.frameBorder = "0";
+
+        // Agregar iframe al contenedor primero
+        if (youtubeIframeContainer) {
+          youtubeIframeContainer.appendChild(iframe);
+        }
+
+        // Función para mostrar el video
+        const showVideo = () => {
+          if (youtubeThumbnail) {
+            youtubeThumbnail.style.display = "none";
+          }
+          if (youtubeIframeContainer) {
+            youtubeIframeContainer.classList.remove("hidden");
+          }
+        };
+
+        // Timeout de respaldo (1 segundo)
+        const fallbackTimeout = setTimeout(showVideo, 1000);
+
+        // Cuando el iframe termine de cargar
+        iframe.onload = function () {
+          clearTimeout(fallbackTimeout);
+          showVideo();
+        };
+      }
+
+      // Click handler para cargar el video manualmente
+      if (youtubeContainer) {
+        youtubeContainer.addEventListener("click", loadYouTubeVideo);
+      }
+
+      // Intersection Observer para carga automática cuando esté visible
+      if (youtubeContainer && "IntersectionObserver" in window) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting && entry.intersectionRatio > 0.3) {
+                // Carga automática cuando el 30% del video esté visible
+                loadYouTubeVideo();
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          {
+            threshold: 0.3,
+            rootMargin: "100px",
+          }
+        );
+
+        observer.observe(youtubeContainer);
       }
     });
   </script>

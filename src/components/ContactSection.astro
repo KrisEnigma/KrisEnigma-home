@@ -242,10 +242,12 @@
           // Validación manual antes de enviar
           let valid = true;
           // Limpiar errores previos
+          if (thankYouMessage) {
+            thankYouMessage.classList.add("hidden");
+            thankYouMessage.textContent = "";
+          }
           ["name", "email", "subject", "message"].forEach((field) => {
             const input = form.querySelector(`[name="${field}"]`);
-            const errorDiv = document.getElementById(`${field}-error`);
-            if (errorDiv) errorDiv.classList.add("hidden");
             if (input) input.classList.remove("border-red-500");
           });
 
@@ -253,12 +255,6 @@
           const name = form.name.value.trim();
           if (!name || name.length < 2) {
             valid = false;
-            const errorDiv = document.getElementById("name-error");
-            if (errorDiv) {
-              errorDiv.textContent =
-                "El nombre es obligatorio (mínimo 2 caracteres).";
-              errorDiv.classList.remove("hidden");
-            }
             form.name.classList.add("border-red-500");
           }
           // Validar email
@@ -266,37 +262,40 @@
           const emailRegex = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
           if (!email || !emailRegex.test(email)) {
             valid = false;
-            const errorDiv = document.getElementById("email-error");
-            if (errorDiv) {
-              errorDiv.textContent = "Email inválido.";
-              errorDiv.classList.remove("hidden");
-            }
             form.email.classList.add("border-red-500");
           }
           // Validar subject
           const subject = form.subject.value;
           if (!subject) {
             valid = false;
-            // Podrías mostrar un error visual aquí si lo deseas
+            form.subject.classList.add("border-red-500");
           }
           // Validar mensaje
           const message = form.message.value.trim();
           if (!message || message.length < 2) {
             valid = false;
-            const errorDiv = document.getElementById("message-error");
-            if (errorDiv) {
-              errorDiv.textContent = "El mensaje es obligatorio.";
-              errorDiv.classList.remove("hidden");
-            }
             form.message.classList.add("border-red-500");
           }
 
           if (!valid) {
+            if (thankYouMessage) {
+              thankYouMessage.classList.remove("hidden");
+              thankYouMessage.textContent =
+                "Todos los campos son obligatorios.";
+              thankYouMessage.className =
+                "mt-4 p-3 rounded-lg bg-red-500/20 text-red-400 text-center font-bold border border-red-500/30 text-sm";
+            }
             if (submitButton) {
               submitButton.disabled = false;
               submitButton.textContent = "Enviar Mensaje";
             }
             return;
+          }
+
+          // Cambiar texto del botón al enviar SOLO si la validación es exitosa
+          if (valid && submitButton) {
+            submitButton.disabled = true;
+            submitButton.textContent = "Enviando mensaje...";
           }
 
           // Envío del formulario
