@@ -1,18 +1,28 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import SocialButton from '../components/SocialButton.astro';
-import LinkCard from '../components/LinkCard.astro';
-import ContactSection from '../components/ContactSection.astro';
-import profileWebp from '../assets/profile.webp';
-import kriswaveWebp from '../assets/kriswave.webp';
+import Layout from "../layouts/Layout.astro";
+import SocialButton from "../components/SocialButton.astro";
+import LinkCard from "../components/LinkCard.astro";
+import ContactSection from "../components/ContactSection.astro";
+import ProjectModal from "../components/ProjectModal.astro";
+import profileWebp from "../assets/profile.webp";
+import kriswaveWebp from "../assets/kriswave.webp";
 ---
 
-<Layout title="KrisEnigma - Músico. Gamer. Creador de Contenido.">  <div class="flex min-h-screen flex-col">    <!-- Hero Section con diseño moderno -->
+<Layout title="KrisEnigma - Músico. Gamer. Creador de Contenido.">
+  <div class="flex min-h-screen flex-col">
+    <!-- Hero Section con diseño moderno -->
     <section class="relative pt-8 pb-6">
-      <div class="container mx-auto px-6 lg:max-w-4xl">        <!-- Profile Section con glassmorphism -->
-        <div class="text-center">          <!-- Imagen de perfil con border animado mejorado -->
-          <div class="relative inline-block mb-4 w-36 h-36 lg:w-40 lg:h-40 profile-gradient-border">
-            <!-- Contenedor de la imagen -->            <div class="relative w-full h-full rounded-full overflow-hidden z-10">
+      <div class="container mx-auto px-6 lg:max-w-4xl">
+        <!-- Profile Section con glassmorphism -->
+        <div class="text-center">
+          <!-- Imagen de perfil con border animado mejorado -->
+          <div
+            class="relative inline-block mb-4 w-36 h-36 lg:w-40 lg:h-40 profile-gradient-border"
+          >
+            <!-- Contenedor de la imagen -->
+            <div
+              class="relative w-full h-full rounded-full overflow-hidden z-10"
+            >
               <img
                 class="w-full h-full rounded-full object-cover transition-transform duration-300 hover:scale-110"
                 src={profileWebp.src}
@@ -21,206 +31,584 @@ import kriswaveWebp from '../assets/kriswave.webp';
               />
             </div>
           </div>
-            <!-- Nombre con tipografía mejorada -->
-          <div class="mb-4 flex items-center justify-center">            <h1 class="text-5xl lg:text-6xl font-aerovias mr-2">
-              <span class="logo-kris">Kris</span><span class="logo-enigma">Enigma</span>
+          <!-- Nombre con tipografía mejorada -->
+          <div class="mb-4 flex items-center justify-center">
+            <h1 class="text-5xl lg:text-6xl font-aerovias mr-2">
+              <span class="logo-kris">Kris</span><span class="logo-enigma"
+                >Enigma</span
+              >
             </h1>
-              <!-- Icono verificado mejorado -->
+            <!-- Icono verificado mejorado -->
             <div class="mt-1">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-7 h-7 text-theme-primary">
-                <path fill="currentColor" d="M22.51 13.76a3 3 0 0 1 0-3.52l.76-1.05a1 1 0 0 0 .14-.9 1.02 1.02 0 0 0-.64-.64l-1.23-.4a2.99 2.99 0 0 1-2.07-2.85V3.1a1 1 0 0 0-1.31-.95l-1.24.4a3 3 0 0 1-3.35-1.09L12.81.41a1.036 1.036 0 0 0-1.62 0l-.76 1.05a3 3 0 0 1-3.35 1.09l-1.24-.4a1 1 0 0 0-1.31.95v1.3a2.99 2.99 0 0 1-2.07 2.85l-1.23.4a1.02 1.02 0 0 0-.64.64 1 1 0 0 0 .14.9l.76 1.05a3 3 0 0 1 0 3.52l-.76 1.05a1 1 0 0 0-.14.9 1.02 1.02 0 0 0 .64.64l1.23.4a2.99 2.99 0 0 1 2.07 2.85v1.3a1 1 0 0 0 1.31.95l1.23-.4a2.99 2.99 0 0 1 3.36 1.09l.76 1.05a1.005 1.005 0 0 0 1.62 0l.76-1.05a3 3 0 0 1 3.36-1.09l1.23.4a1 1 0 0 0 1.31-.95v-1.3a2.99 2.99 0 0 1 2.07-2.85l1.23-.4a1.02 1.02 0 0 0 .64-.64 1 1 0 0 0-.14-.9Zm-5.8-3.053-5 5a1 1 0 0 1-1.414 0l-3-3a1 1 0 1 1 1.414-1.414L11 13.586l4.293-4.293a1 1 0 0 1 1.414 1.414Z"/>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                class="w-7 h-7 text-theme-primary"
+              >
+                <path
+                  fill="currentColor"
+                  d="M22.51 13.76a3 3 0 0 1 0-3.52l.76-1.05a1 1 0 0 0 .14-.9 1.02 1.02 0 0 0-.64-.64l-1.23-.4a2.99 2.99 0 0 1-2.07-2.85V3.1a1 1 0 0 0-1.31-.95l-1.24.4a3 3 0 0 1-3.35-1.09L12.81.41a1.036 1.036 0 0 0-1.62 0l-.76 1.05a3 3 0 0 1-3.35 1.09l-1.24-.4a1 1 0 0 0-1.31.95v1.3a2.99 2.99 0 0 1-2.07 2.85l-1.23.4a1.02 1.02 0 0 0-.64.64 1 1 0 0 0 .14.9l.76 1.05a3 3 0 0 1 0 3.52l-.76 1.05a1 1 0 0 0-.14.9 1.02 1.02 0 0 0 .64.64l1.23.4a2.99 2.99 0 0 1 2.07 2.85v1.3a1 1 0 0 0 1.31.95l1.23-.4a2.99 2.99 0 0 1 3.36 1.09l.76 1.05a1.005 1.005 0 0 0 1.62 0l.76-1.05a3 3 0 0 1 3.36-1.09l1.23.4a1 1 0 0 0 1.31-.95v-1.3a2.99 2.99 0 0 1 2.07-2.85l1.23-.4a1.02 1.02 0 0 0 .64-.64 1 1 0 0 0-.14-.9Zm-5.8-3.053-5 5a1 1 0 0 1-1.414 0l-3-3a1 1 0 1 1 1.414-1.414L11 13.586l4.293-4.293a1 1 0 0 1 1.414 1.414Z"
+                ></path>
               </svg>
             </div>
-          </div>            <!-- Descripción con tipografía mejorada -->
-          <p class="text-lg lg:text-xl text-white/90 italic max-w-2xl mx-auto mb-6">
-            I am a meat popsicle • Músico <span class="not-italic">🎸</span> • Gamer <span class="not-italic">🎮</span> • Creador de Contenido <span class="not-italic">📷</span>
+          </div>
+          <!-- Descripción con tipografía mejorada -->
+          <p
+            class="text-lg lg:text-xl text-white/90 font-uni-neue italic max-w-2xl mx-auto mb-6"
+          >
+            I am a meat popsicle • Músico <span class="not-italic">🎸</span> • Gamer
+            <span class="not-italic">🎮</span> • Creador de Contenido <span
+              class="not-italic">📷</span
+            >
           </p>
         </div>
-        
+
         <!-- Redes sociales con diseño flex moderno -->
         <div class="flex flex-wrap justify-center items-center gap-3 sm:gap-2">
           <SocialButton href="mailto:contacto@krisenigma.com" ariaLabel="Mail">
-            <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z"/>
-              <path d="M3 7l9 6l9 -6"/>
+            <svg
+              class="h-6 w-6"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z"
+              ></path>
+              <path d="M3 7l9 6l9 -6"></path>
             </svg>
           </SocialButton>
-          <SocialButton href="https://youtube.com/KrisEnigma" ariaLabel="Youtube" >
-            <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <rect x="3" y="5" width="18" height="14" rx="4"/>
-              <path d="M10 9l5 3l-5 3z"/>
+          <SocialButton
+            href="https://youtube.com/KrisEnigma"
+            ariaLabel="Youtube"
+          >
+            <svg
+              class="h-6 w-6"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <rect x="3" y="5" width="18" height="14" rx="4"></rect>
+              <path d="M10 9l5 3l-5 3z"></path>
             </svg>
           </SocialButton>
-          <SocialButton href="https://tiktok.com/@KrisEnigma" ariaLabel="TikTok" >
-            <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M9 12a4 4 0 1 0 4 4v-12a5 5 0 0 0 5 5"/>
+          <SocialButton
+            href="https://tiktok.com/@KrisEnigma"
+            ariaLabel="TikTok"
+          >
+            <svg
+              class="h-6 w-6"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M9 12a4 4 0 1 0 4 4v-12a5 5 0 0 0 5 5"></path>
             </svg>
           </SocialButton>
-          <SocialButton href="https://instagram.com/KrisEnigma" ariaLabel="Instagram" >
-            <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <rect x="4" y="4" width="16" height="16" rx="4"/>
-              <circle cx="12" cy="12" r="3"/>
-              <line x1="16.5" y1="7.5" x2="16.5" y2="7.501"/>
+          <SocialButton
+            href="https://instagram.com/KrisEnigma"
+            ariaLabel="Instagram"
+          >
+            <svg
+              class="h-6 w-6"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <rect x="4" y="4" width="16" height="16" rx="4"></rect>
+              <circle cx="12" cy="12" r="3"></circle>
+              <line x1="16.5" y1="7.5" x2="16.5" y2="7.501"></line>
             </svg>
           </SocialButton>
-          <SocialButton href="https://x.com/KrisEnigma" ariaLabel="X (Twitter)" >
-            <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M4 4l11.733 16h4.267l-11.733 -16z"/>
-              <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"/>
+          <SocialButton href="https://x.com/KrisEnigma" ariaLabel="X (Twitter)">
+            <svg
+              class="h-6 w-6"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M4 4l11.733 16h4.267l-11.733 -16z"></path>
+              <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path>
             </svg>
           </SocialButton>
-          <SocialButton href="https://facebook.com/KrisEnigma" ariaLabel="Facebook" >
-            <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3"/>
+          <SocialButton
+            href="https://facebook.com/KrisEnigma"
+            ariaLabel="Facebook"
+          >
+            <svg
+              class="h-6 w-6"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3"
+              ></path>
             </svg>
           </SocialButton>
-          <SocialButton href="https://dsc.gg/krisenigma" ariaLabel="Discord" >
-            <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="9" cy="12" r="1"/>
-              <circle cx="15" cy="12" r="1"/>
-              <path d="M7.5 7.5c3.5 -1 5.5 -1 9 0"/>
-              <path d="M7 16.5c3.5 1 6.5 1 10 0"/>
-              <path d="M15.5 17c0 1 1.5 3 2 3c1.5 0 2.833 -1.667 3.5 -3c.667 -1.667 .5 -5.833 -1.5 -11.5c-1.457 -1.015 -3 -1.34 -4.5 -1.5l-1 2.5"/>
-              <path d="M8.5 17c0 1 -1.356 3 -1.832 3c-1.429 0 -2.698 -1.667 -3.333 -3c-.635 -1.667 -.476 -5.833 1.428 -11.5c1.388 -1.015 2.782 -1.34 4.237 -1.5l1 2.5"/>
+          <SocialButton href="https://dsc.gg/krisenigma" ariaLabel="Discord">
+            <svg
+              class="h-6 w-6"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <circle cx="9" cy="12" r="1"></circle>
+              <circle cx="15" cy="12" r="1"></circle>
+              <path d="M7.5 7.5c3.5 -1 5.5 -1 9 0"></path>
+              <path d="M7 16.5c3.5 1 6.5 1 10 0"></path>
+              <path
+                d="M15.5 17c0 1 1.5 3 2 3c1.5 0 2.833 -1.667 3.5 -3c.667 -1.667 .5 -5.833 -1.5 -11.5c-1.457 -1.015 -3 -1.34 -4.5 -1.5l-1 2.5"
+              ></path>
+              <path
+                d="M8.5 17c0 1 -1.356 3 -1.832 3c-1.429 0 -2.698 -1.667 -3.333 -3c-.635 -1.667 -.476 -5.833 1.428 -11.5c1.388 -1.015 2.782 -1.34 4.237 -1.5l1 2.5"
+              ></path>
             </svg>
           </SocialButton>
-          <SocialButton href="https://twitch.tv/KrisEnigma" ariaLabel="Twitch" >
-            <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M4 5v11a1 1 0 0 0 1 1h2v4l4 -4h5.584c.266 0 .52 -.105 .707 -.293l2.415 -2.414c.187 -.188 .293 -.442 .293 -.708v-8.585a1 1 0 0 0 -1 -1h-14a1 1 0 0 0 -1 1z"/>
-              <line x1="16" y1="8" x2="16" y2="12"/>
-              <line x1="12" y1="8" x2="12" y2="12"/>
+          <SocialButton href="https://twitch.tv/KrisEnigma" ariaLabel="Twitch">
+            <svg
+              class="h-6 w-6"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                d="M4 5v11a1 1 0 0 0 1 1h2v4l4 -4h5.584c.266 0 .52 -.105 .707 -.293l2.415 -2.414c.187 -.188 .293 -.442 .293 -.708v-8.585a1 1 0 0 0 -1 -1h-14a1 1 0 0 0 -1 1z"
+              ></path>
+              <line x1="16" y1="8" x2="16" y2="12"></line>
+              <line x1="12" y1="8" x2="12" y2="12"></line>
             </svg>
           </SocialButton>
-          <SocialButton href="https://open.spotify.com/artist/58QiArKYlCuEDMRBimZ48G" ariaLabel="Spotify" >
-            <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="12" cy="12" r="9"/>
-              <path d="M8 11.973c2.5 -1.473 5.5 -.973 7.5 .527"/>
-              <path d="M9 15c1.5 -1 4 -1 5 .5"/>
-              <path d="M7 9c2 -1 6 -2 10 .5"/>
+          <SocialButton
+            href="https://open.spotify.com/artist/58QiArKYlCuEDMRBimZ48G"
+            ariaLabel="Spotify"
+          >
+            <svg
+              class="h-6 w-6"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <circle cx="12" cy="12" r="9"></circle>
+              <path d="M8 11.973c2.5 -1.473 5.5 -.973 7.5 .527"></path>
+              <path d="M9 15c1.5 -1 4 -1 5 .5"></path>
+              <path d="M7 9c2 -1 6 -2 10 .5"></path>
             </svg>
           </SocialButton>
-          <SocialButton href="https://steamcommunity.com/id/KrisEnigma/" ariaLabel="Steam" >
-            <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M16.5 5a4.5 4.5 0 1 1 -.653 8.953l-4.347 3.009l0 .038a3 3 0 0 1 -2.824 3l-.176 0a3 3 0 0 1 -2.94 -2.402l-2.56 -1.098v-3.5l3.51 1.755a2.989 2.989 0 0 1 2.834 -.635l2.727 -3.818a4.5 4.5 0 0 1 4.429 -5.302z"/>
-              <circle cx="16.5" cy="9.5" r="1" fill="currentColor"/>
+          <SocialButton
+            href="https://steamcommunity.com/id/KrisEnigma/"
+            ariaLabel="Steam"
+          >
+            <svg
+              class="h-6 w-6"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                d="M16.5 5a4.5 4.5 0 1 1 -.653 8.953l-4.347 3.009l0 .038a3 3 0 0 1 -2.824 3l-.176 0a3 3 0 0 1 -2.94 -2.402l-2.56 -1.098v-3.5l3.51 1.755a2.989 2.989 0 0 1 2.834 -.635l2.727 -3.818a4.5 4.5 0 0 1 4.429 -5.302z"
+              ></path>
+              <circle cx="16.5" cy="9.5" r="1" fill="currentColor"></circle>
             </svg>
           </SocialButton>
         </div>
       </div>
-    </section>      <main>        <section class="sm:mx-auto w-full sm:max-w-lg md:max-w-xl xl:max-w-2xl px-4 mt-6">
-          <div class="mt-3">
-            <LinkCard onClick="openContact" image="https://media.esponsor.com/media/public/images/5xn1v531yq/krisenigma-link-contacto-1703285776.webp" title="Contacto" loading="eager" />
-          </div>
-          
-          <div class="mt-3">
-            <LinkCard href="/mediakit.pdf" image="https://www.svgrepo.com/show/255818/pdf.svg" title="Media Kit" loading="eager" />
-          </div>        </section>        <section class="sm:mx-auto w-full sm:max-w-lg md:max-w-xl xl:max-w-2xl px-4 mt-10">          <div class="text-center mb-6 relative">
-            <h2 class="text-2xl md:text-3xl italic section-title-enhanced">
-              Biografía
-            </h2>          </div>
-            <div class="group">
-              <div class="glass-element relative rounded-2xl glass-bg border border-white/30 overflow-hidden">
-                <!-- Image container -->
-                <div class="relative p-4">
-                  <div class="relative overflow-hidden rounded-xl cursor-pointer">
-                    <img 
-                      src={kriswaveWebp.src}
-                      loading="eager" 
-                      class="w-full h-80 object-cover transition-transform duration-500 ease-out hover:scale-105" 
-                      alt="KrisEnigma Biografía"
-                    />
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none"></div>
-                  </div>
-                </div>
-                  <!-- Content -->
-                <div class="relative z-10 px-6 pb-6">
-                  <article class="max-w-none">                    <div class="space-y-4 text-left leading-relaxed">
-                      <p class="text-base text-white">Hola! Soy <strong class="text-theme-primary italic">KrisEnigma</strong>, un gamer y músico que vive y respira videojuegos y rock. Desde mi infancia, con un joystick en una mano y una guitarra en la otra, he vivido la evolución de los videojuegos, desde la época del Atari hasta la generación actual.</p>
-                      
-                      <p class="text-base text-white">Creador del enigmático juego <strong class="text-theme-primary italic">Tercer Ojo</strong>, el año 2006 me puse la meta de desarrollar contenido interactivo e interesante, creando una comunidad dedicada y activa en su auge.</p>
-                      
-                      <p class="text-base text-white">Con <strong class="text-theme-primary italic">Psycho Crusher</strong>, mi proyecto de rock de videojuegos iniciado en el 2010, he recorrido todo Chile llevando temazos de juegos clásicos y modernos con un toque de guitarra eléctrica. Si has estado en eventos como Festigame o Minami Convention, probablemente me has escuchado. Tengo 2 discos que puedes encontrar en todas las plataformas musicales.</p>
-                      
-                      <p class="text-base text-white">He trabajado en múltiples facetas de la industria de los videojuegos, desde guionista y editor hasta presentador en proyectos y medios creados por fans y canales de cable como <strong class="text-theme-primary italic">ControlVG</strong> y <strong class="text-theme-primary italic">Nexoplay</strong>. Hasta me he codeado con grandes de la industria en eventos internacionales como la E3, donde he entrevistado a personalidades como Reggie Fils-Aimé de Nintendo of America, Ed Boon de NetherRealm Studios y muchos más.</p>
-                      
-                      <p class="text-base text-white">En las redes, me encuentras en <strong class="text-theme-primary italic">Instagram</strong> y <strong class="text-theme-primary italic">TikTok</strong> compartiendo datos rápidos y curiosidades sobre juegos, perfecto para tus dosis rápidas e interesantes de gaming. En <strong class="text-theme-primary italic">YouTube</strong>, me pongo serio (pero no tanto) analizando juegos y la industria con un enfoque crítico y artístico, creando contenido en formato largo que me deja profundizar más. También hago streams de vivo de variados videojuegos que me parecen interesantes y comento los eventos más importantes del año, como <strong class="text-theme-primary italic">The Game Awards</strong>.</p>
-                      
-                      <p class="text-base text-white">Me esfuerzo por ser una voz sólida y con mucha credibilidad en la comunidad de videojuegos, proporcionando una mezcla equilibrada de entretenimiento, educación y análisis crítico. Mi objetivo es mantener a los entusiastas de los videojuegos informados y comprometidos, mientras sigo explorando y compartiendo mi pasión por los videojuegos y la música.</p>
-                      
-                      <p class="text-base text-white">Así que, si buscas alguien que combine juegos, música y una buena conversación, <strong class="text-theme-primary italic">aquí estoy!</strong></p>
-                    </div>
-                  </article>
-                </div>              </div>
-            </div>
-          </section>        <section class="sm:mx-auto w-full sm:max-w-lg md:max-w-xl xl:max-w-2xl px-4 mt-10">          <div class="text-center mb-6 relative">
-            <h2 class="text-2xl md:text-3xl italic section-title-enhanced">
-              Redes de Contenido
-            </h2>
-          </div>
-          <div class="grid gap-4">
-            <div class="">
-              <LinkCard href="https://www.youtube.com/KrisEnigma" image="https://media.esponsor.com/media/public/images/q6n7lv56yv/link-YouTube-1659670393.webp" title="YouTube" loading="lazy" />
-            </div>
-            <div class=" ">
-              <LinkCard href="https://www.instagram.com/KrisEnigma" image="https://media.esponsor.com/media/public/images/1kyqw280y5/link-Instagram-1659670431.webp" title="Instagram" loading="lazy" />
-            </div>
-            <div class=" ">
-              <LinkCard href="https://www.tiktok.com/@krisenigma" image="https://media.esponsor.com/media/public/images/0myrpz67y8/link-TikTok-1659670444.webp" title="TikTok" loading="lazy" />
-            </div>
-            <div class=" ">
-              <LinkCard href="https://www.twitch.tv/KrisEnigma" image="https://media.esponsor.com/media/public/images/5vyw47020n/conversions/php57fFTP-web.webp" title="Twitch" loading="lazy" />
-            </div>
-          </div>        </section>
+    </section>
+    <main>
+      <section
+        class="sm:mx-auto w-full sm:max-w-lg md:max-w-xl xl:max-w-2xl px-4 mt-6"
+      >
+        <div class="mt-3">
+          <LinkCard
+            onClick="openContact"
+            image="https://media.esponsor.com/media/public/images/5xn1v531yq/krisenigma-link-contacto-1703285776.webp"
+            title="Contacto"
+            loading="eager"
+          />
+        </div>
 
-        <section class="sm:mx-auto w-full sm:max-w-lg md:max-w-xl xl:max-w-2xl px-4 mt-10">
-          <div class="relative w-full aspect-video">            <iframe
-              src="https://www.youtube.com/embed/v-qHDk9bTZg?si=ZfJOxtzAtDVioFHp" 
-              title="YouTube video player" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-              allowfullscreen
-              class="absolute inset-0 w-full h-full rounded-xl border-0"
-              loading="lazy"
-            ></iframe>
-          </div>        </section>        <section class="sm:mx-auto w-full sm:max-w-lg md:max-w-xl xl:max-w-2xl px-4 mt-10">          <div class="text-center mb-6 relative">
-            <h2 class="text-2xl md:text-3xl italic section-title-enhanced">
-              Proyectos
-            </h2>
+        <div class="mt-3">
+          <LinkCard
+            href="/mediakit.pdf"
+            image="https://www.svgrepo.com/show/255818/pdf.svg"
+            title="Media Kit"
+            loading="eager"
+          />
+        </div>
+      </section>
+      <section
+        class="sm:mx-auto w-full sm:max-w-lg md:max-w-xl xl:max-w-2xl px-4 mt-10"
+      >
+        <div class="text-center mb-6 relative">
+          <h2
+            class="text-2xl md:text-3xl font-uni-neue italic section-title-enhanced"
+          >
+            Biografía
+          </h2>
+        </div>
+        <div class="group">
+          <div
+            class="glass-element relative rounded-2xl glass-bg border border-white/30 overflow-hidden"
+          >
+            <!-- Image container -->
+            <div class="relative p-4">
+              <div class="relative overflow-hidden rounded-xl cursor-pointer">
+                <img
+                  src={kriswaveWebp.src}
+                  loading="eager"
+                  class="w-full h-80 object-cover transition-transform duration-500 ease-out hover:scale-105"
+                  alt="KrisEnigma Biografía"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none"
+                >
+                </div>
+              </div>
+            </div>
+            <!-- Content -->
+            <div class="relative z-10 px-6 pb-6">
+              <article class="max-w-none">
+                <div class="space-y-4 text-left leading-relaxed">
+                  <p class="text-base text-white">
+                    Hola! Soy <strong class="text-theme-primary italic"
+                      >KrisEnigma</strong
+                    >, un gamer y músico que vive y respira videojuegos y rock.
+                    Desde mi infancia, con un joystick en una mano y una
+                    guitarra en la otra, he vivido la evolución de los
+                    videojuegos, desde la época del Atari hasta la generación
+                    actual.
+                  </p>
+
+                  <p class="text-base text-white">
+                    Creador del enigmático juego <strong
+                      class="text-theme-primary italic">Tercer Ojo</strong
+                    >, el año 2006 me puse la meta de desarrollar contenido
+                    interactivo e interesante, creando una comunidad dedicada y
+                    activa en su auge.
+                  </p>
+
+                  <p class="text-base text-white">
+                    Con <strong class="text-theme-primary italic"
+                      >Psycho Crusher</strong
+                    >, mi proyecto de rock de videojuegos iniciado en el 2010,
+                    he recorrido todo Chile llevando temazos de juegos clásicos
+                    y modernos con un toque de guitarra eléctrica. Si has estado
+                    en eventos como Festigame o Minami Convention, probablemente
+                    me has escuchado. Tengo 2 discos que puedes encontrar en
+                    todas las plataformas musicales.
+                  </p>
+
+                  <p class="text-base text-white">
+                    He trabajado en múltiples facetas de la industria de los
+                    videojuegos, desde guionista y editor hasta presentador en
+                    proyectos y medios creados por fans y canales de cable como <strong
+                      class="text-theme-primary italic">ControlVG</strong
+                    > y <strong class="text-theme-primary italic"
+                      >Nexoplay</strong
+                    >. Hasta me he codeado con grandes de la industria en
+                    eventos internacionales como la E3, donde he entrevistado a
+                    personalidades como Reggie Fils-Aimé de Nintendo of America,
+                    Ed Boon de NetherRealm Studios y muchos más.
+                  </p>
+
+                  <p class="text-base text-white">
+                    En las redes, me encuentras en <strong
+                      class="text-theme-primary italic">Instagram</strong
+                    > y <strong class="text-theme-primary italic">TikTok</strong
+                    > compartiendo datos rápidos y curiosidades sobre juegos, perfecto
+                    para tus dosis rápidas e interesantes de gaming. En <strong
+                      class="text-theme-primary italic">YouTube</strong
+                    >, me pongo serio (pero no tanto) analizando juegos y la
+                    industria con un enfoque crítico y artístico, creando
+                    contenido en formato largo que me deja profundizar más.
+                    También hago streams de vivo de variados videojuegos que me
+                    parecen interesantes y comento los eventos más importantes
+                    del año, como <strong class="text-theme-primary italic"
+                      >The Game Awards</strong
+                    >.
+                  </p>
+
+                  <p class="text-base text-white">
+                    Me esfuerzo por ser una voz sólida y con mucha credibilidad
+                    en la comunidad de videojuegos, proporcionando una mezcla
+                    equilibrada de entretenimiento, educación y análisis
+                    crítico. Mi objetivo es mantener a los entusiastas de los
+                    videojuegos informados y comprometidos, mientras sigo
+                    explorando y compartiendo mi pasión por los videojuegos y la
+                    música.
+                  </p>
+
+                  <p class="text-base text-white">
+                    Así que, si buscas alguien que combine juegos, música y una
+                    buena conversación, <strong
+                      class="text-theme-primary italic">aquí estoy!</strong
+                    >
+                  </p>
+                </div>
+              </article>
+            </div>
           </div>
-          <div class="grid gap-4">
-            <div class="">
-              <LinkCard href="https://tercerojo.krisenigma.com" image="https://media.esponsor.com/media/public/images/0mnr65w7n8/krisenigma-link-tercer-ojo-el-juego-por-krisenigma-1703286170.webp" title="Tercer Ojo - El Juego" loading="lazy" />
-            </div>
-            <div >
-              <LinkCard href="http://psycho-crusher.com/" image="https://media.esponsor.com/media/public/images/1knq86v0y5/krisenigma-link-psycho-crusher-1703285875.webp" title="Psycho Crusher" loading="lazy" />
-            </div>            <div class="">
-              <a href="https://krisenigma.com/gamelist" target="_blank" rel="noopener noreferrer" class="group relative grid grid-cols-9 items-center rounded-xl w-full glass-bg border border-white/20 text-white px-4 min-h-[3rem] hover:border-white/30 transform hover:scale-[1.01] link-item overflow-hidden transition-all duration-200 ease-out">
-                <div class="absolute inset-0 bg-gradient-to-r from-theme-primary/5 to-theme-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
-                <div class="h-8 w-8 col-span-1 justify-self-center relative z-10 flex items-center justify-center text-2xl">
-                  🎮
+        </div>
+      </section>
+      <section
+        class="sm:mx-auto w-full sm:max-w-lg md:max-w-xl xl:max-w-2xl px-4 mt-10"
+      >
+        <div class="text-center mb-6 relative">
+          <h2
+            class="text-2xl md:text-3xl font-uni-neue italic section-title-enhanced"
+          >
+            Redes de Contenido
+          </h2>
+        </div>
+        <div class="grid gap-4">
+          <div class="">
+            <LinkCard
+              href="https://www.youtube.com/KrisEnigma"
+              image="https://media.esponsor.com/media/public/images/q6n7lv56yv/link-YouTube-1659670393.webp"
+              title="YouTube"
+              loading="lazy"
+            />
+          </div>
+          <div class="">
+            <LinkCard
+              href="https://www.instagram.com/KrisEnigma"
+              image="https://media.esponsor.com/media/public/images/1kyqw280y5/link-Instagram-1659670431.webp"
+              title="Instagram"
+              loading="lazy"
+            />
+          </div>
+          <div class="">
+            <LinkCard
+              href="https://www.tiktok.com/@krisenigma"
+              image="https://media.esponsor.com/media/public/images/0myrpz67y8/link-TikTok-1659670444.webp"
+              title="TikTok"
+              loading="lazy"
+            />
+          </div>
+          <div class="">
+            <LinkCard
+              href="https://www.twitch.tv/KrisEnigma"
+              image="https://media.esponsor.com/media/public/images/5vyw47020n/conversions/php57fFTP-web.webp"
+              title="Twitch"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="sm:mx-auto w-full sm:max-w-lg md:max-w-xl xl:max-w-2xl px-4 mt-10"
+      >
+        <div
+          class="relative w-full"
+          style="aspect-ratio: 16/9; min-height:240px;"
+        >
+          <iframe
+            src="https://www.youtube.com/embed/v-qHDk9bTZg?si=ZfJOxtzAtDVioFHp"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            class="absolute inset-0 w-full h-full rounded-xl border-0 z-20 bg-black"
+            loading="lazy"></iframe>
+        </div>
+      </section>
+      <section
+        class="sm:mx-auto w-full sm:max-w-lg md:max-w-xl xl:max-w-2xl px-4 mt-10"
+      >
+        <div class="text-center mb-6 relative">
+          <h2
+            class="text-2xl md:text-3xl font-uni-neue italic section-title-enhanced"
+          >
+            Proyectos
+          </h2>
+        </div>
+        <div class="grid gap-4">
+          <div class="">
+            <button
+              onclick="openProjectModal('tercer-ojo')"
+              class="group relative grid grid-cols-9 items-center rounded-xl w-full glass-bg border border-white/20 text-white px-4 min-h-[3rem] hover:border-white/30 transform hover:scale-[1.01] link-item overflow-hidden transition-all duration-200 ease-out cursor-pointer"
+            >
+              <div
+                class="absolute inset-0 bg-gradient-to-r from-theme-primary/5 to-theme-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+              >
+              </div>
+              <div
+                class="h-8 w-8 col-span-1 justify-self-center relative z-10 flex items-center justify-center text-2xl"
+              >
+                👁️
+              </div>
+              <div class="col-span-8 ml-2 text-left">
+                <div class="font-medium font-uni-neue italic">
+                  Tercer Ojo - El Juego
                 </div>
-                <div class="col-span-8 ml-2">
-                  <div class="font-medium">GameList</div>
-                  <div class="text-sm text-white/70">Lista de juegos completados por KrisEnigma</div>
+                <div class="text-sm text-white/70">
+                  Juego enigmático que desafía tu mente desde 2006
                 </div>
-              </a>
-            </div>
-            <div class="">
-              <a href="https://github.com/KrisEnigma/GameSalad" target="_blank" rel="noopener noreferrer" class="group relative grid grid-cols-9 items-center rounded-xl w-full glass-bg border border-white/20 text-white px-4 min-h-[3rem] hover:border-white/30 transform hover:scale-[1.01] link-item overflow-hidden transition-all duration-200 ease-out">
-                <div class="absolute inset-0 bg-gradient-to-r from-theme-primary/5 to-theme-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
-                <div class="h-8 w-8 col-span-1 justify-self-center relative z-10 flex items-center justify-center text-2xl">
-                  🎯
+              </div>
+            </button>
+          </div>
+          <div>
+            <button
+              onclick="openProjectModal('psycho-crusher')"
+              class="group relative grid grid-cols-9 items-center rounded-xl w-full glass-bg border border-white/20 text-white px-4 min-h-[3rem] hover:border-white/30 transform hover:scale-[1.01] link-item overflow-hidden transition-all duration-200 ease-out cursor-pointer"
+            >
+              <div
+                class="absolute inset-0 bg-gradient-to-r from-theme-primary/5 to-theme-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+              >
+              </div>
+              <div
+                class="h-8 w-8 col-span-1 justify-self-center relative z-10 flex items-center justify-center text-2xl"
+              >
+                🎸
+              </div>
+              <div class="col-span-8 ml-2 text-left">
+                <div class="font-medium font-uni-neue italic">
+                  Psycho Crusher
                 </div>
-                <div class="col-span-8 ml-2">
-                  <div class="font-medium">GameSalad</div>
-                  <div class="text-sm text-white/70">Juego de palabras inspirado en el clásico Lingo. Próximamente online.</div>
+                <div class="text-sm text-white/70">
+                  Rock de videojuegos desde 2010
                 </div>
-              </a>
-            </div>
-          </div>        </section>
-      </main>
-    </div>    <div class="pb-8"></div> <!-- Reduced bottom padding -->
+              </div>
+            </button>
+          </div>
+          <div class="">
+            <button
+              onclick="openProjectModal('gamelist')"
+              class="group relative grid grid-cols-9 items-center rounded-xl w-full glass-bg border border-white/20 text-white px-4 min-h-[3rem] hover:border-white/30 transform hover:scale-[1.01] link-item overflow-hidden transition-all duration-200 ease-out cursor-pointer"
+            >
+              <div
+                class="absolute inset-0 bg-gradient-to-r from-theme-primary/5 to-theme-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+              >
+              </div>
+              <div
+                class="h-8 w-8 col-span-1 justify-self-center relative z-10 flex items-center justify-center text-2xl"
+              >
+                🎮
+              </div>
+              <div class="col-span-8 ml-2 text-left">
+                <div class="font-medium font-uni-neue italic">GameList</div>
+                <div class="text-sm text-white/70">
+                  Lista de juegos completados por KrisEnigma
+                </div>
+              </div>
+            </button>
+          </div>
+          <div class="">
+            <button
+              onclick="openProjectModal('gamesalad')"
+              class="group relative grid grid-cols-9 items-center rounded-xl w-full glass-bg border border-white/20 text-white px-4 min-h-[3rem] hover:border-white/30 transform hover:scale-[1.01] link-item overflow-hidden transition-all duration-200 ease-out cursor-pointer"
+            >
+              <div
+                class="absolute inset-0 bg-gradient-to-r from-theme-primary/5 to-theme-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+              >
+              </div>
+              <div
+                class="h-8 w-8 col-span-1 justify-self-center relative z-10 flex items-center justify-center text-2xl"
+              >
+                🎯
+              </div>
+              <div class="col-span-8 ml-2 text-left">
+                <div class="font-medium font-uni-neue italic">GameSalad</div>
+                <div class="text-sm text-white/70">
+                  Juego de palabras inspirado en Word Salad.
+                </div>
+              </div>
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
   </div>
-  
-  <!-- Modal de contacto -->
-  <ContactSection />
+  <div class="pb-8"></div>
+  <!-- Reduced bottom padding -->
+
+  <!-- Footer -->
+  <footer
+    class="relative z-20 mt-8 w-full bg-white/5 backdrop-blur-md border-t border-white/20"
+  >
+    <div class="w-full px-6 py-4">
+      <div class="text-center space-y-1">
+        <!-- Logo/Nombre -->
+        <div class="flex items-center justify-center mb-1">
+          <h3 class="text-xl font-aerovias">
+            <span class="logo-kris">Kris</span><span class="logo-enigma"
+              >Enigma</span
+            >
+          </h3>
+        </div>
+        <!-- Descripción corta -->
+        <p class="text-white/80 text-sm font-uni-neue italic">
+          Músico • Gamer • Creador de Contenido
+        </p>
+        <!-- Enlaces rápidos -->
+        <div class="flex flex-wrap justify-center gap-4 text-sm py-1">
+          <a
+            href="mailto:contacto@krisenigma.com"
+            class="text-white/70 hover:text-theme-primary transition-colors duration-200"
+          >
+            Contacto
+          </a>
+          <a
+            href="/mediakit.pdf"
+            target="_blank"
+            class="text-white/70 hover:text-theme-primary transition-colors duration-200"
+          >
+            Media Kit
+          </a>
+          <a
+            href="https://tercerojo.net"
+            target="_blank"
+            class="text-white/70 hover:text-theme-primary transition-colors duration-200"
+          >
+            Tercer Ojo
+          </a>
+          <a
+            href="https://psycho-crusher.com"
+            target="_blank"
+            class="text-white/70 hover:text-theme-primary transition-colors duration-200"
+          >
+            Psycho Crusher
+          </a>
+        </div>
+        <!-- Copyright -->
+        <div class="pt-1 border-t border-white/10">
+          <p class="text-white/50 text-xs">
+            © <span id="currentYear">2025</span> KrisEnigma. Todos los derechos
+            reservados.
+          </p>
+          <p class="text-white/40 text-xs">
+            Powered by Astro, Tailwind y buenos riffs 🚀🎸
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Actualizar año currentYear en el footer
+    document.addEventListener("DOMContentLoaded", function () {
+      const currentYearElement = document.getElementById("currentYear");
+      if (currentYearElement) {
+        currentYearElement.textContent = new Date().getFullYear().toString();
+      }
+    });
+  </script>
 </Layout>
+
+<!-- Modal de contacto -->
+<ContactSection />
+<!-- Modal de proyectos -->
+<ProjectModal id="tercer-ojo" onClose="closeProjectModal" />
+<ProjectModal id="psycho-crusher" onClose="closeProjectModal" />
+<ProjectModal id="gamelist" onClose="closeProjectModal" />
+<ProjectModal id="gamesalad" onClose="closeProjectModal" />
