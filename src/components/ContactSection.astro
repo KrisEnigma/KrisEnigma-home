@@ -162,7 +162,7 @@
   // Solo cargar si no existe ya
   if (!window.__krisContactModalLoaded) {
     window.__krisContactModalLoaded = true;
-    
+
     // Función global para abrir el modal de contacto
     window.openContact = function () {
       const modal = document.getElementById("contactModal");
@@ -216,7 +216,10 @@
       document.addEventListener("keydown", function (event) {
         if (event.key === "Escape") {
           const currentModal = document.getElementById("contactModal");
-          if (currentModal && !currentModal.classList.contains("pointer-events-none")) {
+          if (
+            currentModal &&
+            !currentModal.classList.contains("pointer-events-none")
+          ) {
             closeModal();
           }
         }
@@ -310,7 +313,6 @@
       }
     });
   }
-</script>
 </script>
 
 <style>

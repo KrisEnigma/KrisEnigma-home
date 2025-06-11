@@ -101,7 +101,7 @@ const structuredData = jsonLd || defaultJsonLd;
 }
 
 <!-- JSON-LD Structured Data -->
-<script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+<script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)} />
 
 <!-- Additional SEO improvements -->
 <meta

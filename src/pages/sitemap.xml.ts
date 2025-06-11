@@ -1,6 +1,8 @@
 // Sitemap.xml automático para mejor SEO
 import type { APIRoute } from "astro";
 
+export const prerender = true;
+
 const SITE_URL = "https://krisenigma.com";
 
 // URLs estáticas del sitio
