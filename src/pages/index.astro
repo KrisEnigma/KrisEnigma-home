@@ -6,6 +6,9 @@ import SocialButton from "../components/SocialButton.astro";
 import LinkCard from "../components/LinkCard.astro";
 import ContactSection from "../components/ContactSection.astro";
 import ProjectModal from "../components/ProjectModal.astro";
+
+// Configuración del video de YouTube destacado
+const YOUTUBE_VIDEO_ID = "v-qHDk9bTZg";
 ---
 
 <Layout title="KrisEnigma - Músico. Gamer. Creador de Contenido.">
@@ -438,7 +441,7 @@ import ProjectModal from "../components/ProjectModal.astro";
             class="absolute inset-0 rounded-xl overflow-hidden bg-black"
           >
             <img
-              src="https://img.youtube.com/vi/v-qHDk9bTZg/maxresdefault.jpg"
+              src={`https://img.youtube.com/vi/${YOUTUBE_VIDEO_ID}/maxresdefault.jpg`}
               alt="YouTube video thumbnail"
               class="w-full h-full object-cover"
               loading="lazy"
@@ -653,7 +656,7 @@ import ProjectModal from "../components/ProjectModal.astro";
       </div>
     </div>
   </footer>
-  <script>
+  <script is:inline define:vars={{ YOUTUBE_VIDEO_ID }}>
     // Actualizar año currentYear en el footer
     document.addEventListener("DOMContentLoaded", function () {
       const currentYearElement = document.getElementById("currentYear");
@@ -671,11 +674,9 @@ import ProjectModal from "../components/ProjectModal.astro";
       function loadYouTubeVideo() {
         if (youtubeLoaded) return;
 
-        youtubeLoaded = true;
-
-        // Crear iframe sin autoplay
+        youtubeLoaded = true; // Crear iframe sin autoplay
         const iframe = document.createElement("iframe");
-        iframe.src = "https://www.youtube.com/embed/v-qHDk9bTZg?rel=0";
+        iframe.src = `https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?rel=0`;
         iframe.title = "YouTube video player";
         iframe.allow =
           "accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
