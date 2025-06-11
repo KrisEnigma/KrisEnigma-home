@@ -9,12 +9,7 @@ dotenv.config();
 // https://astro.build/config
 export default defineConfig({
   site: 'https://krisenigma.com',
-  base: '/',
-  trailingSlash: 'ignore',
   output: 'static',
-  adapter: node({
-    mode: 'standalone'
-  }),
   integrations: [
     tailwind({
       applyBaseStyles: false,
