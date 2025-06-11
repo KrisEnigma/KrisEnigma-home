@@ -3,10 +3,18 @@
 const { gtagId } = Astro.props;
 ---
 
-<!-- Google Analytics 4 -->
-{gtagId && (
-  <>    <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${gtagId}`}></script>
-    <script is:inline set:html={`
+<!-- Google Analytics 4 -->{
+  gtagId && (
+    <>
+      {" "}
+      <script
+        is:inline
+        async
+        src={`https://www.googletagmanager.com/gtag/js?id=${gtagId}`}
+      />
+      <script
+        is:inline
+        set:html={`
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
@@ -14,24 +22,28 @@ const { gtagId } = Astro.props;
         page_title: document.title,
         page_location: window.location.href,
       });
-    `}></script>
-  </>
-)}
+    `}
+      />
+    </>
+  )
+}
 
 <!-- Performance Monitoring -->
 <script>
   // Basic performance monitoring
-  window.addEventListener('load', () => {
+  window.addEventListener("load", () => {
     // Monitor page load time
-    const navigation = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
+    const navigation = performance.getEntriesByType(
+      "navigation"
+    )[0] as PerformanceNavigationTiming;
     if (navigation) {
       const loadTime = navigation.loadEventEnd - navigation.loadEventStart;
-      console.log('Page Load Time:', loadTime + 'ms');
-      
+      console.log("Page Load Time:", loadTime + "ms");
+
       // Send to GA if available
-      if (typeof (window as any).gtag !== 'undefined') {
-        (window as any).gtag('event', 'page_load_time', {
-          event_category: 'Performance',
+      if (typeof (window as any).gtag !== "undefined") {
+        (window as any).gtag("event", "page_load_time", {
+          event_category: "Performance",
           value: Math.round(loadTime),
           non_interaction: true,
         });
@@ -40,32 +52,32 @@ const { gtagId } = Astro.props;
   });
 
   // Error tracking
-  window.addEventListener('error', (event) => {
-    console.error('JavaScript Error:', {
+  window.addEventListener("error", (event) => {
+    console.error("JavaScript Error:", {
       message: event.message,
       filename: event.filename,
       lineno: event.lineno,
       colno: event.colno,
-      error: event.error
+      error: event.error,
     });
-    
+
     // Send to analytics if available
-    if (typeof (window as any).gtag !== 'undefined') {
-      (window as any).gtag('event', 'exception', {
+    if (typeof (window as any).gtag !== "undefined") {
+      (window as any).gtag("event", "exception", {
         description: event.message,
-        fatal: false
+        fatal: false,
       });
     }
   });
 
-  window.addEventListener('unhandledrejection', (event) => {
-    console.error('Unhandled Promise Rejection:', event.reason);
-    
+  window.addEventListener("unhandledrejection", (event) => {
+    console.error("Unhandled Promise Rejection:", event.reason);
+
     // Send to analytics if available
-    if (typeof (window as any).gtag !== 'undefined') {
-      (window as any).gtag('event', 'exception', {
-        description: 'Unhandled Promise Rejection: ' + event.reason,
-        fatal: false
+    if (typeof (window as any).gtag !== "undefined") {
+      (window as any).gtag("event", "exception", {
+        description: "Unhandled Promise Rejection: " + event.reason,
+        fatal: false,
       });
     }
   });

@@ -1,4 +1,4 @@
-import { defineConfig } from 'astro/config';
+import { defineConfig, passthroughImageService } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import dotenv from 'dotenv';
 
@@ -21,6 +21,9 @@ export default defineConfig({
   build: {
     assets: 'assets',
     inlineStylesheets: 'auto'
+  },
+  image: {
+    service: passthroughImageService()
   },
   vite: {
     build: {

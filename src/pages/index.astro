@@ -676,7 +676,8 @@ import ProjectModal from "../components/ProjectModal.astro";
         // Crear iframe sin autoplay
         const iframe = document.createElement("iframe");
         iframe.src = "https://www.youtube.com/embed/v-qHDk9bTZg?rel=0";
-        iframe.title = "YouTube video player";        iframe.allow =
+        iframe.title = "YouTube video player";
+        iframe.allow =
           "accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
         iframe.allowFullscreen = true;
         iframe.className = "w-full h-full rounded-xl border-0";
