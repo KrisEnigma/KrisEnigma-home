@@ -24,7 +24,7 @@ export default {
                 border: '1px solid rgba(255, 255, 255, 0.1)',
             },
             '.logo-enigma': {
-                background: 'linear-gradient(-45deg, #00e1af, #7a53dd)',
+                background: 'linear-gradient(-45deg, #7a53dd, #00e1af)',
                 backgroundClip: 'text',
                 WebkitBackgroundClip: 'text',
                 color: 'transparent',
