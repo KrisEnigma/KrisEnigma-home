@@ -158,147 +158,159 @@
   </div>
 </div>
 
-<script>
-  // Función global para abrir el modal de contacto
-  (window as any).openContact = function () {
-    const modal = document.getElementById("contactModal") as HTMLElement;
+<script is:inline>
+  // Solo cargar si no existe ya
+  if (!window.__krisContactModalLoaded) {
+    window.__krisContactModalLoaded = true;
+    
+    // Función global para abrir el modal de contacto
+    window.openContact = function () {
+      const modal = document.getElementById("contactModal");
 
-    if (modal) {
-      // Mostrar el modal usando clases CSS (consistente con ProjectModal)
-      modal.classList.remove("opacity-0", "pointer-events-none");
-      modal.querySelector(".transform")?.classList.remove("scale-95");
-      modal.querySelector(".transform")?.classList.add("scale-100");
-
-      // Evitar scroll del body
-      document.body.style.overflow = "hidden";
-    }
-  };
-  document.addEventListener("DOMContentLoaded", function () {
-    const modal = document.getElementById("contactModal") as HTMLElement;
-    const closeBtn = document.getElementById("closeModal");
-    const form = document.getElementById("contactForm") as HTMLFormElement; // Función para cerrar el modal
-    function closeModal() {
       if (modal) {
-        // Usar clases CSS para consistencia con ProjectModal
-        modal.classList.add("opacity-0", "pointer-events-none");
-        modal.querySelector(".transform")?.classList.add("scale-95");
-        modal.querySelector(".transform")?.classList.remove("scale-100");
+        // Mostrar el modal usando clases CSS (consistente con ProjectModal)
+        modal.classList.remove("opacity-0", "pointer-events-none");
+        modal.querySelector(".transform")?.classList.remove("scale-95");
+        modal.querySelector(".transform")?.classList.add("scale-100");
 
-        // Restaurar scroll del body después de la animación
-        setTimeout(() => {
-          document.body.style.overflow = "auto";
-        }, 300);
+        // Evitar scroll del body
+        document.body.style.overflow = "hidden";
       }
-    }
+    };
 
-    // Cerrar modal al hacer clic en el botón X
-    if (closeBtn) {
-      closeBtn.addEventListener("click", closeModal);
-    }
+    document.addEventListener("DOMContentLoaded", function () {
+      const modal = document.getElementById("contactModal");
+      const closeBtn = document.getElementById("closeModal");
+      const form = document.getElementById("contactForm");
 
-    // Cerrar modal al hacer clic fuera del contenido
-    if (modal) {
-      modal.addEventListener("click", function (event) {
-        if (event.target === modal) {
-          closeModal();
+      // Función para cerrar el modal
+      function closeModal() {
+        if (modal) {
+          // Usar clases CSS para consistencia con ProjectModal
+          modal.classList.add("opacity-0", "pointer-events-none");
+          modal.querySelector(".transform")?.classList.add("scale-95");
+          modal.querySelector(".transform")?.classList.remove("scale-100");
+
+          // Restaurar scroll del body después de la animación
+          setTimeout(() => {
+            document.body.style.overflow = "auto";
+          }, 300);
+        }
+      }
+
+      // Cerrar modal al hacer clic en el botón X
+      if (closeBtn) {
+        closeBtn.addEventListener("click", closeModal);
+      }
+
+      // Cerrar modal al hacer clic fuera del contenido
+      if (modal) {
+        modal.addEventListener("click", function (event) {
+          if (event.target === modal) {
+            closeModal();
+          }
+        });
+      }
+
+      // Cerrar modal con la tecla ESC
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+          const currentModal = document.getElementById("contactModal");
+          if (currentModal && !currentModal.classList.contains("pointer-events-none")) {
+            closeModal();
+          }
         }
       });
-    }
 
-    // Cerrar modal con la tecla ESC
-    document.addEventListener("keydown", function (event) {
-      if (event.key === "Escape") {
-        closeModal();
-      }
-    }); // Manejar el envío del formulario
-    if (form) {
-      form.addEventListener("submit", async function (event) {
-        event.preventDefault();
+      // Manejar el envío del formulario
+      if (form) {
+        form.addEventListener("submit", async function (event) {
+          event.preventDefault();
 
-        const thankYouMessage = document.getElementById("thankyouMessage");
-        const submitButton = form.querySelector(
-          'button[type="submit"]'
-        ) as HTMLButtonElement;
+          const thankYouMessage = document.getElementById("thankyouMessage");
+          const submitButton = form.querySelector('button[type="submit"]');
 
-        // Deshabilitar el botón durante el envío
-        if (submitButton) {
-          submitButton.disabled = true;
-          submitButton.textContent = "Enviando...";
-        }
+          // Deshabilitar el botón durante el envío
+          if (submitButton) {
+            submitButton.disabled = true;
+            submitButton.textContent = "Enviando...";
+          }
 
-        // Envío del formulario
-        const formData = new FormData(form);
-        const data = {
-          name: formData.get("name"),
-          email: formData.get("email"),
-          subject: formData.get("subject"),
-          message: formData.get("message"),
-        };
+          // Envío del formulario
+          const formData = new FormData(form);
+          const data = {
+            name: formData.get("name"),
+            email: formData.get("email"),
+            subject: formData.get("subject"),
+            message: formData.get("message"),
+          };
 
-        try {
-          const response = await fetch("/api/contact-resend", {
-            method: "POST",
-            body: JSON.stringify(data),
-            headers: {
-              "Content-Type": "application/json",
-            },
-          });
+          try {
+            const response = await fetch("/api/contact-resend", {
+              method: "POST",
+              body: JSON.stringify(data),
+              headers: {
+                "Content-Type": "application/json",
+              },
+            });
 
-          const result = await response.json();
+            const result = await response.json();
 
-          if (result.success) {
-            // Mostrar mensaje de éxito
-            if (thankYouMessage) {
-              thankYouMessage.classList.remove("hidden");
-              thankYouMessage.textContent =
-                "¡Gracias por tu mensaje! Te responderé pronto.";
-              thankYouMessage.className =
-                "mt-4 p-3 rounded-lg bg-green-500/20 text-green-400 text-center font-bold border border-green-500/30 text-sm";
-            }
+            if (result.success) {
+              // Mostrar mensaje de éxito
+              if (thankYouMessage) {
+                thankYouMessage.classList.remove("hidden");
+                thankYouMessage.textContent =
+                  "¡Gracias por tu mensaje! Te responderé pronto.";
+                thankYouMessage.className =
+                  "mt-4 p-3 rounded-lg bg-green-500/20 text-green-400 text-center font-bold border border-green-500/30 text-sm";
+              }
 
-            form.reset();
+              form.reset();
 
-            // Cerrar modal después de 2 segundos
-            setTimeout(() => {
-              closeModal();
-              // Ocultar mensaje después de cerrar
+              // Cerrar modal después de 2 segundos
               setTimeout(() => {
-                if (thankYouMessage) {
-                  thankYouMessage.classList.add("hidden");
-                }
-              }, 300);
-            }, 2000);
-          } else {
+                closeModal();
+                // Ocultar mensaje después de cerrar
+                setTimeout(() => {
+                  if (thankYouMessage) {
+                    thankYouMessage.classList.add("hidden");
+                  }
+                }, 300);
+              }, 2000);
+            } else {
+              // Mostrar mensaje de error
+              if (thankYouMessage) {
+                thankYouMessage.classList.remove("hidden");
+                thankYouMessage.textContent =
+                  result.error ||
+                  "Error al enviar el mensaje. Inténtalo de nuevo.";
+                thankYouMessage.className =
+                  "mt-4 p-3 rounded-lg bg-red-500/20 text-red-400 text-center font-bold border border-red-500/30 text-sm";
+              }
+            }
+          } catch (error) {
+            console.error("Error al enviar el formulario:", error);
             // Mostrar mensaje de error
             if (thankYouMessage) {
               thankYouMessage.classList.remove("hidden");
               thankYouMessage.textContent =
-                result.error ||
-                "Error al enviar el mensaje. Inténtalo de nuevo.";
+                "Error de conexión. Inténtalo de nuevo.";
               thankYouMessage.className =
                 "mt-4 p-3 rounded-lg bg-red-500/20 text-red-400 text-center font-bold border border-red-500/30 text-sm";
             }
           }
-        } catch (error) {
-          console.error("Error al enviar el formulario:", error);
-          // Mostrar mensaje de error
-          if (thankYouMessage) {
-            thankYouMessage.classList.remove("hidden");
-            thankYouMessage.textContent =
-              "Error de conexión. Inténtalo de nuevo.";
-            thankYouMessage.className =
-              "mt-4 p-3 rounded-lg bg-red-500/20 text-red-400 text-center font-bold border border-red-500/30 text-sm";
-          }
-        }
 
-        // Restaurar el botón
-        if (submitButton) {
-          submitButton.disabled = false;
-          submitButton.textContent = "Enviar Mensaje";
-        }
-      });
-    }
-  });
+          // Restaurar el botón
+          if (submitButton) {
+            submitButton.disabled = false;
+            submitButton.textContent = "Enviar Mensaje";
+          }
+        });
+      }
+    });
+  }
+</script>
 </script>
 
 <style>
