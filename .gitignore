@@ -72,3 +72,10 @@ temp/
 *.njsproj
 *.sln
 *.sw?
+
+# Cloudflare/Workers/Secrets
+wrangler.toml
+.dev.vars
+
+# Cloudflare Wrangler files
+.wrangler/
