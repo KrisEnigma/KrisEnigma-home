@@ -1,61 +1,78 @@
 ---
-import '../styles/global.css';
-import SEOHead from '../components/SEOHead.astro';
-import Analytics from '../components/Analytics.astro';
+import "../styles/global.css";
+import SEOHead from "../components/SEOHead.astro";
+import Analytics from "../components/Analytics.astro";
 
 export interface Props {
   title: string;
   description?: string;
   canonical?: string;
   image?: string;
-  type?: 'website' | 'article' | 'profile';
+  type?: "website" | "article" | "profile";
 }
 
-const { 
-  title, 
-  description = "KrisEnigma - Músico. Gamer. Creador de Contenido.", 
+const {
+  title,
+  description = "KrisEnigma - Músico. Gamer. Creador de Contenido.",
   canonical,
   image,
-  type = "website"
+  type = "website",
 } = Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    
+
     <!-- Accessibility improvements -->
     <meta name="theme-color" content="#00e1af" />
     <meta name="color-scheme" content="dark" />
-    
+
     <!-- Preload critical fonts -->
-    <link rel="preload" href="https://fonts.cdnfonts.com/css/aerovias-brasil-nf" as="style" />
-    <link rel="preload" href="https://fonts.cdnfonts.com/css/uni-neue" as="style" />
-    
+    <link
+      rel="preload"
+      href="https://fonts.cdnfonts.com/css/aerovias-brasil-nf"
+      as="style"
+    />
+    <link
+      rel="preload"
+      href="https://fonts.cdnfonts.com/css/uni-neue"
+      as="style"
+    />
+
     <!-- Fonts -->
-    <link href="https://fonts.cdnfonts.com/css/aerovias-brasil-nf" rel="stylesheet">
-    <link href="https://fonts.cdnfonts.com/css/uni-neue" rel="stylesheet">
-    
+    <link
+      href="https://fonts.cdnfonts.com/css/aerovias-brasil-nf"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.cdnfonts.com/css/uni-neue" rel="stylesheet" />
+
     <!-- SEO optimizado -->
-    <SEOHead 
+    <SEOHead
       title={title}
       description={description}
       canonical={canonical}
       image={image}
       type={type}
     />
-    
+
     <!-- Analytics -->
     <Analytics gtagId={import.meta.env.PUBLIC_GTAG_ID} />
   </head>
-  <body class="h-full antialiased overflow-x-hidden" style="font-family: 'Uni Neue', sans-serif; letter-spacing: 0.025em;">
+  <body
+    class="h-full antialiased overflow-x-hidden"
+    style="font-family: 'Uni Neue', sans-serif; letter-spacing: 0.025em;"
+  >
     <!-- Fondo base con blur -->
-    <div class="fixed inset-0 z-0 bg-theme-bg bg-cover bg-center bg-no-repeat bg-fixed brightness-75 blur-sm"></div>
-       
+    <div
+      class="fixed inset-0 z-0 bg-theme-bg bg-cover bg-center bg-no-repeat bg-fixed brightness-75 blur-sm"
+    >
+    </div>
+
     <!-- Main Content -->
     <div class="relative z-20 min-h-screen">
       <slot />

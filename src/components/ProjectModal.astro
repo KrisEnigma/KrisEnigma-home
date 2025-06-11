@@ -1,0 +1,321 @@
+---
+// ProjectModal.astro - Modal para mostrar información de proyectos
+---
+
+<!-- Modal de Proyecto -->
+<div
+  id="projectModal"
+  class="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm opacity-0 pointer-events-none transition-all duration-300"
+>
+  <!-- Contenedor del modal -->
+  <div
+    class="relative mx-4 w-full max-w-2xl bg-gray-900/95 backdrop-blur-lg rounded-xl border border-white/20 shadow-2xl transform scale-95 transition-all duration-300 max-h-[90vh] overflow-y-auto"
+  >
+    <!-- Header del modal -->
+    <div
+      class="flex items-center justify-between p-6 border-b border-white/10 sticky top-0 bg-gray-900/95 backdrop-blur-lg"
+    >
+      <div class="flex items-center space-x-3">
+        <span id="projectIcon" class="text-2xl"></span>
+        <h3 id="projectTitle" class="text-xl text-white italic"></h3>
+      </div>
+      <button
+        id="closeProjectModal"
+        class="p-2 rounded-lg bg-red-500/20 hover:bg-red-500/30 text-red-400 hover:text-red-300 transition-all duration-200 border border-red-500/30 hover:border-red-400/50"
+      >
+        <svg
+          class="h-5 w-5"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Contenido del modal -->
+    <div class="p-6">
+      <!-- Imagen del proyecto -->
+      <div class="mb-6 overflow-hidden rounded-lg">
+        <img
+          id="projectImage"
+          src=""
+          alt=""
+          class="w-full h-48 object-cover transition-all duration-300 ease-out hover:scale-105"
+        />
+      </div>
+
+      <!-- Descripción del proyecto -->
+      <div
+        id="projectDescription"
+        class="text-white leading-relaxed space-y-4 mb-6"
+      >
+        <!-- El contenido se cargará dinámicamente -->
+      </div>
+      <!-- Información adicional -->
+      <div id="projectDetails" class="space-y-3 mb-6">
+        <!-- Los detalles se cargarán dinámicamente -->
+      </div>
+
+      <!-- Tecnologías utilizadas -->
+      <div id="projectTechnologies" class="mb-6">
+        <!-- Las tecnologías se cargarán dinámicamente -->
+      </div>
+
+      <!-- Botones de acción -->
+      <div class="flex flex-col sm:flex-row gap-3">
+        <button
+          id="visitProject"
+          class="flex-1 px-6 py-3 bg-theme-accent hover:bg-theme-accent/80 text-white italic rounded-lg font-medium transition-all duration-200 hover:scale-[1.02]"
+        >
+          Visitar Proyecto
+        </button>
+        <button
+          id="closeProjectModalBottom"
+          class="px-6 py-3 bg-white/10 hover:bg-white/20 text-white italic rounded-lg font-medium transition-all duration-200 border border-white/20"
+        >
+          Cerrar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  // Datos de los proyectos
+  const projectsData = {
+    "tercer-ojo": {
+      title: "Tercer Ojo - El Juego",
+      icon: "👁️",
+      image: "https://tercerojo.net/logo3erojo.jpg",
+      description: [
+        'Tercer Ojo es mi proyecto más querido y duradero: un juego web de enigmas que creé en septiembre de 2006 y que sigue activo hasta hoy. Lo que comenzó como un experimento se convirtió en "el juego de acertijos en línea más difícil en español", manteniendo una comunidad dedicada durante casi dos décadas.',
+        "El juego desafía a los jugadores con más de 100 niveles de puzzles únicos que van desde criptografía básica hasta complejos rompecabezas que requieren conocimiento de programación, música, historia, matemáticas y cultura general. Cada nivel es una experiencia única: algunos requieren analizar espectrogramas de audio, otros descifrar códigos o resolver sudokus temáticos.",
+        "A lo largo de los años he modernizado completamente el juego: partió como simple HTML y CSS escrito a mano en Notepad en 2006, y ahora cuenta con autenticación Firebase para guardar progreso, sistema de ranking, vibración háptica en móviles, modo PWA, y un foro oficial donde la comunidad comparte pistas. Aunque no he agregado niveles nuevos en años, el juego mantiene su esencia original con los más de 100 puzzles que diseñé.",
+        "Lo que más me emociona de Tercer Ojo no son solo los enigmas que diseño, sino la comunidad que se ha formado alrededor. Ver a personas de diferentes países colaborando para resolver puzzles que creé hace años es una de las experiencias más gratificantes de mi carrera como creador de contenido.",
+      ],
+      details: [
+        { label: "Año de creación", value: "2006 (activo 18+ años)" },
+        { label: "Tipo", value: "Juego de enigmas web multidisciplinario" },
+        { label: "Niveles", value: "100+ puzzles únicos" },
+        { label: "Estado", value: "Activo con actualizaciones regulares" },
+        { label: "Comunidad", value: "Fanbase internacional con foro oficial" },
+        {
+          label: "Características",
+          value: "PWA, ranking, autenticación, modo offline",
+        },
+      ],
+      technologies:
+        "Desarrollado con JavaScript ES6+ y TypeScript para tipado estático y mejor mantenibilidad. Frontend construido con HTML5 y CSS3 moderno. Backend utiliza Firebase 10.3.1 (Authentication, Realtime Database, Storage, Functions). Implementa Service Workers para PWA y funcionalidad offline. Bibliotecas especializadas incluyen Highlight.js 11.11.1 para sintaxis de código, Font Awesome para iconografía, y Firebase UI para autenticación. Incluye detección avanzada de dispositivos móviles, optimizaciones touch, y sistema de vibración háptica.",
+      url: "https://tercerojo.krisenigma.com",
+    },
+    "psycho-crusher": {
+      title: "Psycho Crusher",
+      icon: "🎸",
+      image: "https://psycho-crusher.com/files/header.jpg",
+      description: [
+        "Psycho Crusher es mi proyecto musical más personal y duradero. Desde 2010 he estado transformando los soundtracks más memorables de los videojuegos en versiones rock y metal, combinando mi amor por la música con mi pasión por el gaming.",
+        'A lo largo de estos años he lanzado dos álbumes: "Psycho Crusher" (2013) y "Avocado Overdose" (2015), más el single "MaxX Unlimited" (2023). Mi cover de "Still Alive" de Mirror\'s Edge se ha convertido en el track más escuchado con más de 527,000 reproducciones en Spotify, lo cual nunca imaginé cuando lo grabé.',
+        "He tenido la oportunidad de llevar estas versiones a eventos importantes de la escena gamer chilena como Festigame y Minami Convention. Ver a la gente cantando y headbangeando temas de Undertale, Contra o Wolfenstein en versión rock es una experiencia indescriptible.",
+        "Lo que más me satisface es que Psycho Crusher ha encontrado su propia identidad: no solo adapto la música, sino que la reimagino completamente. Cada cover respeta la esencia original pero añade esa intensidad del rock que caracteriza mi estilo. Con más de 8,300 oyentes mensuales en Spotify, puedo decir que he logrado crear algo genuino en el mundo del VGM.",
+      ],
+      details: [
+        { label: "Artista", value: 'Cristián "Kris" Escobar' },
+        { label: "Año de inicio", value: "2010" },
+        { label: "Género", value: "VGM Rock/Metal" },
+        { label: "Álbumes", value: "2 álbumes + 1 single (2013, 2015, 2023)" },
+        { label: "Oyentes mensuales", value: "8,300+ en Spotify" },
+        {
+          label: "Hit más popular",
+          value: '"Still Alive" - 527K reproducciones',
+        },
+        {
+          label: "Presentaciones",
+          value: "Festigame, Minami Convention y más",
+        },
+        {
+          label: "Plataformas",
+          value: "Todas las principales (Spotify, Apple, etc.)",
+        },
+      ],
+      technologies:
+        "Producción musical realizada con DAW profesional para grabación multi-pista. Masterización digital y distribución a plataformas de streaming mediante DistroKid. Sitio web oficial desarrollado con tecnologías web estándar (HTML5, CSS3, JavaScript) para promoción y contenido multimedia. Uso de herramientas de audio profesionales para grabación de guitarra eléctrica, bajo y batería programada, con procesamiento de efectos y plugins especializados para el género rock/metal.",
+      url: "http://psycho-crusher.com/",
+    },
+    gamelist: {
+      title: "GameList",
+      icon: "🎮",
+      image: "/gamelist.jpg",
+      description: [
+        "GameList nació de mi necesidad obsesiva de llevar registro de todos los juegos que completo. Como alguien que lleva más de 30 años jugando, desde mis primeros días con Atari hasta los títulos modernos, sentía que estaba perdiendo de vista mi propio historial gaming.",
+        "Lo que comenzó como una simple lista en Excel evolucionó hacia esta aplicación web donde documento cada juego que termino, incluyendo mi calificación personal, tiempo jugado, plataforma y reflexiones sobre la experiencia. Es mi archivo personal, pero decidí hacerlo público porque creo que puede ser útil para otros gamers.",
+        "He documentado más de 900 juegos completados, desde indies que nadie conoce hasta los AAA más populares. No todos tienen reseña completa todavía - estoy en el proceso de agregar calificaciones a todos y micro-reseñas cuando sea posible, incluyendo links a streams donde los jugué en vivo.",
+        "Es un proyecto muy personal que uso constantemente. Me ayuda a recordar qué pensaba de ciertos juegos, a redescubrir títulos que había olvidado, y a mantener un registro tangible de décadas de gaming. Para mí, es tan valiosa como una biblioteca personal de libros.",
+      ],
+      details: [
+        { label: "Juegos documentados", value: "900+" },
+        { label: "Período personal", value: "30+ años de gaming" },
+        { label: "Desde", value: "Atari hasta actualidad" },
+        {
+          label: "Contenido",
+          value: "Calificaciones y micro-reseñas en progreso",
+        },
+        { label: "Propósito", value: "Archivo personal público" },
+        { label: "Actualización", value: "Cada juego completado" },
+        { label: "Valor", value: "Registro histórico personal" },
+      ],
+      technologies:
+        "Construida con Next.js 14 y React 18 para el frontend moderno. TypeScript para tipado estático y mejor desarrollo. Utiliza Tailwind CSS con PostCSS para estilos optimizados. Backend potenciado por Supabase con base de datos PostgreSQL. Integra múltiples APIs externas: IGDB para metadatos de juegos, Steam API, y SteamGridDB para imágenes. Sistema de autenticación completo, hooks personalizados para gestión de estado, y componentes reutilizables. Configuración con ESLint y arquitectura de servicios modulares.",
+      url: "https://krisenigma.com/gamelist",
+    },
+    gamesalad: {
+      title: "GameSalad",
+      icon: "🎯",
+      image: "/gamesalad.jpg",
+      description: [
+        'GameSalad es mi experimento personal con los juegos de palabras, inspirado en el concepto "Word Salad". Decidí crear mi propia versión como un ejercicio de programación y diseño de juegos, combinando mi pasión por el desarrollo web con la mecánica simple pero adictiva de encontrar palabras.',
+        "Lo desarrollé usando tecnologías web modernas, enfocándome especialmente en hacer que funcionara bien tanto en escritorio como móviles. Implementé funciones como vibración háptica para dispositivos móviles y un sistema PWA para que se pueda instalar como una app nativa.",
+        "El proyecto me sirvió para experimentar con Capacitor, Service Workers y arquitecturas modulares en JavaScript. Aunque es un concepto simple, me permitió explorar muchas tecnologías interesantes y practicar el desarrollo de juegos casuales.",
+        "Es uno de esos proyectos que nació de mi curiosidad por ver cómo funcionan internamente este tipo de juegos y mi deseo de implementar mi propia versión desde cero. No busca revolucionar el género, sino ser un ejemplo sólido de desarrollo web moderno aplicado a gaming casual.",
+      ],
+      details: [
+        { label: "Tipo", value: "Juego de palabras experimental" },
+        { label: "Inspiración", value: "Word Salad (implementación propia)" },
+        { label: "Propósito", value: "Experimento de desarrollo web" },
+        { label: "Características", value: "PWA, vibración háptica" },
+        { label: "Enfoque", value: "Aprendizaje de tecnologías" },
+        { label: "Estado", value: "Prototipo funcional" },
+        { label: "Objetivo", value: "Práctica de desarrollo de juegos" },
+      ],
+      technologies:
+        "Desarrollado con JavaScript ES6+ y arquitectura modular usando servicios (ElementService, ConfigurationService). Implementa Capacitor para funcionalidades nativas móviles como vibración háptica, notificaciones locales y gestión de estado de aplicación. Build system configurado con Vite para desarrollo rápido y HTTPS local. Incluye Service Workers para funcionalidad PWA, Stylelint para calidad CSS, y ESLint con SonarJS para análisis de código. Sistema de almacenamiento persistente con Capacitor Preferences.",
+      url: "https://krisenigma.com/gamesalad",
+    },
+  }; // Función para abrir el modal del proyecto
+  function openProjectModal(projectId) {
+    const modal = document.getElementById("projectModal");
+    const project = projectsData[projectId];
+
+    if (!modal || !project) return;
+
+    // Actualizar contenido del modal
+    const title = document.getElementById("projectTitle");
+    const icon = document.getElementById("projectIcon");
+    const image = document.getElementById("projectImage");
+    const description = document.getElementById("projectDescription");
+    const details = document.getElementById("projectDetails");
+    const visitButton = document.getElementById("visitProject");
+    if (title) title.textContent = project.title;
+    if (icon) icon.textContent = project.icon;
+    if (image) {
+      // Ocultar imagen durante la carga para evitar mostrar la anterior
+      image.style.opacity = "0";
+      image.src = project.image;
+      image.alt = project.title;
+
+      // Mostrar imagen cuando esté completamente cargada
+      image.onload = () => {
+        image.style.opacity = "1";
+      };
+    }
+    if (description) {
+      description.innerHTML = project.description
+        .map((p) => `<p class="text-base text-white">${p}</p>`)
+        .join("");
+    }
+    if (details) {
+      details.innerHTML = project.details
+        .map(
+          (detail) => `
+          <div class="flex justify-between items-center py-2 border-b border-white/10 last:border-b-0">
+            <span class="text-white/70 text-sm italic">${detail.label}:</span>
+            <span class="text-white font-medium text-sm">${detail.value}</span>
+          </div>
+        `
+        )
+        .join("");
+    }
+
+    // Mostrar tecnologías si existen
+    const technologiesContainer = document.getElementById(
+      "projectTechnologies"
+    );
+    if (technologiesContainer && project.technologies) {
+      technologiesContainer.innerHTML = `
+        <div class="bg-white/5 rounded-lg p-4 border border-white/10">
+          <h4 class="text-white font-medium italic mb-2 text-sm flex items-center">
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+            </svg>
+            Tecnologías
+          </h4>
+          <p class="text-white/80 text-sm leading-relaxed">${project.technologies}</p>
+        </div>
+      `;
+    } else if (technologiesContainer) {
+      technologiesContainer.innerHTML = "";
+    }
+
+    if (visitButton) {
+      visitButton.onclick = () => window.open(project.url, "_blank");
+    } // Resetear scroll del contenido del modal
+    const modalContent = modal.querySelector(".overflow-y-auto");
+    if (modalContent) {
+      modalContent.scrollTop = 0;
+    }
+
+    // Mostrar modal y evitar scroll del body
+    modal.classList.remove("opacity-0", "pointer-events-none");
+    modal.querySelector(".transform")?.classList.remove("scale-95");
+    modal.querySelector(".transform")?.classList.add("scale-100");
+    document.body.style.overflow = "hidden";
+  }
+
+  // Función para cerrar el modal
+  function closeProjectModal() {
+    const modal = document.getElementById("projectModal");
+    if (!modal) return;
+
+    modal.classList.add("opacity-0", "pointer-events-none");
+    modal.querySelector(".transform")?.classList.add("scale-95");
+    modal.querySelector(".transform")?.classList.remove("scale-100");
+
+    // Restaurar scroll del body después de la animación
+    setTimeout(() => {
+      document.body.style.overflow = "auto";
+    }, 300);
+  }
+
+  // Event listeners
+  document.addEventListener("DOMContentLoaded", () => {
+    // Cerrar modal
+    document
+      .getElementById("closeProjectModal")
+      ?.addEventListener("click", closeProjectModal);
+    document
+      .getElementById("closeProjectModalBottom")
+      ?.addEventListener("click", closeProjectModal);
+
+    // Cerrar modal al hacer clic en el fondo
+    document.getElementById("projectModal")?.addEventListener("click", (e) => {
+      if (e.target === e.currentTarget) {
+        closeProjectModal();
+      }
+    }); // Cerrar modal con Escape
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        const modal = document.getElementById("projectModal");
+        if (modal && !modal.classList.contains("pointer-events-none")) {
+          closeProjectModal();
+        }
+      }
+    });
+  });
+  // Hacer la función global para que pueda ser llamada desde otros scripts
+  window.openProjectModal = openProjectModal;
+</script>

@@ -3,137 +3,202 @@
 ---
 
 <!-- Modal de Contacto -->
-<div id="contactModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm opacity-0 pointer-events-none transition-all duration-300">
+<div
+  id="contactModal"
+  class="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm opacity-0 pointer-events-none transition-all duration-300"
+>
   <!-- Contenedor del modal -->
-  <div class="relative mx-4 w-full max-w-md bg-gray-900/95 backdrop-blur-lg rounded-xl border border-white/20 shadow-2xl transform scale-95 transition-all duration-300">    <!-- Header del modal -->    <div class="flex items-center justify-between p-6 border-b border-white/10">
+  <div
+    class="relative mx-4 w-full max-w-md bg-gray-900/95 backdrop-blur-lg rounded-xl border border-white/20 shadow-2xl transform scale-95 transition-all duration-300"
+  >
+    <!-- Header del modal -->
+    <div class="flex items-center justify-between p-6 border-b border-white/10">
       <h3 class="text-xl text-white italic">Contacto</h3>
-      <button id="closeModal" class="p-2 rounded-lg bg-red-500/20 hover:bg-red-500/30 text-red-400 hover:text-red-300 transition-all duration-200 border border-red-500/30 hover:border-red-400/50">
-        <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+      <button
+        id="closeModal"
+        class="p-2 rounded-lg bg-red-500/20 hover:bg-red-500/30 text-red-400 hover:text-red-300 transition-all duration-200 border border-red-500/30 hover:border-red-400/50"
+      >
+        <svg
+          class="h-5 w-5"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"></path>
         </svg>
       </button>
     </div>
 
     <!-- Contenido del modal -->
     <div class="p-6">
-      <form id="contactForm" class="space-y-4" novalidate>        <div>
-          <label for="name" class="block text-sm font-medium text-white mb-1 italic">
+      <form id="contactForm" class="space-y-4" novalidate>
+        <div>
+          <label
+            for="name"
+            class="block text-sm font-medium text-white mb-1 italic"
+          >
             Nombre <span class="text-red-400">*</span>
           </label>
-          <input 
-            type="text" 
-            id="name" 
-            name="name" 
-            required 
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
             minlength="2"
             maxlength="50"
             autocomplete="name"
-            aria-describedby="name-error"            class="w-full px-3 py-2 rounded-lg border border-white/20 bg-white/10 backdrop-blur-sm text-white placeholder-white/60 focus:ring-2 focus:ring-theme-primary focus:border-theme-primary/50 transition-all duration-300 text-sm"
+            aria-describedby="name-error"
+            class="w-full px-3 py-2 rounded-lg border border-white/20 bg-white/10 backdrop-blur-sm text-white placeholder-white/60 focus:ring-2 focus:ring-theme-primary focus:border-theme-primary/50 transition-all duration-300 text-sm"
             placeholder="Tu nombre"
           />
-          <div id="name-error" class="text-red-400 text-xs mt-1 hidden" role="alert"></div>
+          <div
+            id="name-error"
+            class="text-red-400 text-xs mt-1 hidden"
+            role="alert"
+          >
+          </div>
         </div>
-          <div>
-          <label for="email" class="block text-sm font-medium text-white mb-1 italic">
+        <div>
+          <label
+            for="email"
+            class="block text-sm font-medium text-white mb-1 italic"
+          >
             Email <span class="text-red-400">*</span>
           </label>
-          <input 
-            type="email" 
-            id="email" 
-            name="email" 
-            required 
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
             autocomplete="email"
             aria-describedby="email-error"
-            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"            class="w-full px-3 py-2 rounded-lg border border-white/20 bg-white/10 backdrop-blur-sm text-white placeholder-white/60 focus:ring-2 focus:ring-theme-primary focus:border-theme-primary/50 transition-all duration-300 text-sm"
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+            class="w-full px-3 py-2 rounded-lg border border-white/20 bg-white/10 backdrop-blur-sm text-white placeholder-white/60 focus:ring-2 focus:ring-theme-primary focus:border-theme-primary/50 transition-all duration-300 text-sm"
             placeholder="tu@email.com"
           />
-          <div id="email-error" class="text-red-400 text-xs mt-1 hidden" role="alert"></div>        </div>          <div>
-          <label for="subject" class="block text-sm font-medium text-white mb-1 italic">Motivo</label>
-          <select
-            id="subject" 
-            name="subject" 
-            required 
-            class="w-full px-3 py-2 rounded-lg border border-white/20 bg-white/10 backdrop-blur-sm text-white focus:ring-2 focus:ring-theme-primary focus:border-theme-primary/50 transition-all duration-300 text-sm appearance-none cursor-pointer"
-            style="background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;12&quot; height=&quot;12&quot; viewBox=&quot;0 0 12 12&quot;><path fill=&quot;%23ffffff&quot; opacity=&quot;0.7&quot; d=&quot;M10.293 3.293L6 7.586 1.707 3.293A1 1 0 00.293 4.707l5 5a1 1 0 001.414 0l5-5a1 1 0 10-1.414-1.414z&quot;/></svg>'); background-repeat: no-repeat; background-position: right 12px center; background-size: 12px;"
+          <div
+            id="email-error"
+            class="text-red-400 text-xs mt-1 hidden"
+            role="alert"
           >
-            <option value="" disabled selected class="text-white/60">Selecciona el motivo</option>
-            <option value="Preguntas" class="text-white bg-gray-900/95">Preguntas</option>
-            <option value="Colaboración" class="text-white bg-gray-900/95">Colaboración</option>
-            <option value="Patrocinio" class="text-white bg-gray-900/95">Patrocinio</option>
-            <option value="Feedback" class="text-white bg-gray-900/95">Feedback</option>
-            <option value="Medios" class="text-white bg-gray-900/95">Medios/Prensa</option>
-            <option value="Eventos" class="text-white bg-gray-900/95">Eventos</option>
-            <option value="Otros" class="text-white bg-gray-900/95">Otros</option>
+          </div>
+        </div>
+        <div>
+          <label
+            for="subject"
+            class="block text-sm font-medium text-white mb-1 italic"
+            >Motivo</label
+          >
+          <select
+            id="subject"
+            name="subject"
+            required
+            class="w-full px-3 py-2 rounded-lg border border-white/20 bg-white/10 backdrop-blur-sm text-white focus:ring-2 focus:ring-theme-primary focus:border-theme-primary/50 transition-all duration-300 text-sm appearance-none cursor-pointer"
+            style='background-image: url(&apos;data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><path fill="%23ffffff" opacity="0.7" d="M10.293 3.293L6 7.586 1.707 3.293A1 1 0 00.293 4.707l5 5a1 1 0 001.414 0l5-5a1 1 0 10-1.414-1.414z"/></svg>&apos;); background-repeat: no-repeat; background-position: right 12px center; background-size: 12px;'
+          >
+            <option value="" disabled selected class="text-white/60"
+              >Selecciona el motivo</option
+            >
+            <option value="Preguntas" class="text-white bg-gray-900/95"
+              >Preguntas</option
+            >
+            <option value="Colaboración" class="text-white bg-gray-900/95"
+              >Colaboración</option
+            >
+            <option value="Patrocinio" class="text-white bg-gray-900/95"
+              >Patrocinio</option
+            >
+            <option value="Feedback" class="text-white bg-gray-900/95"
+              >Feedback</option
+            >
+            <option value="Medios" class="text-white bg-gray-900/95"
+              >Medios/Prensa</option
+            >
+            <option value="Eventos" class="text-white bg-gray-900/95"
+              >Eventos</option
+            >
+            <option value="Otros" class="text-white bg-gray-900/95"
+              >Otros</option
+            >
           </select>
         </div>
-          <div>
-          <label for="message" class="block text-sm font-medium text-white mb-1 italic">Mensaje</label>
+        <div>
+          <label
+            for="message"
+            class="block text-sm font-medium text-white mb-1 italic"
+            >Mensaje</label
+          >
           <textarea
-            id="message" 
-            name="message" 
-            rows="4" 
-            required            class="w-full px-3 py-2 rounded-lg border border-white/20 bg-white/10 backdrop-blur-sm text-white placeholder-white/60 focus:ring-2 focus:ring-theme-primary focus:border-theme-primary/50 transition-all duration-300 text-sm"
-            placeholder="Tu mensaje..."
-          ></textarea>
+            id="message"
+            name="message"
+            rows="4"
+            required
+            class="w-full px-3 py-2 rounded-lg border border-white/20 bg-white/10 backdrop-blur-sm text-white placeholder-white/60 focus:ring-2 focus:ring-theme-primary focus:border-theme-primary/50 transition-all duration-300 text-sm"
+            placeholder="Tu mensaje..."></textarea>
         </div>
-          <button 
-          type="submit" 
+        <button
+          type="submit"
           class="w-full py-3 px-4 rounded-lg bg-gradient-to-r from-theme-primary to-theme-accent text-white font-bold shadow-lg hover:from-theme-primary/90 hover:to-theme-accent/90 transition-all duration-300 text-sm"
         >
           Enviar Mensaje
         </button>
       </form>
-      
+
       <!-- Mensaje de respuesta -->
-      <div id="thankyouMessage" class="hidden mt-4 p-3 rounded-lg text-center font-bold text-sm"></div>
+      <div
+        id="thankyouMessage"
+        class="hidden mt-4 p-3 rounded-lg text-center font-bold text-sm"
+      >
+      </div>
     </div>
   </div>
 </div>
 
 <script>
   // Función global para abrir el modal de contacto
-  (window as any).openContact = function() {
-    const modal = document.getElementById('contactModal') as HTMLElement;
-    const modalContent = modal?.querySelector('div') as HTMLElement;
-    
-    if (modal && modalContent) {
-      // Mostrar el modal
-      modal.classList.remove('pointer-events-none');
-      modal.style.opacity = '1';
-      modalContent.style.transform = 'scale(1)';
-      
+  (window as any).openContact = function () {
+    const modal = document.getElementById("contactModal") as HTMLElement;
+
+    if (modal) {
+      // Mostrar el modal usando clases CSS (consistente con ProjectModal)
+      modal.classList.remove("opacity-0", "pointer-events-none");
+      modal.querySelector(".transform")?.classList.remove("scale-95");
+      modal.querySelector(".transform")?.classList.add("scale-100");
+
       // Evitar scroll del body
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     }
   };
-
-  document.addEventListener('DOMContentLoaded', function() {
-    const modal = document.getElementById('contactModal') as HTMLElement;
-    const modalContent = modal?.querySelector('div') as HTMLElement;
-    const closeBtn = document.getElementById('closeModal');
-    const form = document.getElementById('contactForm') as HTMLFormElement;
-
-    // Función para cerrar el modal
+  document.addEventListener("DOMContentLoaded", function () {
+    const modal = document.getElementById("contactModal") as HTMLElement;
+    const closeBtn = document.getElementById("closeModal");
+    const form = document.getElementById("contactForm") as HTMLFormElement; // Función para cerrar el modal
     function closeModal() {
-      if (modal && modalContent) {
-        modal.style.opacity = '0';
-        modalContent.style.transform = 'scale(0.95)';
-        
+      if (modal) {
+        // Usar clases CSS para consistencia con ProjectModal
+        modal.classList.add("opacity-0", "pointer-events-none");
+        modal.querySelector(".transform")?.classList.add("scale-95");
+        modal.querySelector(".transform")?.classList.remove("scale-100");
+
+        // Restaurar scroll del body después de la animación
         setTimeout(() => {
-          modal.classList.add('pointer-events-none');
-          document.body.style.overflow = 'auto';
+          document.body.style.overflow = "auto";
         }, 300);
       }
     }
 
     // Cerrar modal al hacer clic en el botón X
     if (closeBtn) {
-      closeBtn.addEventListener('click', closeModal);
+      closeBtn.addEventListener("click", closeModal);
     }
 
     // Cerrar modal al hacer clic fuera del contenido
     if (modal) {
-      modal.addEventListener('click', function(event) {
+      modal.addEventListener("click", function (event) {
         if (event.target === modal) {
           closeModal();
         }
@@ -141,40 +206,42 @@
     }
 
     // Cerrar modal con la tecla ESC
-    document.addEventListener('keydown', function(event) {
-      if (event.key === 'Escape') {
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") {
         closeModal();
       }
-    });    // Manejar el envío del formulario
+    }); // Manejar el envío del formulario
     if (form) {
-      form.addEventListener('submit', async function(event) {
+      form.addEventListener("submit", async function (event) {
         event.preventDefault();
-        
-        const thankYouMessage = document.getElementById('thankyouMessage');
-        const submitButton = form.querySelector('button[type="submit"]') as HTMLButtonElement;
-        
+
+        const thankYouMessage = document.getElementById("thankyouMessage");
+        const submitButton = form.querySelector(
+          'button[type="submit"]'
+        ) as HTMLButtonElement;
+
         // Deshabilitar el botón durante el envío
         if (submitButton) {
           submitButton.disabled = true;
-          submitButton.textContent = 'Enviando...';
+          submitButton.textContent = "Enviando...";
         }
 
         // Envío del formulario
         const formData = new FormData(form);
         const data = {
-          name: formData.get('name'),
-          email: formData.get('email'),
-          subject: formData.get('subject'),
-          message: formData.get('message')
+          name: formData.get("name"),
+          email: formData.get("email"),
+          subject: formData.get("subject"),
+          message: formData.get("message"),
         };
 
         try {
-          const response = await fetch('/api/contact-resend', {
-            method: 'POST',
+          const response = await fetch("/api/contact-resend", {
+            method: "POST",
             body: JSON.stringify(data),
             headers: {
-              'Content-Type': 'application/json'
-            }
+              "Content-Type": "application/json",
+            },
           });
 
           const result = await response.json();
@@ -182,46 +249,52 @@
           if (result.success) {
             // Mostrar mensaje de éxito
             if (thankYouMessage) {
-              thankYouMessage.classList.remove('hidden');
-              thankYouMessage.textContent = '¡Gracias por tu mensaje! Te responderé pronto.';
-              thankYouMessage.className = 'mt-4 p-3 rounded-lg bg-green-500/20 text-green-400 text-center font-bold border border-green-500/30 text-sm';
+              thankYouMessage.classList.remove("hidden");
+              thankYouMessage.textContent =
+                "¡Gracias por tu mensaje! Te responderé pronto.";
+              thankYouMessage.className =
+                "mt-4 p-3 rounded-lg bg-green-500/20 text-green-400 text-center font-bold border border-green-500/30 text-sm";
             }
-            
+
             form.reset();
-            
+
             // Cerrar modal después de 2 segundos
             setTimeout(() => {
               closeModal();
               // Ocultar mensaje después de cerrar
               setTimeout(() => {
                 if (thankYouMessage) {
-                  thankYouMessage.classList.add('hidden');
+                  thankYouMessage.classList.add("hidden");
                 }
               }, 300);
             }, 2000);
-            
           } else {
             // Mostrar mensaje de error
             if (thankYouMessage) {
-              thankYouMessage.classList.remove('hidden');
-              thankYouMessage.textContent = result.error || 'Error al enviar el mensaje. Inténtalo de nuevo.';
-              thankYouMessage.className = 'mt-4 p-3 rounded-lg bg-red-500/20 text-red-400 text-center font-bold border border-red-500/30 text-sm';
+              thankYouMessage.classList.remove("hidden");
+              thankYouMessage.textContent =
+                result.error ||
+                "Error al enviar el mensaje. Inténtalo de nuevo.";
+              thankYouMessage.className =
+                "mt-4 p-3 rounded-lg bg-red-500/20 text-red-400 text-center font-bold border border-red-500/30 text-sm";
             }
           }
         } catch (error) {
-          console.error('Error al enviar el formulario:', error);
+          console.error("Error al enviar el formulario:", error);
           // Mostrar mensaje de error
           if (thankYouMessage) {
-            thankYouMessage.classList.remove('hidden');
-            thankYouMessage.textContent = 'Error de conexión. Inténtalo de nuevo.';
-            thankYouMessage.className = 'mt-4 p-3 rounded-lg bg-red-500/20 text-red-400 text-center font-bold border border-red-500/30 text-sm';
+            thankYouMessage.classList.remove("hidden");
+            thankYouMessage.textContent =
+              "Error de conexión. Inténtalo de nuevo.";
+            thankYouMessage.className =
+              "mt-4 p-3 rounded-lg bg-red-500/20 text-red-400 text-center font-bold border border-red-500/30 text-sm";
           }
         }
-        
+
         // Restaurar el botón
         if (submitButton) {
           submitButton.disabled = false;
-          submitButton.textContent = 'Enviar Mensaje';
+          submitButton.textContent = "Enviar Mensaje";
         }
       });
     }
@@ -232,33 +305,35 @@
   /* Modal backdrop */
   #contactModal {
     backdrop-filter: blur(4px);
-    transition: opacity 0.3s ease-out, backdrop-filter 0.3s ease-out;
+    transition:
+      opacity 0.3s ease-out,
+      backdrop-filter 0.3s ease-out;
   }
-  
+
   /* Modal container */
   #contactModal > div {
     transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-    box-shadow: 
+    box-shadow:
       0 25px 50px -12px rgba(0, 0, 0, 0.5),
       0 0 0 1px rgba(255, 255, 255, 0.1),
       inset 0 1px 0 rgba(255, 255, 255, 0.2);
   }
-  
+
   /* Scrollbar styling para el modal en caso de contenido largo */
   #contactModal ::-webkit-scrollbar {
     width: 6px;
   }
-  
+
   #contactModal ::-webkit-scrollbar-track {
     background: rgba(255, 255, 255, 0.1);
     border-radius: 3px;
   }
-  
+
   #contactModal ::-webkit-scrollbar-thumb {
     background: rgba(255, 255, 255, 0.3);
     border-radius: 3px;
   }
-  
+
   #contactModal ::-webkit-scrollbar-thumb:hover {
     background: rgba(255, 255, 255, 0.5);
   }

@@ -9,35 +9,42 @@ export interface Props {
 const { href, ariaLabel, class: additionalClasses } = Astro.props;
 ---
 
-<a 
-  href={href} 
-  target="_blank" 
+<a
+  href={href}
+  target="_blank"
   rel="noopener noreferrer"
-  class={`social-button group relative ${additionalClasses || ''}`}
+  class={`social-button group relative ${additionalClasses || ""}`}
   aria-label={ariaLabel}
   tabindex="0"
 >
   <!-- Icon container -->
-  <div class="relative p-3 rounded-full glass-bg border border-white/20 group-hover:border-theme-primary/50">
-    <svg 
+  <div
+    class="relative p-3 rounded-full glass-bg border border-white/20 group-hover:border-theme-primary/50"
+  >
+    <svg
       class="h-6 w-6 group-hover:text-theme-primary text-white"
-      preserveAspectRatio="xMinYMin" 
-      viewBox="0 0 24 24" 
-      fill="none" 
-      stroke="currentColor" 
-      stroke-width="2" 
-      stroke-linecap="round" 
+      preserveAspectRatio="xMinYMin"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
       stroke-linejoin="round"
     >
       <title>{ariaLabel}</title>
       <slot />
     </svg>
   </div>
-  
+
   <!-- Tooltip -->
-  <div class="tooltip absolute -top-12 left-1/2 transform -translate-x-1/2 px-3 py-1 bg-black/80 text-white text-sm rounded-lg opacity-0 group-hover:opacity-100 pointer-events-none whitespace-nowrap z-10">
+  <div
+    class="tooltip absolute -top-12 left-1/2 transform -translate-x-1/2 px-3 py-1 bg-black/80 text-white text-sm rounded-lg opacity-0 group-hover:opacity-100 pointer-events-none whitespace-nowrap z-10"
+  >
     {ariaLabel}
-    <div class="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-black/80"></div>
+    <div
+      class="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-black/80"
+    >
+    </div>
   </div>
 </a>
 
@@ -45,11 +52,11 @@ const { href, ariaLabel, class: additionalClasses } = Astro.props;
   .social-button {
     @apply relative inline-flex;
   }
-  
+
   .social-button:focus {
     @apply outline-none;
   }
-  
+
   .social-button:focus-visible {
     @apply ring-2 ring-theme-primary ring-offset-2 ring-offset-black rounded-full;
   }
