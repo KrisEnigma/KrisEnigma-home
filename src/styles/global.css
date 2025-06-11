@@ -4,6 +4,20 @@
 
 /* Minimal custom CSS - preferir clases Tailwind siempre que sea posible */
 @layer components {
+
+    /* Fuentes específicas para diferentes elementos */
+    .font-title {
+        font-family: 'Uni Neue', sans-serif;
+        font-style: italic;
+        font-weight: 400;
+    }
+
+    .font-emphasized {
+        font-family: 'Uni Neue', sans-serif;
+        font-style: italic;
+        font-weight: 500;
+    }
+
     .profile-gradient-border::before {
         content: '';
         position: absolute;

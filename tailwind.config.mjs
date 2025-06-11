@@ -4,7 +4,9 @@ export default {
     theme: {
         extend: {
             fontFamily: {
+                'titillium': ['Titillium Web', 'sans-serif'],
                 'aerovias': ['Aerovias Brasil NF', 'sans-serif'],
+                'uni-neue': ['Uni Neue', 'sans-serif'],
             }, colors: {
                 'theme-primary': '#00e1af',
                 'theme-accent': '#7a53dd',

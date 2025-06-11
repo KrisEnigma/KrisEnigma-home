@@ -17,7 +17,8 @@
     >
       <div class="flex items-center space-x-3">
         <span id="projectIcon" class="text-2xl"></span>
-        <h3 id="projectTitle" class="text-xl text-white italic"></h3>
+        <h3 id="projectTitle" class="text-xl text-white font-uni-neue italic">
+        </h3>
       </div>
       <button
         id="closeProjectModal"
@@ -71,13 +72,13 @@
       <div class="flex flex-col sm:flex-row gap-3">
         <button
           id="visitProject"
-          class="flex-1 px-6 py-3 bg-theme-accent hover:bg-theme-accent/80 text-white italic rounded-lg font-medium transition-all duration-200 hover:scale-[1.02]"
+          class="flex-1 px-6 py-3 bg-theme-accent hover:bg-theme-accent/80 text-white font-uni-neue italic rounded-lg font-medium transition-all duration-200 hover:scale-[1.02]"
         >
           Visitar Proyecto
         </button>
         <button
           id="closeProjectModalBottom"
-          class="px-6 py-3 bg-white/10 hover:bg-white/20 text-white italic rounded-lg font-medium transition-all duration-200 border border-white/20"
+          class="px-6 py-3 bg-white/10 hover:bg-white/20 text-white font-uni-neue italic rounded-lg font-medium transition-all duration-200 border border-white/20"
         >
           Cerrar
         </button>
@@ -233,7 +234,7 @@
         .map(
           (detail) => `
           <div class="flex justify-between items-center py-2 border-b border-white/10 last:border-b-0">
-            <span class="text-white/70 text-sm italic">${detail.label}:</span>
+            <span class="text-white/70 text-sm font-uni-neue italic">${detail.label}:</span>
             <span class="text-white font-medium text-sm">${detail.value}</span>
           </div>
         `
@@ -248,7 +249,7 @@
     if (technologiesContainer && project.technologies) {
       technologiesContainer.innerHTML = `
         <div class="bg-white/5 rounded-lg p-4 border border-white/10">
-          <h4 class="text-white font-medium italic mb-2 text-sm flex items-center">
+          <h4 class="text-white font-medium font-uni-neue italic mb-2 text-sm flex items-center">
             <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
             </svg>
