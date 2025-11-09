@@ -35,7 +35,12 @@
 
     <!-- Contenido del modal -->
     <div class="p-6">
-      <form id="contactForm" class="space-y-4" novalidate>
+  <form id="contactForm" class="space-y-4" novalidate autocomplete="off">
+        <!-- Honeypot anti-spam: campo invisible para bots -->
+        <div style="display:none;">
+          <label for="urltrap">No llenar este campo</label>
+          <input type="text" id="urltrap" name="urltrap" tabindex="-1" autocomplete="off" />
+        </div>
         <div>
           <label
             for="name"
@@ -231,8 +236,19 @@
         }
       });
 
-      // Manejar el envío del formulario
-      if (form) {
+      // Guardar el timestamp de apertura del modal
+      let formStartTimestamp = null;
+      window.openContact = function () {
+        const modal = document.getElementById("contactModal");
+        if (modal) {
+          modal.classList.remove("opacity-0", "pointer-events-none");
+          modal.querySelector(".transform")?.classList.remove("scale-95");
+          modal.querySelector(".transform")?.classList.add("scale-100");
+          document.body.style.overflow = "hidden";
+          // Guardar timestamp al abrir
+          formStartTimestamp = Date.now();
+        }
+      };
         form.addEventListener("submit", async function (event) {
           event.preventDefault();
 
@@ -299,11 +315,15 @@
           }
 
           // Envío del formulario
+          // Honeypot
+          const urltrap = form.urltrap ? form.urltrap.value : "";
           const data = {
             name,
             email,
             subject,
             message,
+            urltrap,
+            formStart: formStartTimestamp,
           };
 
           try {
