@@ -59,7 +59,8 @@ function buildHtml(name, email, message) {
 export async function onRequestPost(context) {
     try {
         const { request, env } = context;
-        console.log('[DEBUG] RESEND_API_KEY exists (onRequestPost):', !!env.RESEND_API_KEY);
+            // minimal log: indicate handler invoked (do not log secrets)
+            console.log('mailer: onRequestPost invoked');
 
         const data = await request.json().catch(() => ({}));
         const validation = validatePayload(data);
@@ -75,7 +76,7 @@ export async function onRequestPost(context) {
         }
 
         // Send email using Resend SDK (dynamic import)
-        console.log('[DEBUG] Importando Resend SDK...');
+            // import Resend SDK
         const { Resend } = await import('resend');
         const resend = new Resend(apiKey);
 
@@ -88,9 +89,9 @@ export async function onRequestPost(context) {
             html,
         };
 
-        console.log('[DEBUG] Enviando email (onRequestPost) payload:', JSON.stringify({ from: payload.from, to: payload.to, replyTo: payload.replyTo, subject: payload.subject }));
-        const result = await resend.emails.send(payload);
-        console.log('[DEBUG] Resend response (onRequestPost):', JSON.stringify(result));
+            const result = await resend.emails.send(payload);
+            // log only result id
+            console.log('mailer: email sent id=', result?.data?.id);
 
         return new Response(JSON.stringify({ success: true, message: 'Email enviado exitosamente', id: result?.data?.id, timestamp: new Date().toISOString() }), { status: 200, headers: { 'Content-Type': 'application/json' } });
     } catch (err) {
@@ -102,7 +103,8 @@ export async function onRequestPost(context) {
 // Fallback export for Worker-style fetch handler (keeps compatibility with wrangler deploy)
 export default {
     async fetch(request, env) {
-        console.log('[DEBUG] RESEND_API_KEY exists (fetch):', !!env.RESEND_API_KEY);
+            // minimal log: indicate fetch handler invoked
+            console.log('mailer: fetch invoked');
         if (request.method === 'OPTIONS') {
             return new Response(null, { status: 204, headers: { 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'POST, OPTIONS', 'Access-Control-Allow-Headers': 'Content-Type' } });
         }
@@ -136,9 +138,8 @@ export default {
                 html,
             };
 
-            console.log('[DEBUG fetch handler] Enviando payload:', JSON.stringify({ from: payload.from, to: payload.to, replyTo: payload.replyTo, subject: payload.subject }));
-            const result = await resend.emails.send(payload);
-            console.log('[DEBUG fetch handler] Resend response:', JSON.stringify(result));
+                const result = await resend.emails.send(payload);
+                console.log('mailer: email sent id=', result?.data?.id);
 
             return new Response(JSON.stringify({ success: true, message: 'Email enviado exitosamente', id: result?.data?.id, timestamp: new Date().toISOString() }), { status: 200, headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' } });
         } catch (err) {
