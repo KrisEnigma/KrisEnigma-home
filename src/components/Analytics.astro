@@ -29,56 +29,56 @@ const { gtagId } = Astro.props;
 }
 
 <!-- Performance Monitoring -->
-<script>
+<script is:inline set:html={`(function(){
   // Basic performance monitoring
-  window.addEventListener("load", () => {
-    // Monitor page load time
-    const navigation = performance.getEntriesByType(
-      "navigation"
-    )[0] as PerformanceNavigationTiming;
-    if (navigation) {
-      const loadTime = navigation.loadEventEnd - navigation.loadEventStart;
-      console.log("Page Load Time:", loadTime + "ms");
-
-      // Send to GA if available
-      if (typeof (window as any).gtag !== "undefined") {
-        (window as any).gtag("event", "page_load_time", {
-          event_category: "Performance",
-          value: Math.round(loadTime),
-          non_interaction: true,
-        });
+  window.addEventListener("load", function(){
+    try {
+      var navigation = performance.getEntriesByType("navigation")[0];
+      if (navigation) {
+        var loadTime = (navigation.loadEventEnd || 0) - (navigation.loadEventStart || 0);
+        console.log("Page Load Time:", loadTime + "ms");
+        if (typeof window.gtag !== "undefined") {
+          window.gtag("event", "page_load_time", {
+            event_category: "Performance",
+            value: Math.round(loadTime),
+            non_interaction: true
+          });
+        }
       }
+    } catch (e) {
+      // ignore diagnostics/runtime gaps
     }
   });
 
   // Error tracking
-  window.addEventListener("error", (event) => {
-    console.error("JavaScript Error:", {
-      message: event.message,
-      filename: event.filename,
-      lineno: event.lineno,
-      colno: event.colno,
-      error: event.error,
-    });
-
-    // Send to analytics if available
-    if (typeof (window as any).gtag !== "undefined") {
-      (window as any).gtag("event", "exception", {
-        description: event.message,
-        fatal: false,
+  window.addEventListener("error", function(event){
+    try {
+      console.error("JavaScript Error:", {
+        message: event.message,
+        filename: event.filename,
+        lineno: event.lineno,
+        colno: event.colno,
+        error: event.error
       });
-    }
+      if (typeof window.gtag !== "undefined") {
+        window.gtag("event", "exception", {
+          description: event.message,
+          fatal: false
+        });
+      }
+    } catch (e) {}
   });
 
-  window.addEventListener("unhandledrejection", (event) => {
-    console.error("Unhandled Promise Rejection:", event.reason);
-
-    // Send to analytics if available
-    if (typeof (window as any).gtag !== "undefined") {
-      (window as any).gtag("event", "exception", {
-        description: "Unhandled Promise Rejection: " + event.reason,
-        fatal: false,
-      });
-    }
+  window.addEventListener("unhandledrejection", function(event){
+    try {
+      console.error("Unhandled Promise Rejection:", event.reason);
+      if (typeof window.gtag !== "undefined") {
+        window.gtag("event", "exception", {
+          description: "Unhandled Promise Rejection: " + event.reason,
+          fatal: false
+        });
+      }
+    } catch (e) {}
   });
-</script>
+})();
+`}></script>

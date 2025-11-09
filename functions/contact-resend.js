@@ -11,7 +11,7 @@ export async function onRequestPost(context) {
         // Log temporal para depuración de secret
         console.log('[DEBUG] RESEND_API_KEY exists:', !!env.RESEND_API_KEY);
         const data = await request.json();
-    const { name, email, subject, message, urltrap, formStart } = data;
+        const { name, email, subject, message, urltrap, formStart } = data;
 
         // Honeypot anti-spam: si el campo urltrap está lleno, es spam
         if (urltrap && urltrap.trim() !== "") {
@@ -97,8 +97,8 @@ export async function onRequestPost(context) {
                     <p style="margin: 0; color: #a0aec0; font-size: 13px; line-height: 1.4;">
                         Mensaje enviado desde <strong style="color: #00e1af;">krisenigma.com</strong><br>
                         ${new Date().toLocaleDateString('es-ES', {
-                        weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit'
-                    })}
+                weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit'
+            })}
                     </p>
                     </td></tr>
                     </table>
@@ -167,7 +167,37 @@ export default {
         }
         try {
             const data = await request.json();
-            const { name, email, subject, message } = data;
+            console.log('[DEBUG fetch handler] request body:', JSON.stringify(data));
+            const { name, email, subject, message, urltrap, formStart } = data;
+            // Honeypot and time-based anti-spam (same rules que onRequestPost)
+            if (urltrap && String(urltrap).trim() !== "") {
+                return new Response(JSON.stringify({
+                    success: false,
+                    error: 'Spam detectado (honeypot)'
+                }), {
+                    status: 400,
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Access-Control-Allow-Origin': '*',
+                    }
+                });
+            }
+            if (formStart) {
+                const now = Date.now();
+                const diff = now - Number(formStart);
+                if (isNaN(diff) || diff < 3000) {
+                    return new Response(JSON.stringify({
+                        success: false,
+                        error: 'Spam detectado (tiempo)'
+                    }), {
+                        status: 400,
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Access-Control-Allow-Origin': '*',
+                        }
+                    });
+                }
+            }
             if (!name || !email || !subject || !message) {
                 return new Response(JSON.stringify({
                     success: false,
@@ -194,7 +224,6 @@ export default {
                     }
                 });
             }
-            // ...existing code...
             const html = `
             <!DOCTYPE html>
             <html lang="es">
@@ -230,31 +259,44 @@ export default {
             </body>
             </html>
             `;
-            const response = await fetch('https://api.brevo.com/v3/smtp/email', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'api-key': apiKey
-                },
-                body: JSON.stringify({
-                    sender: {
-                        name: name,
-                        email: '9aa096001@smtp-brevo.com'
-                    },
-                    to: [
-                        { email: 'contacto@krisenigma.com', name: 'KrisEnigma' }
-                    ],
-                    replyTo: { email: email, name: name },
+
+            // Enviar usando Resend (igual que onRequestPost)
+            try {
+                const { Resend } = await import('resend');
+                const resend = new Resend(apiKey);
+                const payload = {
+                    from: `${name} <noreply@krisenigma.com>`,
+                    to: ['contacto@krisenigma.com'],
+                    replyTo: email,
                     subject: subject,
-                    htmlContent: html
-                })
-            });
-            if (!response.ok) {
-                const errorData = await response.json().catch(() => ({}));
+                    html: html,
+                };
+                console.log('[DEBUG fetch handler] Enviando con Resend, payload:', JSON.stringify({
+                    from: payload.from,
+                    to: payload.to,
+                    replyTo: payload.replyTo,
+                    subject: payload.subject
+                }));
+                const result = await resend.emails.send(payload);
+                console.log('[DEBUG fetch handler] Resend response:', JSON.stringify(result));
+                return new Response(JSON.stringify({
+                    success: true,
+                    message: 'Email enviado exitosamente',
+                    id: result.data?.id,
+                    timestamp: new Date().toISOString()
+                }), {
+                    status: 200,
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Access-Control-Allow-Origin': '*',
+                    }
+                });
+            } catch (err) {
+                console.error('[Mailer fetch handler] Error sending via Resend:', err && err.message, err && err.stack, err);
                 return new Response(JSON.stringify({
                     success: false,
                     error: 'Error al enviar el correo',
-                    details: errorData
+                    details: err && err.message
                 }), {
                     status: 500,
                     headers: {
@@ -263,19 +305,6 @@ export default {
                     }
                 });
             }
-            const result = await response.json();
-            return new Response(JSON.stringify({
-                success: true,
-                message: 'Email enviado exitosamente',
-                id: result.messageId,
-                timestamp: new Date().toISOString()
-            }), {
-                status: 200,
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Access-Control-Allow-Origin': '*',
-                }
-            });
         } catch (error) {
             // Log detallado para depuración en Cloudflare
             console.error("[Mailer Worker] Error (fetch handler):", error && error.message, error && error.stack, error);
