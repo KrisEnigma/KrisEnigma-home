@@ -49,6 +49,10 @@ coverage/
 # Optional REPL history
 .node_repl_history
 
+# Playwright test output
+test-results/
+playwright-report/
+
 # Output of 'npm pack'
 *.tgz
 
