@@ -1,0 +1,225 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import SocialButton from "../../components/SocialButton.astro";
+import LinkCard from "../../components/LinkCard.astro";
+import Logo from "../../components/Logo.astro";
+import { useTranslations } from "../../i18n/utils";
+const t = useTranslations('en');
+const YOUTUBE_VIDEO_ID = "v-qHDk9bTZg";
+---
+
+<Layout title="KrisEnigma — Musician · Gamer · Content Creator" description="Musician, Gamer and Content Creator since 2005. Tercer Ojo, Psycho Crusher, and more.">
+  <div class="creator-page">
+    <div class="page-glow-creator"></div>
+    <div class="back-nav">
+      <a href="/en/" class="back-link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        {t('nav.back')}
+      </a>
+      <a href="/en/contact" class="back-link nav-contact-pill">{t('nav.contact')}</a>
+    </div>
+
+    <!-- Hero -->
+    <header class="creator-hero">
+      <div class="relative inline-block mb-5 w-32 h-32 profile-gradient-border">
+        <div class="relative w-full h-full rounded-full overflow-hidden z-10">
+          <img class="w-full h-full rounded-full object-cover transition-transform duration-300 hover:scale-110" src="/profile.webp" alt="KrisEnigma" loading="eager" />
+        </div>
+      </div>
+      <div class="creator-name-row">
+        <h1 class="text-5xl lg:text-6xl">
+          <Logo size="text-5xl lg:text-6xl" as="span" />
+        </h1>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="creator-badge-icon">
+          <path fill="currentColor" d="M22.51 13.76a3 3 0 0 1 0-3.52l.76-1.05a1 1 0 0 0 .14-.9 1.02 1.02 0 0 0-.64-.64l-1.23-.4a2.99 2.99 0 0 1-2.07-2.85V3.1a1 1 0 0 0-1.31-.95l-1.24.4a3 3 0 0 1-3.35-1.09L12.81.41a1.036 1.036 0 0 0-1.62 0l-.76 1.05a3 3 0 0 1-3.35 1.09l-1.24-.4a1 1 0 0 0-1.31.95v1.3a2.99 2.99 0 0 1-2.07 2.85l-1.23.4a1.02 1.02 0 0 0-.64.64 1 1 0 0 0 .14.9l.76 1.05a3 3 0 0 1 0 3.52l-.76 1.05a1 1 0 0 0-.14.9 1.02 1.02 0 0 0 .64.64l1.23.4a2.99 2.99 0 0 1 2.07 2.85v1.3a1 1 0 0 0 1.31.95l1.23-.4a2.99 2.99 0 0 1 3.36 1.09l.76 1.05a1.005 1.005 0 0 0 1.62 0l.76-1.05a3 3 0 0 1 3.36-1.09l1.23.4a1 1 0 0 0 1.31-.95v-1.3a2.99 2.99 0 0 1 2.07-2.85l1.23-.4a1.02 1.02 0 0 0 .64-.64 1 1 0 0 0-.14-.9Zm-5.8-3.053-5 5a1 1 0 0 1-1.414 0l-3-3a1 1 0 1 1 1.414-1.414L11 13.586l4.293-4.293a1 1 0 0 1 1.414 1.414Z"/>
+        </svg>
+      </div>
+      <p class="creator-tagline">{t('creator.tagline')}</p>
+      <div class="creator-social">
+        <SocialButton href="mailto:contacto@krisenigma.com" ariaLabel="Mail"><path d="M3 7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z"/><path d="M3 7l9 6 9-6"/></SocialButton>
+        <SocialButton href="https://youtube.com/KrisEnigma" ariaLabel="YouTube"><rect x="3" y="5" width="18" height="14" rx="4"/><path d="M10 9l5 3-5 3z"/></SocialButton>
+        <SocialButton href="https://tiktok.com/@KrisEnigma" ariaLabel="TikTok"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></SocialButton>
+        <SocialButton href="https://instagram.com/KrisEnigma" ariaLabel="Instagram"><rect x="4" y="4" width="16" height="16" rx="4"/><circle cx="12" cy="12" r="3"/><line x1="16.5" y1="7.5" x2="16.5" y2="7.501"/></SocialButton>
+        <SocialButton href="https://x.com/KrisEnigma" ariaLabel="X"><path d="M4 4l11.733 16h4.267L8.267 4z"/><path d="M4 20l6.768-6.768m2.46-2.46L20 4"/></SocialButton>
+        <SocialButton href="https://twitch.tv/KrisEnigma" ariaLabel="Twitch"><path d="M4 5v11a1 1 0 0 0 1 1h2v4l4-4h5.584c.266 0 .52-.105.707-.293l2.415-2.414c.187-.188.293-.442.293-.708V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1z"/><line x1="16" y1="8" x2="16" y2="12"/><line x1="12" y1="8" x2="12" y2="12"/></SocialButton>
+        <SocialButton href="https://open.spotify.com/artist/58QiArKYlCuEDMRBimZ48G" ariaLabel="Spotify"><circle cx="12" cy="12" r="9"/><path d="M8 11.973c2.5-1.473 5.5-.973 7.5.527M9 15c1.5-1 4-1 5 .5M7 9c2-1 6-2 10 .5"/></SocialButton>
+        <SocialButton href="https://dsc.gg/krisenigma" ariaLabel="Discord"><circle cx="9" cy="12" r="1"/><circle cx="15" cy="12" r="1"/><path d="M7.5 7.5c3.5-1 5.5-1 9 0M7 16.5c3.5 1 6.5 1 10 0"/><path d="M15.5 17c0 1 1.5 3 2 3c1.5 0 2.833-1.667 3.5-3c.667-1.667.5-5.833-1.5-11.5c-1.457-1.015-3-1.34-4.5-1.5l-1 2.5"/><path d="M8.5 17c0 1-1.356 3-1.832 3c-1.429 0-2.698-1.667-3.333-3c-.635-1.667-.476-5.833 1.428-11.5c1.388-1.015 2.782-1.34 4.237-1.5l1 2.5"/></SocialButton>
+      </div>
+    </header>
+
+    <div class="page-inner">
+      <!-- Quick actions -->
+      <!-- Bio -->
+      <section class="page-section">
+        <h2 class="page-section-label">{t('creator.sections.bio')}</h2>
+        <div class="creator-bio-card">
+          <div class="creator-highlights">
+            <span class="highlight-chip">🎮 Gaming since the 90s</span>
+            <span class="highlight-chip">🎸 Psycho Crusher · 2 albums</span>
+            <span class="highlight-chip">📺 ControlVG · Nexoplay · IGN Latam</span>
+            <span class="highlight-chip">✈️ E3 · Los Angeles</span>
+          </div>
+          <div class="creator-bio-text">
+            <p set:html={t('creator.bio.p1')} />
+            <p set:html={t('creator.bio.p2')} />
+            <p set:html={t('creator.bio.p3')} />
+            <p set:html={t('creator.bio.p4')} />
+            <p set:html={t('creator.bio.p5')} />
+            <p set:html={t('creator.bio.p6')} />
+          </div>
+        </div>
+      </section>
+
+      <div class="creator-quick-actions page-section">
+        <LinkCard href="/en/contact" image="https://media.esponsor.com/media/public/images/5xn1v531yq/krisenigma-link-contacto-1703285776.webp" title={t('creator.contact.label')} loading="eager" />
+        <LinkCard href="/mediakit.pdf" image="/pdf.svg" title={t('creator.mediakit.label')} loading="eager" />
+      </div>
+
+      <!-- Projects -->
+      <section class="page-section">
+        <h2 class="page-section-label">{t('creator.sections.projects')}</h2>
+        <div class="creator-projects">
+          <a href="https://tercerojo.net" target="_blank" rel="noopener noreferrer" class="creator-project-card">
+            <span class="project-icon">👁️</span>
+            <div class="project-info">
+              <div class="project-name">Tercer Ojo</div>
+              <div class="project-sub">Web puzzle game active since 2006 · 100+ levels · international community</div>
+            </div>
+            <svg class="project-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="https://psycho-crusher.com" target="_blank" rel="noopener noreferrer" class="creator-project-card">
+            <span class="project-icon">🎸</span>
+            <div class="project-info">
+              <div class="project-name">Psycho Crusher</div>
+              <div class="project-sub">Video game rock since 2010 · 2 studio albums on all platforms · Live shows in Chile</div>
+            </div>
+            <svg class="project-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+        <a href="/en/pro" class="page-crosslink">
+          <span>Looking for my technical &amp; professional work?</span>
+          <span class="crosslink-arrow">View professional profile →</span>
+        </a>
+      </section>
+
+
+      <!-- Content platforms -->
+      <section class="page-section">
+        <h2 class="page-section-label">{t('creator.sections.content')}</h2>
+        <div class="grid gap-3">
+          <LinkCard href="https://www.youtube.com/KrisEnigma" image="https://media.esponsor.com/media/public/images/q6n7lv56yv/link-YouTube-1659670393.webp" title="YouTube" loading="lazy" />
+          <LinkCard href="https://www.instagram.com/KrisEnigma" image="https://media.esponsor.com/media/public/images/1kyqw280y5/link-Instagram-1659670431.webp" title="Instagram" loading="lazy" />
+          <LinkCard href="https://www.tiktok.com/@krisenigma" image="https://media.esponsor.com/media/public/images/0myrpz67y8/link-TikTok-1659670444.webp" title="TikTok" loading="lazy" />
+          <LinkCard href="https://www.twitch.tv/KrisEnigma" image="https://media.esponsor.com/media/public/images/5vyw47020n/conversions/php57fFTP-web.webp" title="Twitch" loading="lazy" />
+        </div>
+      </section>
+
+      <!-- Featured video -->
+      <section class="page-section">
+        <h2 class="page-section-label">Latest video</h2>
+        <div id="youtube-container" class="relative w-full cursor-pointer" style="aspect-ratio:16/9;min-height:240px;">
+          <div id="youtube-thumbnail" class="absolute inset-0 rounded-xl overflow-hidden bg-black">
+            <img src={`https://img.youtube.com/vi/${YOUTUBE_VIDEO_ID}/maxresdefault.jpg`} alt="YouTube" class="w-full h-full object-cover" loading="lazy" />
+            <div class="absolute inset-0 flex items-center justify-center">
+              <button aria-label="Play" class="ytp-large-play-button">
+                <svg height="48" width="68" viewBox="0 0 68 48"><path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#f03"/><path d="M 45,24 27,14 27,34" fill="#fff"/></svg>
+              </button>
+            </div>
+          </div>
+          <div id="youtube-iframe-container" class="absolute inset-0 hidden"></div>
+        </div>
+      </section>
+    </div><!-- /page-inner -->
+
+    <footer class="creator-footer">
+      <div class="creator-footer-inner">
+        <div class="creator-footer-brand">
+          <Logo />
+          <p class="footer-tagline">{t('creator.footer.tagline')}</p>
+        </div>
+        <div class="footer-links-row">
+          <a href="/en/" class="footer-link">{t('nav.home')}</a>
+          <a href="/en/pro" class="footer-link">{t('nav.pro')}</a>
+          <a href="/en/contact" class="footer-link">{t('nav.contact')}</a>
+          <a href="https://tercerojo.net" target="_blank" class="footer-link">Tercer Ojo</a>
+          <a href="https://psycho-crusher.com" target="_blank" class="footer-link">Psycho Crusher</a>
+        </div>
+        <p class="footer-copy">© <span id="currentYear"></span> KrisEnigma. {t('footer.rights')}</p>
+        <p class="footer-powered">{t('footer.powered')}</p>
+      </div>
+    </footer>
+  </div>
+</Layout>
+
+<script is:inline define:vars={{ YOUTUBE_VIDEO_ID }}>
+  document.getElementById('currentYear').textContent = new Date().getFullYear();
+  const container = document.getElementById('youtube-container');
+  const thumb = document.getElementById('youtube-thumbnail');
+  const iframeWrap = document.getElementById('youtube-iframe-container');
+  let loaded = false;
+  function loadVideo() {
+    if (loaded) return; loaded = true;
+    const iframe = document.createElement('iframe');
+    iframe.src = `https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?rel=0`;
+    iframe.title = 'YouTube video player';
+    iframe.allow = 'accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+    iframe.allowFullscreen = true;
+    iframe.className = 'w-full h-full rounded-xl border-0';
+    iframeWrap.appendChild(iframe);
+    const show = () => { thumb.style.display = 'none'; iframeWrap.classList.remove('hidden'); };
+    const t = setTimeout(show, 1000);
+    iframe.onload = () => { clearTimeout(t); show(); };
+  }
+  container.addEventListener('click', loadVideo);
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting && e.intersectionRatio > 0.3) loadVideo(); });
+    }, { threshold: 0.3, rootMargin: '100px' }).observe(container);
+  }
+</script>
+
+<style>
+  .creator-page { min-height: 100vh; display: flex; flex-direction: column; --page-accent: #00e1af; }
+  .creator-hero { display: flex; flex-direction: column; align-items: center; padding: 72px 24px 20px; text-align: center; }
+  .creator-name-row { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+  .creator-badge-icon { width: 26px; height: 26px; color: #00e1af; margin-top: 2px; flex-shrink: 0; }
+  .creator-tagline { font-size: 15px; color: rgba(255,255,255,0.45); font-family: 'Uni Neue', sans-serif; font-style: italic; margin: 0 0 16px; letter-spacing: 0.03em; }
+  .creator-social { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+  .creator-quick-actions { display: grid; grid-template-columns: 1fr; gap: 10px; }
+  @media (min-width: 640px) { .creator-quick-actions { grid-template-columns: 1fr 1fr; } }
+  .creator-bio-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(0,225,175,0.12); border-radius: 14px; padding: 24px; }
+  .creator-highlights { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+  .creator-bio-text { display: flex; flex-direction: column; gap: 12px; }
+  .creator-bio-text p { font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.75; margin: 0; }
+  .creator-projects { display: flex; flex-direction: column; gap: 10px; margin-bottom: 12px; }
+  .creator-project-card { display: flex; align-items: center; gap: 16px; padding: 16px 20px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; text-decoration: none; color: inherit; transition: border-color 0.2s, background 0.2s, transform 0.2s; }
+  .creator-project-card:hover { border-color: rgba(0,225,175,0.2); background: rgba(0,225,175,0.03); transform: translateY(-1px); }
+  .project-icon { font-size: 24px; flex-shrink: 0; }
+  .project-info { flex: 1; min-width: 0; }
+  .project-name { font-size: 15px; font-weight: 700; color: #ffffff; margin-bottom: 3px; font-family: 'Uni Neue', sans-serif; font-style: italic; }
+  .project-sub { font-size: 12px; color: rgba(255,255,255,0.35); line-height: 1.5; }
+  .project-arrow { color: rgba(255,255,255,0.15); flex-shrink: 0; transition: color 0.2s, transform 0.2s; }
+  .creator-project-card:hover .project-arrow { color: #00e1af; transform: translateX(3px); }
+  .back-nav { position: fixed; top: 16px; left: 16px; z-index: 40; display: flex; align-items: center; gap: 8px; }
+  .back-link { font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.3); text-decoration: none; display: flex; align-items: center; gap: 5px; padding: 4px 10px; border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; backdrop-filter: blur(4px); background: rgba(0,0,0,0.2); transition: color 0.2s, border-color 0.2s; }
+  .back-link:hover { color: #00e1af; border-color: rgba(0,225,175,0.25); }
+  .nav-contact-pill:hover { color: #9b7fee; border-color: rgba(122,83,221,0.25); }
+  .creator-footer { margin-top: auto; border-top: 1px solid rgba(255,255,255,0.07); background: rgba(5,5,8,0.5); backdrop-filter: blur(4px); }
+  .creator-footer-inner { max-width: 720px; margin: 0 auto; padding: 28px 24px; text-align: center; }
+  .creator-footer-brand { margin-bottom: 14px; }
+  .footer-tagline { font-size: 13px; color: rgba(255,255,255,0.3); font-family: 'Uni Neue', sans-serif; font-style: italic; margin-top: 4px; }
+  .footer-links-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; margin-bottom: 16px; }
+  .footer-link { font-size: 13px; color: rgba(255,255,255,0.25); text-decoration: none; transition: color 0.2s; }
+  .footer-link:hover { color: #00e1af; }
+  .footer-copy { font-size: 12px; color: rgba(255,255,255,0.2); margin-bottom: 4px; }
+  .footer-powered { font-size: 11px; color: rgba(255,255,255,0.12); }
+
+  @media (max-width: 640px) {
+    .back-nav { top: 12px; left: 12px; gap: 6px; }
+    .back-link { font-size: 11px; padding: 4px 8px; }
+    .creator-hero { padding: 68px 20px 18px; }
+    .creator-bio-card { padding: 20px; }
+    .creator-footer-inner { padding: 24px 20px 28px; }
+    .footer-links-row { gap: 12px; }
+  }
+</style>

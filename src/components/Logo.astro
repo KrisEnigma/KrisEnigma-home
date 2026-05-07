@@ -1,0 +1,22 @@
+---
+/**
+ * KrisEnigma logo — single source of truth for font, weight,
+ * and the "Enigma" gradient.
+ *
+ * Props:
+ *   size   — Tailwind font-size utility applied to the wrapper
+ *            e.g. "text-xl" (footer), "text-5xl lg:text-6xl" (hero)
+ *            Defaults to "text-xl".
+ *   as     — HTML element to render ("span" | "h1" | "div" etc.)
+ *            Defaults to "span".
+ */
+interface Props {
+  size?: string;
+  as?: string;
+}
+const { size = "text-xl", as: Tag = "span" } = Astro.props;
+---
+
+<Tag class={`font-aerovias font-normal not-italic mr-2 tracking-normal leading-none ${size}`.trim()}>
+  <span class="logo-kris">Kris</span><span class="logo-enigma">Enigma</span>
+</Tag>

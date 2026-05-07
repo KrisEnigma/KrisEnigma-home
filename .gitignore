@@ -1,6 +1,5 @@
 # Dependencies
 node_modules/
-pnpm-lock.yaml
 
 # Build output
 dist/
@@ -11,11 +10,12 @@ dist/
 .env.local
 .env.production
 
-# IDE and editor files
-.vscode/
-.idea/
-*.swp
-*.swo
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
 
 # OS generated files
 .DS_Store
@@ -26,28 +26,11 @@ dist/
 ehthumbs.db
 Thumbs.db
 
-# Logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-
 # Runtime data
 pids
 *.pid
 *.seed
 *.pid.lock
-
-# Coverage directory used by tools like istanbul
-coverage/
-*.lcov
-
-# Optional npm cache directory
-.npm
-
-# Optional REPL history
-.node_repl_history
 
 # Playwright test output
 test-results/
@@ -58,23 +41,6 @@ playwright-report/
 
 # Yarn Integrity file
 .yarn-integrity
-
-# parcel-bundler cache (https://parceljs.org/)
-.cache
-.parcel-cache
-
-# Temporary folders
-tmp/
-temp/
-
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
 *.sw?
 
 # Cloudflare/Workers/Secrets

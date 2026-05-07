@@ -1,0 +1,257 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Logo from "../components/Logo.astro";
+import { useTranslations } from "../i18n/utils";
+const t = useTranslations('es');
+---
+
+<Layout title={`${t('contact.title')} — KrisEnigma`} description="Contacto para consultas creativas o profesionales.">
+  <div class="contact-page">
+    <div class="page-glow-contact"></div>
+    <div class="back-nav">
+      <a href="/" class="back-link" id="contact-back-btn">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        {t('nav.back')}
+      </a>
+    </div>
+
+    <div class="page-inner contact-inner">
+      <header class="contact-header">
+        <h1 class="contact-title font-uni-neue">{t('contact.title')}</h1>
+        <p class="contact-subtitle">{t('contact.subtitle')}</p>
+      </header>
+
+      <section class="page-section">
+        <h2 class="page-section-label">Mensaje directo</h2>
+        <div class="contact-card glass-bg">
+          <form id="contactForm" class="contact-form" novalidate autocomplete="off"
+            data-success={t('contact.success')}
+            data-error={t('contact.error')}
+            data-required={t('contact.required')}
+            data-sending={t('contact.sending')}
+            data-submit={t('contact.submit')}
+          >
+            <div style="display:none;">
+              <input type="text" id="urltrap" name="urltrap" tabindex="-1" autocomplete="off" />
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">{t('contact.name')} <span class="required">*</span></label>
+                <input type="text" id="name" name="name" required minlength="2" maxlength="50" autocomplete="name" placeholder={t('contact.name.placeholder')} />
+              </div>
+              <div class="form-group">
+                <label for="email">Email <span class="required">*</span></label>
+                <input type="email" id="email" name="email" required autocomplete="email" placeholder={t('contact.email.placeholder')} />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="subject">{t('contact.subject')} <span class="required">*</span></label>
+              <select id="subject" name="subject" required>
+                <option value="" disabled selected>{t('contact.subject.placeholder')}</option>
+                <optgroup label={t('contact.optgroup.creator')}>
+                  <option value="Colaboración">{t('contact.opt.collab')}</option>
+                  <option value="Patrocinio">{t('contact.opt.sponsor')}</option>
+                  <option value="Medios/Prensa">{t('contact.opt.press')}</option>
+                  <option value="Eventos">{t('contact.opt.events')}</option>
+                </optgroup>
+                <optgroup label={t('contact.optgroup.pro')}>
+                  <option value="Oportunidad laboral">{t('contact.opt.job')}</option>
+                  <option value="Proyecto freelance">{t('contact.opt.freelance')}</option>
+                  <option value="Consultoría técnica">{t('contact.opt.consulting')}</option>
+                </optgroup>
+                <optgroup label={t('contact.optgroup.general')}>
+                  <option value="Preguntas">{t('contact.opt.questions')}</option>
+                  <option value="Feedback">{t('contact.opt.feedback')}</option>
+                  <option value="Otros">{t('contact.opt.other')}</option>
+                </optgroup>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">{t('contact.message')} <span class="required">*</span></label>
+              <textarea id="message" name="message" rows="5" required placeholder={t('contact.message.placeholder')}></textarea>
+            </div>
+
+            <button type="submit" id="submitBtn">{t('contact.submit')}</button>
+            <div id="thankyouMessage" class="feedback-msg hidden"></div>
+          </form>
+        </div>
+      </section>
+
+      <footer class="contact-footer">
+        <div class="contact-footer-inner">
+          <div class="contact-footer-brand">
+            <Logo />
+            <p class="contact-footer-tagline">{t('contact.subtitle')}</p>
+          </div>
+          <div class="footer-links-row">
+            <a href="/" class="footer-link">{t('nav.home')}</a>
+            <a href="/creator" class="footer-link">{t('nav.creator')}</a>
+            <a href="/pro" class="footer-link">{t('nav.pro')}</a>
+            <a href="mailto:contacto@krisenigma.com" class="footer-link">Mail</a>
+          </div>
+          <p class="footer-copy">© <span id="currentYear"></span> KrisEnigma. {t('footer.rights')}</p>
+          <p class="footer-powered">{t('footer.powered')}</p>
+        </div>
+      </footer>
+    </div>
+  </div>
+</Layout>
+
+<script is:inline>
+  const yearNode = document.getElementById('currentYear');
+  if (yearNode) yearNode.textContent = new Date().getFullYear();
+
+  const btn = document.getElementById('contact-back-btn');
+  if (btn) {
+    btn.addEventListener('click', (e) => {
+      if (window.history.length > 1 && document.referrer && !document.referrer.includes('/contact')) {
+        e.preventDefault();
+        window.history.back();
+      }
+    });
+  }
+</script>
+
+<script src="/contact.js" is:inline></script>
+
+<style>
+  .contact-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .back-nav { position: fixed; top: 16px; left: 16px; z-index: 40; display: flex; align-items: center; gap: 8px; }
+  .back-link { font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.3); text-decoration: none; display: flex; align-items: center; gap: 5px; padding: 4px 10px; border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; backdrop-filter: blur(4px); background: rgba(0,0,0,0.2); transition: color 0.2s, border-color 0.2s; }
+  .back-link:hover { color: #00e1af; border-color: rgba(0,225,175,0.25); }
+
+  .contact-inner {
+    flex: 1;
+    padding-top: 92px;
+  }
+
+  .contact-header {
+    margin-bottom: 28px;
+  }
+
+  .contact-title {
+    font-size: clamp(28px, 5vw, 40px);
+    font-weight: 400;
+    color: #ffffff;
+    margin: 0 0 8px;
+    font-style: italic;
+  }
+
+  .contact-subtitle {
+    font-size: 14px;
+    color: rgba(255,255,255,0.4);
+    margin: 0;
+  }
+
+  .contact-card {
+    padding: 28px;
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .contact-form { display: flex; flex-direction: column; gap: 20px; }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  @media (max-width: 520px) { .form-row { grid-template-columns: 1fr; } }
+
+  .form-group { display: flex; flex-direction: column; gap: 6px; }
+
+  label {
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.7);
+    font-family: 'Uni Neue', sans-serif;
+    font-style: italic;
+  }
+
+  .required { color: #f87171; }
+
+  input, select, textarea {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 8px;
+    padding: 10px 14px;
+    color: #ffffff;
+    font-size: 14px;
+    font-family: 'Titillium Web', sans-serif;
+    transition: border-color 0.2s, background 0.2s;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  input::placeholder, textarea::placeholder { color: rgba(255,255,255,0.3); }
+
+  input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: rgba(0,225,175,0.4);
+    background: rgba(255,255,255,0.08);
+  }
+
+  select option { background: #1a1a2e; color: #ffffff; }
+  select optgroup { color: rgba(255,255,255,0.5); font-style: italic; }
+
+  textarea { resize: vertical; min-height: 120px; }
+
+  button[type="submit"] {
+    align-self: flex-start;
+    background: rgba(0,225,175,0.08);
+    border: 1px solid rgba(0,225,175,0.3);
+    border-radius: 8px;
+    padding: 12px 28px;
+    color: #00e1af;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: 'Titillium Web', sans-serif;
+    cursor: pointer;
+    transition: opacity 0.2s, transform 0.2s;
+    letter-spacing: 0.04em;
+  }
+
+  button[type="submit"]:hover { opacity: 0.85; transform: translateY(-1px); }
+  button[type="submit"]:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+  .feedback-msg {
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .feedback-msg.success { background: rgba(0,225,175,0.1); color: #00e1af; border: 1px solid rgba(0,225,175,0.2); }
+  .feedback-msg.error { background: rgba(248,113,113,0.1); color: #f87171; border: 1px solid rgba(248,113,113,0.2); }
+  .feedback-msg.hidden { display: none; }
+
+  .contact-footer { margin-top: auto; border-top: 1px solid rgba(255,255,255,0.07); background: rgba(5,5,8,0.5); backdrop-filter: blur(4px); }
+  .contact-footer-inner { max-width: 720px; margin: 0 auto; padding: 28px 24px; text-align: center; }
+  .contact-footer-brand { margin-bottom: 14px; }
+  .contact-footer-tagline { font-size: 13px; color: rgba(255,255,255,0.3); font-family: 'Uni Neue', sans-serif; font-style: italic; margin-top: 4px; }
+  .footer-links-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; margin-bottom: 16px; }
+  .footer-link { font-size: 13px; color: rgba(255,255,255,0.25); text-decoration: none; transition: color 0.2s; }
+  .footer-link:hover { color: #00e1af; }
+  .footer-copy { font-size: 12px; color: rgba(255,255,255,0.2); margin-bottom: 4px; }
+  .footer-powered { font-size: 11px; color: rgba(255,255,255,0.12); }
+
+  @media (max-width: 640px) {
+    .back-nav { top: 12px; left: 12px; }
+    .back-link { font-size: 11px; padding: 4px 8px; }
+    .contact-inner { padding-top: 76px; }
+    .contact-card { padding: 22px; }
+    button[type="submit"] { width: 100%; justify-content: center; }
+    .contact-footer-inner { padding: 24px 20px 28px; }
+    .footer-links-row { gap: 12px; }
+  }
+</style>

@@ -1,0 +1,40 @@
+---
+import { getLangFromUrl, getAlternatePath, useTranslations } from '../i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const alternatePath = getAlternatePath(lang, Astro.url.pathname);
+const alternateLang = lang === 'es' ? 'en' : 'es';
+---
+
+<a
+  href={alternatePath}
+  class="lang-toggle"
+  aria-label={t('lang.toggle.aria')}
+  title={t('lang.toggle.aria')}
+  data-lang={alternateLang}
+  onclick={`localStorage.setItem('ke-lang', '${alternateLang}')`}
+>
+  {t('lang.toggle')}
+</a>
+
+<style>
+  .lang-toggle {
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 6px;
+    padding: 4px 10px;
+    text-decoration: none;
+    transition: all 0.2s;
+    backdrop-filter: blur(4px);
+  }
+  .lang-toggle:hover {
+    color: #00e1af;
+    border-color: rgba(0,225,175,0.4);
+    background: rgba(0,225,175,0.08);
+  }
+</style>

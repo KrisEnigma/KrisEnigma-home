@@ -2,6 +2,8 @@
 import "../styles/global.css";
 import SEOHead from "../components/SEOHead.astro";
 import Analytics from "../components/Analytics.astro";
+import LangToggle from "../components/LangToggle.astro";
+import { getLangFromUrl } from "../i18n/utils";
 
 export interface Props {
   title: string;
@@ -9,81 +11,81 @@ export interface Props {
   canonical?: string;
   image?: string;
   type?: "website" | "article" | "profile";
+  jsonLd?: any;
+  noBackground?: boolean;
 }
+
+const lang = getLangFromUrl(Astro.url);
 
 const {
   title,
-  description = "KrisEnigma - Músico. Gamer. Creador de Contenido.",
+  description = lang === 'en'
+    ? "KrisEnigma - Musician. Gamer. Content Creator."
+    : "KrisEnigma - Músico. Gamer. Creador de Contenido.",
   canonical,
   image,
   type = "website",
+  jsonLd,
+  noBackground = true,
 } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-
-    <!-- Accessibility improvements -->
     <meta name="theme-color" content="#00e1af" />
     <meta name="color-scheme" content="dark" />
-    <!-- Preload critical fonts -->
-    <link
-      rel="preload"
-      href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700&display=swap"
-      as="style"
-    />
-    <link
-      rel="preload"
-      href="https://fonts.cdnfonts.com/css/aerovias-brasil-nf"
-      as="style"
-    />
-    <link
-      rel="preload"
-      href="https://fonts.cdnfonts.com/css/uni-neue"
-      as="style"
-    />
-
-    <!-- Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.cdnfonts.com/css/aerovias-brasil-nf"
-      rel="stylesheet"
-    />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700&display=swap" as="style" />
+    <link rel="preload" href="https://fonts.cdnfonts.com/css/aerovias-brasil-nf" as="style" />
+    <link rel="preload" href="https://fonts.cdnfonts.com/css/uni-neue" as="style" />
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.cdnfonts.com/css/aerovias-brasil-nf" rel="stylesheet" />
     <link href="https://fonts.cdnfonts.com/css/uni-neue" rel="stylesheet" />
-
-    <!-- SEO optimizado -->
-    <SEOHead
-      title={title}
-      description={description}
-      canonical={canonical}
-      image={image}
-      type={type}
-    />
-
-    <!-- Analytics -->
+    <SEOHead title={title} description={description} canonical={canonical} image={image} type={type} jsonLd={jsonLd} />
     <Analytics gtagId={import.meta.env.PUBLIC_GTAG_ID} />
   </head>
-  <body
-    class="h-full antialiased overflow-x-hidden"
-    style="font-family: 'Titillium Web', sans-serif; letter-spacing: 0.015em;"
-  >
-    <!-- Fondo base con blur -->
-    <div
-      class="fixed inset-0 z-0 bg-theme-bg bg-cover bg-center bg-no-repeat bg-fixed brightness-75 blur-sm"
-    >
+  <body class="h-full antialiased overflow-x-hidden" style="font-family: 'Titillium Web', sans-serif; letter-spacing: 0.015em;">
+    {noBackground
+      ? <div class="fixed inset-0 z-0" style="background: #050508;"></div>
+      : <div class="fixed inset-0 z-0 bg-theme-bg bg-cover bg-center bg-no-repeat bg-fixed brightness-75 blur-sm"></div>
+    }
+    {noBackground && <div class="fixed inset-0 page-grain"></div>}
+    {noBackground && <div class="fixed inset-0 page-grid"></div>}
+
+    <!-- Lang toggle fixed top-right -->
+    <div class="fixed top-4 right-4 z-50">
+      <LangToggle />
     </div>
 
-    <!-- Main Content -->
     <div class="relative z-20 min-h-screen">
       <slot />
     </div>
+
+    <!-- Language detection script — client-side only, does not affect crawlers -->
+    <script is:inline>
+      (function() {
+        var stored = localStorage.getItem('ke-lang');
+        var currentPath = window.location.pathname;
+        var isEn = currentPath.startsWith('/en');
+        var isRoot = currentPath === '/' || currentPath === '/en' || currentPath === '/en/';
+
+        if (!stored) {
+          var browserLang = (navigator.language || '').toLowerCase();
+          stored = browserLang.startsWith('es') ? 'es' : 'en';
+          localStorage.setItem('ke-lang', stored);
+        }
+
+        if (stored === 'en' && !isEn) {
+          window.location.replace('/en' + (currentPath === '/' ? '/' : currentPath));
+        } else if (stored === 'es' && isEn) {
+          var newPath = currentPath.replace(/^\/en/, '') || '/';
+          window.location.replace(newPath);
+        }
+      })();
+    </script>
   </body>
 </html>

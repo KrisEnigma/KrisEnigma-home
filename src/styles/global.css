@@ -110,3 +110,166 @@
         scroll-behavior: smooth;
     }
 }
+
+/* === Page atmosphere === */
+.page-grain {
+  z-index: 1;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 256px;
+  opacity: 0.035;
+  pointer-events: none;
+}
+
+.page-grid {
+  z-index: 2;
+  background-image:
+    linear-gradient(rgba(0,225,175,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,225,175,0.04) 1px, transparent 1px);
+  background-size: 44px 44px;
+  pointer-events: none;
+}
+
+.page-glow-creator {
+  position: fixed;
+  top: -200px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 900px;
+  height: 650px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at 50% 30%, rgba(0,225,175,0.10) 0%, rgba(0,225,175,0.03) 40%, transparent 70%);
+  pointer-events: none;
+  z-index: 3;
+  animation: glow-breathe 9s ease-in-out infinite;
+}
+
+.page-glow-pro {
+  position: fixed;
+  top: -160px;
+  right: -100px;
+  width: 700px;
+  height: 580px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(122,83,221,0.12) 0%, rgba(122,83,221,0.04) 40%, transparent 70%);
+  pointer-events: none;
+  z-index: 3;
+  animation: glow-drift 11s ease-in-out infinite;
+}
+
+.page-glow-contact {
+  position: fixed;
+  bottom: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: 400px;
+  border-radius: 50%;
+  background:
+    radial-gradient(ellipse at 28% 50%, rgba(0,225,175,0.08) 0%, transparent 55%),
+    radial-gradient(ellipse at 72% 50%, rgba(122,83,221,0.08) 0%, transparent 55%);
+  pointer-events: none;
+  z-index: 3;
+}
+
+@keyframes glow-breathe {
+  0%, 100% { opacity: 0.7; transform: translateX(-50%) scale(1); }
+  50% { opacity: 1; transform: translateX(-50%) scale(1.1); }
+}
+
+@keyframes glow-drift {
+  0%, 100% { opacity: 0.75; transform: translateY(0); }
+  50% { opacity: 1; transform: translateY(22px); }
+}
+
+/* === Shared page structure === */
+.page-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 24px 48px;
+}
+
+.page-section {
+  margin-bottom: 52px;
+}
+
+.page-section-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.page-section-label::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--page-accent, rgba(255,255,255,0.3));
+  flex-shrink: 0;
+}
+
+.highlight-chip {
+  display: inline-flex;
+  align-items: center;
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background: rgba(0,225,175,0.06);
+  border: 1px solid rgba(0,225,175,0.15);
+  color: rgba(0,225,175,0.75);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+.page-crosslink {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 14px 20px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.07);
+  text-decoration: none;
+  color: rgba(255,255,255,0.35);
+  font-size: 13px;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.page-crosslink:hover {
+  background: rgba(255,255,255,0.04);
+  border-color: rgba(255,255,255,0.13);
+}
+
+.crosslink-arrow {
+  color: var(--page-accent, #00e1af);
+  white-space: nowrap;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+}
+
+/* KrisEnigma logo baseline */
+.logo-kris {
+  color: #ffffff;
+}
+
+.logo-enigma {
+  background: linear-gradient(-45deg, #7a53dd, #00e1af);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  padding: 0 2px;
+  margin: 0 -2px;
+}

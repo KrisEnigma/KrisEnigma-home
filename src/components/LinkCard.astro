@@ -10,13 +10,14 @@ export interface Props {
 
 const { href, image, title, description, onClick, loading = 'lazy' } = Astro.props;
 const commonClasses = "group relative grid grid-cols-9 items-center rounded-xl w-full glass-bg border border-white/20 text-white px-4 min-h-[3rem] hover:border-white/30 transform hover:scale-[1.01] link-item overflow-hidden transition-all duration-200 ease-out";
+const isExternal = href ? /^(https?:|mailto:)/.test(href) : false;
 ---
 
 {href ? (  
   <a 
     href={href}
-    target="_blank"
-    rel="noopener noreferrer"    
+    target={isExternal ? "_blank" : undefined}
+    rel={isExternal ? "noopener noreferrer" : undefined}
     class={commonClasses}
   >
     <!-- Efecto de hover simple -->
