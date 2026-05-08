@@ -43,7 +43,7 @@ jobs:
     - name: Copy home build to deployment
       run: |
         cd deployment
-        find . -maxdepth 1 ! -name '.git' ! -name '.' ! -name 'gamelist' ! -name 'gamesalad' ! -name 'mdtohtml' ! -name 'cronica' -exec rm -rf {} +
+        find . -maxdepth 1 ! -name '.git' ! -name '.' ! -name 'gamelist' ! -name 'gamesalad' ! -name 'mdtohtml' ! -name 'cronica' ! -name 'gastitos' ! -name 'hud' ! -name 'logclean' ! -name 'workout' ! -name 'functions' ! -name '_redirects' -exec rm -rf {} +
         cp -r ../home/dist/* .
 
     - name: Deploy to GitHub
