@@ -351,3 +351,36 @@
     opacity: 0.24;
   }
 }
+
+/* ---- Entrance animations ---- */
+@keyframes ke-item-in {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Creator panel — starts slightly earlier for left-to-right wave feel */
+.ke-panel-creator .ke-tag      { animation: ke-item-in 0.55s cubic-bezier(0.22,1,0.36,1) both; animation-delay: 0.12s; }
+.ke-panel-creator .ke-icon-row { animation: ke-item-in 0.55s cubic-bezier(0.22,1,0.36,1) both; animation-delay: 0.22s; }
+.ke-panel-creator .ke-name     { animation: ke-item-in 0.60s cubic-bezier(0.22,1,0.36,1) both; animation-delay: 0.30s; }
+.ke-panel-creator .ke-subtitle { animation: ke-item-in 0.55s cubic-bezier(0.22,1,0.36,1) both; animation-delay: 0.38s; }
+.ke-panel-creator .ke-pills    { animation: ke-item-in 0.55s cubic-bezier(0.22,1,0.36,1) both; animation-delay: 0.46s; }
+.ke-panel-creator .ke-cta      { animation: ke-item-in 0.50s cubic-bezier(0.22,1,0.36,1) both; animation-delay: 0.54s; }
+
+/* Pro panel — offset by ~0.10s to create a wave */
+.ke-panel-pro .ke-tag      { animation: ke-item-in 0.55s cubic-bezier(0.22,1,0.36,1) both; animation-delay: 0.22s; }
+.ke-panel-pro .ke-icon-row { animation: ke-item-in 0.55s cubic-bezier(0.22,1,0.36,1) both; animation-delay: 0.32s; }
+.ke-panel-pro .ke-name     { animation: ke-item-in 0.60s cubic-bezier(0.22,1,0.36,1) both; animation-delay: 0.40s; }
+.ke-panel-pro .ke-subtitle { animation: ke-item-in 0.55s cubic-bezier(0.22,1,0.36,1) both; animation-delay: 0.48s; }
+.ke-panel-pro .ke-pills    { animation: ke-item-in 0.55s cubic-bezier(0.22,1,0.36,1) both; animation-delay: 0.56s; }
+.ke-panel-pro .ke-cta      { animation: ke-item-in 0.50s cubic-bezier(0.22,1,0.36,1) both; animation-delay: 0.64s; }
+
+/* Footer fades in last */
+.ke-footer { animation: ke-item-in 0.50s ease both; animation-delay: 0.85s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .ke-panel-creator .ke-tag,  .ke-panel-creator .ke-icon-row, .ke-panel-creator .ke-name,
+  .ke-panel-creator .ke-subtitle, .ke-panel-creator .ke-pills, .ke-panel-creator .ke-cta,
+  .ke-panel-pro .ke-tag, .ke-panel-pro .ke-icon-row, .ke-panel-pro .ke-name,
+  .ke-panel-pro .ke-subtitle, .ke-panel-pro .ke-pills, .ke-panel-pro .ke-cta,
+  .ke-footer { animation: none; }
+}

@@ -63,6 +63,24 @@ const projects = lang === 'en' ? [
     tech: ["Astro", "TypeScript", "Tailwind", "Cloudflare Pages", "Resend", "GitHub Actions"],
     accent: "purple",
   },
+  {
+    emoji: "🖥️",
+    name: "Home Server",
+    url: null,
+    years: null,
+    desc: "Home-built mini server running Homepage, Home Assistant, Cockpit, PiHole, Plex, and qBittorrent. Mix of Docker and bare metal depending on what makes sense per service.",
+    tech: ["Docker", "Home Assistant", "PiHole", "Linux", "Cockpit"],
+    accent: "teal",
+  },
+  {
+    emoji: "☁️",
+    name: "Oracle Cloud VPS",
+    url: null,
+    years: null,
+    desc: "Personal VPS on Oracle Cloud running Quake 3 servers, a RustDesk server for remote access, custom stream alert tools, and various other self-hosted services.",
+    tech: ["Oracle Cloud", "Linux", "Docker", "RustDesk"],
+    accent: "purple",
+  },
 ] : [
   {
     emoji: "👁️",
@@ -98,6 +116,24 @@ const projects = lang === 'en' ? [
     years: null,
     desc: "Sitio personal con CI/CD, Cloudflare Pages Functions, anti-spam, seguridad HTTP headers.",
     tech: ["Astro", "TypeScript", "Tailwind", "Cloudflare Pages", "Resend", "GitHub Actions"],
+    accent: "purple",
+  },
+  {
+    emoji: "🖥️",
+    name: "Home Server",
+    url: null,
+    years: null,
+    desc: "Minibox casero con Homepage, Home Assistant, Cockpit, PiHole, Plex y qBittorrent. Mix de Docker y bare metal según lo que tiene sentido para cada servicio.",
+    tech: ["Docker", "Home Assistant", "PiHole", "Linux", "Cockpit"],
+    accent: "teal",
+  },
+  {
+    emoji: "☁️",
+    name: "Oracle Cloud VPS",
+    url: null,
+    years: null,
+    desc: "VPS personal en Oracle Cloud con servidores de Quake 3, servidor RustDesk para acceso remoto, herramientas de alertas de stream personalizadas, y varios servicios adicionales.",
+    tech: ["Oracle Cloud", "Linux", "Docker", "RustDesk"],
     accent: "purple",
   },
 ];
@@ -353,7 +389,7 @@ const experience = lang === 'en' ? [
   .pro-hero-bio { font-size: 14px; color: rgba(255,255,255,0.5); line-height: 1.8; max-width: 640px; margin-bottom: 28px; }
 
   /* Role card */
-  .role-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 20px 24px; display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 28px; }
+  .role-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-left: 2px solid rgba(0,225,175,0.35); border-radius: 12px; padding: 20px 24px; display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 28px; }
   .role-current-label { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(0,225,175,0.5); margin-bottom: 6px; }
   .role-company { font-size: 13px; font-weight: 700; color: #00e1af; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 4px; }
   .role-title { font-size: 16px; font-weight: 600; color: #ffffff; margin-bottom: 4px; }
@@ -373,8 +409,8 @@ const experience = lang === 'en' ? [
   /* Projects */
   .projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
   @media (max-width: 600px) { .projects-grid { grid-template-columns: 1fr; } }
-  .project-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); border-radius: 12px; padding: 20px; transition: border-color 0.2s, background 0.2s; }
-  .project-card:hover { background: rgba(255,255,255,0.05); }
+  .project-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); border-radius: 12px; padding: 20px; transition: border-color 0.2s, background 0.2s, transform 0.2s; }
+  .project-card:hover { background: rgba(255,255,255,0.05); transform: translateY(-2px); }
   .project-card-teal { border-color: rgba(0,225,175,0.1); }
   .project-card-teal:hover { border-color: rgba(0,225,175,0.2); }
   .project-card-purple { border-color: rgba(122,83,221,0.1); }
@@ -401,7 +437,7 @@ const experience = lang === 'en' ? [
   .exp-list { display: flex; flex-direction: column; gap: 0; border-left: 1px solid rgba(255,255,255,0.07); padding-left: 20px; margin-left: 4px; }
   .exp-item { position: relative; padding-bottom: 24px; }
   .exp-item:last-child { padding-bottom: 0; }
-  .exp-item::before { content: ''; position: absolute; width: 7px; height: 7px; border-radius: 50%; background: rgba(155,127,238,0.35); left: -24px; top: 6px; border: 1px solid rgba(155,127,238,0.5); }
+  .exp-item::before { content: ''; position: absolute; width: 8px; height: 8px; border-radius: 50%; background: rgba(155,127,238,0.5); left: -24px; top: 5px; border: 1px solid rgba(155,127,238,0.7); box-shadow: 0 0 6px rgba(122,83,221,0.35); }
   .exp-header { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; flex-wrap: wrap; margin-bottom: 3px; }
   .exp-company { font-size: 14px; font-weight: 700; color: rgba(255,255,255,0.85); }
   .exp-period { font-size: 11px; color: rgba(255,255,255,0.28); white-space: nowrap; }
