@@ -1,0 +1,127 @@
+- generic [ref=e2]:
+  - generic [ref=e4]:
+    - navigation [ref=e5]:
+      - generic [ref=e6]:
+        - generic [ref=e7]:
+          - button "Skip to... ⌥ P" [ref=e9]:
+            - generic [ref=e10]:
+              - generic [ref=e11]:
+                - text: Skip to...
+                - generic [ref=e12]:
+                  - generic [ref=e14]: ⌥
+                  - generic [ref=e16]: P
+              - img [ref=e20]
+          - link "Twitch Home" [ref=e22] [cursor=pointer]:
+            - /url: /
+            - figure [ref=e24]:
+              - img [ref=e25]
+          - link "Browse" [ref=e35] [cursor=pointer]:
+            - /url: /directory
+            - paragraph [ref=e38]: Browse
+          - button "More Options" [ref=e43]:
+            - generic:
+              - generic:
+                - img
+        - search [ref=e48]:
+          - generic [ref=e51]:
+            - searchbox "Search Input" [ref=e55]
+            - button "Search Button" [disabled] [ref=e57]:
+              - img [ref=e61]
+        - generic [ref=e65]:
+          - generic [ref=e66]:
+            - button "Log In" [ref=e68]:
+              - generic [ref=e70]: Log In
+            - button "Sign Up" [ref=e72]:
+              - generic [ref=e74]: Sign Up
+          - button "User Menu" [ref=e78]:
+            - button "User Menu" [ref=e79]:
+              - generic:
+                - generic:
+                  - img
+    - generic [ref=e80]:
+      - complementary [ref=e82]:
+        - generic [ref=e85]:
+          - button "Collapse Side Nav" [ref=e88]:
+            - generic:
+              - generic:
+                - img
+          - generic [ref=e89]:
+            - navigation "Left Navigation"
+      - main [ref=e90]:
+        - generic [ref=e92]:
+          - region "Stream Information" [ref=e106]
+          - generic [ref=e114]:
+            - generic "Twitch video player" [ref=e115]
+            - generic [ref=e116]:
+              - button "Play" [ref=e121]
+              - region "Player Controls" [ref=e123]:
+                - generic [ref=e124]:
+                  - generic [ref=e125]:
+                    - button "Play (space/k)" [ref=e128]:
+                      - generic:
+                        - generic:
+                          - img
+                    - generic [ref=e130]:
+                      - button "Mute (m)" [ref=e134]:
+                        - generic:
+                          - generic:
+                            - img
+                      - generic [ref=e138]:
+                        - generic [ref=e139]: Volume
+                        - slider [ref=e142] [cursor=pointer]: "1"
+                  - generic [ref=e146]:
+                    - button "Settings" [ref=e151]:
+                      - generic:
+                        - generic:
+                          - img
+                    - button "Theatre Mode (alt+t)" [ref=e154]:
+                      - generic:
+                        - generic:
+                          - img
+                    - button "Fullscreen (f)" [ref=e157]:
+                      - generic:
+                        - generic:
+                          - img
+      - generic:
+        - complementary "Right Column":
+          - button "Collapse Chat" [ref=e160]:
+            - generic:
+              - generic:
+                - img
+          - generic:
+            - complementary "Stream Chat":
+              - generic [ref=e165]:
+                - region [ref=e166]:
+                  - heading "Stream Chat" [level=4] [ref=e168]
+                  - button "Community" [ref=e171]:
+                    - generic:
+                      - generic:
+                        - img
+                - region "Stream Chat" [ref=e172]:
+                  - generic [ref=e173]:
+                    - generic:
+                      - generic:
+                        - link "Skip reading chat messages":
+                          - /url: /KrisEnigma#WYSIWGChatInputEditor_SkipChat
+                    - generic "Chat messages" [ref=e174]:
+                      - log [ref=e177]
+                    - generic [ref=e179]:
+                      - generic [ref=e180]:
+                        - strong [ref=e188]: Connecting to Chat
+                        - generic [ref=e194]:
+                          - generic [ref=e199]:
+                            - paragraph: Send a message
+                            - textbox "Send a message" [ref=e200]
+                          - status
+                      - generic [ref=e205]:
+                        - generic:
+                          - paragraph
+                        - button "Chat settings" [ref=e209]:
+                          - generic:
+                            - generic:
+                              - img
+                        - button "Send Chat" [disabled] [ref=e212]:
+                          - generic [ref=e214]: Chat
+    - contentinfo
+  - status [ref=e215]
+  - alert [ref=e216]

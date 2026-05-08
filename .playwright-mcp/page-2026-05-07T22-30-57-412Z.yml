@@ -1,0 +1,650 @@
+- generic [ref=e2]:
+  - banner [ref=e4]:
+    - generic [ref=e6]:
+      - generic [ref=e7]:
+        - button "Guide" [ref=e9] [cursor=pointer]:
+          - generic [ref=e12]:
+            - img
+        - generic [ref=e13]:
+          - link "YouTube Home" [ref=e14] [cursor=pointer]:
+            - /url: /
+            - generic [ref=e19]:
+              - img
+          - generic [ref=e20]: CL
+        - button "Skip navigation" [ref=e24] [cursor=pointer]:
+          - generic [ref=e25]: Skip navigation
+      - generic [ref=e29]:
+        - search [ref=e30]:
+          - generic [ref=e31]:
+            - combobox "Search" [expanded] [ref=e34]
+            - button "Search" [ref=e35] [cursor=pointer]:
+              - generic [ref=e38]:
+                - img
+        - generic [ref=e40]:
+          - button "Search with your voice" [ref=e42] [cursor=pointer]:
+            - generic [ref=e46]:
+              - img
+          - tooltip "tooltip"
+      - generic [ref=e51]:
+        - button "Settings" [ref=e56] [cursor=pointer]:
+          - generic [ref=e59]:
+            - img
+        - link "Sign in" [ref=e62] [cursor=pointer]:
+          - /url: https://accounts.google.com/ServiceLogin?service=youtube&uilel=3&passive=true&continue=https%3A%2F%2Fwww.youtube.com%2Fsignin%3Faction_handle_signin%3Dtrue%26app%3Ddesktop%26hl%3Den%26next%3Dhttps%253A%252F%252Fwww.youtube.com%252FKrisEnigma&hl=en&ec=65620
+          - generic [ref=e66]:
+            - img
+          - generic [ref=e67]: Sign in
+  - navigation [ref=e71]:
+    - generic [ref=e72]:
+      - link "Home" [ref=e74] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e77]:
+          - img
+        - generic [ref=e78]: Home
+      - link "Shorts" [ref=e80] [cursor=pointer]:
+        - /url: /shorts/
+        - generic [ref=e83]:
+          - img
+        - generic [ref=e84]: Shorts
+      - link "Subscriptions" [ref=e86] [cursor=pointer]:
+        - /url: /feed/subscriptions
+        - generic [ref=e89]:
+          - img
+        - generic [ref=e90]: Subscriptions
+      - link "You" [ref=e92] [cursor=pointer]:
+        - /url: /feed/you
+        - generic [ref=e95]:
+          - img
+        - generic [ref=e96]: You
+  - generic [ref=e97]:
+    - main [ref=e98]:
+      - generic [ref=e105]:
+        - generic [ref=e121]:
+          - heading "KrisEnigma" [level=1] [ref=e123]
+          - generic [ref=e124]:
+            - group [ref=e125]:
+              - generic [ref=e126]: "@KrisEnigma"
+            - generic [ref=e127]: •
+            - group [ref=e128]:
+              - generic "7.32 thousand subscribers" [ref=e129]: 7.32K subscribers
+              - generic [ref=e130]: •
+              - generic [ref=e131]: 391 videos
+          - generic [ref=e133] [cursor=pointer]:
+            - generic [ref=e134]: Opiniones y datos de videojuegos que valen la pena.
+            - button "Description. Opiniones y datos de videojuegos que valen la pena....tap for more." [ref=e135]:
+              - generic [ref=e136]: ...more
+          - generic [ref=e137]:
+            - link "twitch.tv/KrisEnigma" [ref=e140] [cursor=pointer]:
+              - /url: https://www.youtube.com/redirect?event=channel_header&redir_token=QUFFLUhqbUhINjNnYTVDcjYxM1gzRVlrOW9DZWlyZDFTQXxBQ3Jtc0tsVG1yTVVvX2ZPbEVmZEJXVGJkcUo2RjE1VlRZUzNPTHdabmZHOThydnAwTGo3QWtRQzJrSXBBZGZhd2M4MFVValVYc2hZRU5vQ0tHVDFnNlpiOW1Nb25nRHZ5RU9JamtqdGRXdlRBLWF2YmRwdUlpOA&q=http%3A%2F%2Fwww.twitch.tv%2FKrisEnigma
+            - button "and 5 more links" [ref=e143] [cursor=pointer]
+          - generic [ref=e144]:
+            - button "Subscribe" [ref=e147] [cursor=pointer]:
+              - generic [ref=e148]: Subscribe
+            - button "Join this channel" [ref=e154] [cursor=pointer]:
+              - generic [ref=e158]:
+                - img
+              - generic [ref=e159]: Join
+        - tablist [ref=e166]:
+          - tablist [ref=e170]:
+            - tab "Home" [selected] [ref=e171] [cursor=pointer]:
+              - generic [ref=e172]: Home
+            - tab "Videos" [ref=e173] [cursor=pointer]:
+              - generic [ref=e174]: Videos
+            - tab "Shorts" [ref=e175] [cursor=pointer]:
+              - generic [ref=e176]: Shorts
+            - tab "Live" [ref=e177] [cursor=pointer]:
+              - generic [ref=e178]: Live
+            - tab "Playlists" [ref=e179] [cursor=pointer]:
+              - generic [ref=e180]: Playlists
+            - tab "Posts" [ref=e181] [cursor=pointer]:
+              - generic [ref=e182]: Posts
+            - button "Search" [ref=e186] [cursor=pointer]:
+              - generic [ref=e189]:
+                - img
+      - generic [ref=e196]:
+        - generic [ref=e199]:
+          - generic "YouTube Video Player" [ref=e203]:
+            - link "El ENIGMA de MYHOUSE.WAD - El mapa MÁS MISTERIOSO de DOOM" [ref=e208] [cursor=pointer]:
+              - /url: https://www.youtube.com/watch?v=ZK-zXRWlE9M
+            - button "More" [ref=e210] [cursor=pointer]:
+              - generic [ref=e211]:
+                - img
+            - generic [ref=e212]:
+              - generic [ref=e213] [cursor=pointer]:
+                - slider "Seek slider" [ref=e214]
+                - generic:
+                  - generic:
+                    - generic:
+                      - slider "Click or scroll the panel for the precise seeking."
+              - generic [ref=e223]:
+                - generic [ref=e224]:
+                  - button "Pause (k)" [ref=e225] [cursor=pointer]:
+                    - img
+                  - generic [ref=e226]:
+                    - button "Unmute (m)" [ref=e228] [cursor=pointer]:
+                      - img
+                    - slider "Volume"
+                  - button "0 Minutes 0 Seconds of 1 Hours 24 Minutes 29 Seconds" [ref=e232] [cursor=pointer]: 0:00 / 1:24:29
+                - generic [ref=e234]:
+                  - button [ref=e235] [cursor=pointer]:
+                    - img
+                  - button "Settings" [ref=e236] [cursor=pointer]:
+                    - img
+          - generic [ref=e237]:
+            - generic [ref=e238]:
+              - heading "The ENIGMA of MYHOUSE.WAD – DOOM’s MOST MYSTERIOUS Map 1 hour, 24 minutes" [level=3] [ref=e239]:
+                - link "The ENIGMA of MYHOUSE.WAD – DOOM’s MOST MYSTERIOUS Map" [ref=e240] [cursor=pointer]:
+                  - /url: /watch?v=ZK-zXRWlE9M
+              - generic [ref=e243]:
+                - generic [ref=e244]: 3,476 views
+                - generic [ref=e245]: •2 years ago
+            - generic [ref=e246]:
+              - generic [ref=e248]:
+                - text: "MyHouse is much more than just a simple map—it's a digital walk through its creator’s memories. Download MyHouse:"
+                - link "https://www.doomworld.com/forum/topic..." [ref=e249] [cursor=pointer]:
+                  - /url: https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbEdGNUZHZTNEUUI2NVlXRm5rWUFYbDNxa3hmZ3xBQ3Jtc0tteWZ5Mi0wcUROeXdvTm5XZUd5U2JHSi1zb1R1NWs5cmlhYmpZMTByeFJKWWF5VmJHeUI2SnhHQUl0dTNvaGxOOXZYZ0NWd1J5Rk9Ca1VubUlQSkQzMXktdmJ2SzduU2ZsWWpnU3hxTUh2a1RScFpQRQ&q=https%3A%2F%2Fwww.doomworld.com%2Fforum%2Ftopic%2F134292-myhousewad%2F
+                - text: "Spanish translation:"
+                - link "https://drive.google.com/drive/folder..." [ref=e250] [cursor=pointer]:
+                  - /url: https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbkNCRmhOcmJjWngzQTZwejExTVhENnRtZ1FkUXxBQ3Jtc0trZmxPS25DdXBhYXJnLXV2NEdLc3pYaUViR0l6X2VqX3hOTUx0alFQTHhpa3VPNjdyTDBQcFl4M3JXcHJrY3J0ZHJGUVo4V01CaVJkZUFBQ214ZnVvUmY5Y1FONzdicHYyLVk3U0JXMGticG81ZlVrTQ&q=https%3A%2F%2Fdrive.google.com%2Fdrive%2Ffolders%2F1BMyA9f_vd07vynvHiTpGnK_mB2P2x6Jj%3Fusp%3Dsharing
+                - text: "–– ✨ If you like what I do, consider donating on the platform of your choice. You can make a one-time contribution or subscribe for monthly support: eSponsor:"
+                - link "http://esponsor.com/KrisEnigma/donate" [ref=e251] [cursor=pointer]:
+                  - /url: https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqa1ZwYnoxNTZQanBJTzJjMGcyNkpPcWFaQzVxUXxBQ3Jtc0ttbmpxYnJsTWlIRi0xdmtFZFgxV1Fma1ZDSzVnNnl0UnBRcGRRZmY4M19DdlUtOWJsWWVwWC1MWTBtZzVpRzZTMzVGMnRLbGI0RlI4MDFoakNFNV9GTXpFUkxSMlEtRjNsMm9BRzUxdFJleWhrb2QtNA&q=http%3A%2F%2Fesponsor.com%2FKrisEnigma%2Fdonate
+                - text: "Ko-Fi:"
+                - link "https://ko-fi.com/krisenigma" [ref=e252] [cursor=pointer]:
+                  - /url: https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqa3V5eFN1YjJyUVRXbW5lclJ1eWNQc0dDZU1fUXxBQ3Jtc0trMWZwR0NFU2I3MnRPUTFyTVpVREVTUXdBUWx3U3JGczF4NkhldjB6S0w2SWZYNkRHbkczamhiZVptNjlIekVtUUlKMHoyZ3R0cWpQQTJBclhNYnpRQVk4SjZSLURIbndxQTE3Q0RhOGpqZDNfakV0RQ&q=https%3A%2F%2Fko-fi.com%2Fkrisenigma
+                - text: "Patreon:"
+                - link "https://patreon.com/KrisEnigma" [ref=e253] [cursor=pointer]:
+                  - /url: https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbTRRNzhwRVB0Q0JpN21GbldoYjJzdDJNNHBrUXxBQ3Jtc0tsN3FWMVdqdF9kVnFaZGdQTUtsUzdNaU0xRFJFNVNhZVVnMTZ3R0k3a1Byc2RDVFRjalQ1YkxxVXFESWxSWTZseHh6UWZOc0JveC16RG4tME0yY29LUHpqWGhUSy12dWcwSjdVeUM4Y1JOQ2FkWFVkNA&q=https%3A%2F%2Fpatreon.com%2FKrisEnigma
+                - text: "Connect with me on social media: 📹 TikTok:"
+                - link "https://www.tiktok.com/@KrisEnigma" [ref=e254] [cursor=pointer]:
+                  - /url: https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbWlKT1hRVzRmZnVRUVowTDd1ZVlVeG5xdlRoUXxBQ3Jtc0tsVk5WMTdDQVhRcElOWDVTTjVaeV9GSFJjSlp6SGZQZVJsamhvcHlDakxkbW5PZlhKQjRFbVhEUEY2V2tSd09nb0hGaHdmRXNlOUFHd2luOXhZQk5CRlpPbmprQVJfRTZrQ1FYaFZMVDdibTlDaVZlOA&q=https%3A%2F%2Fwww.tiktok.com%2F%40KrisEnigma
+                - text: "🎮 Twitch:"
+                - link "https://www.twitch.tv/KrisEnigma" [ref=e255] [cursor=pointer]:
+                  - /url: https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbVZQMFZXaWVWXzZXU2xyUUE2LXpRTFVLQkV1QXxBQ3Jtc0trOGcxTW9UYTlCTGQ0LWlJRWowRHR4Y3NOSkEzTlJ6akVZbFhXeXdQc0t1WFNhTFpBYjZieUlWeG1HVkp3dW1kRmlnb090NlRlTE5Pell2UlU2SlUtcjhjRHV4MkpaTENSVlA0WG1LcGhPV21Pd181OA&q=https%3A%2F%2Fwww.twitch.tv%2FKrisEnigma
+                - text: "🗨️ Discord:"
+                - link "https://dsc.gg/krisenigma" [ref=e256] [cursor=pointer]:
+                  - /url: https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbjdFVHN2M1ZtMlMxN29CODk4WUhGd1VLSjg2UXxBQ3Jtc0ttZnNIS1ItN1VQNEUtS2c3NUdhel93MmhPY0x5RGY3azlYbk9XYW10WEdzWmhKZzhuUXNnUFl5QjFpdEM3VWp4d0R3SWtvSmRsRVVpTk14NEJpNjdteFB2M25Ra29ZcVlLaWFDMlk1ZFZQMTRsY3VrUQ&q=https%3A%2F%2Fdsc.gg%2Fkrisenigma
+                - text: "📸 Instagram:"
+                - link "https://www.instagram.com/KrisEnigma" [ref=e257] [cursor=pointer]:
+                  - /url: https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbDFzV0JYWWktQ19QYmJZVkpTQ0NyNE5Pczhod3xBQ3Jtc0trcXp0cHg3UE0wVXdJenpRRmRSV0dtZklJelN4T2owbGs2eDdBWmpERTRTYUVXLWJUREV2ZWk2bmZuRkM4RTg4c2hydWRiVDhlbkE2YnBPZHB2aTRVQ3k3SGVJYktkOU9MZEM0bmxZaW9jbmg0REdMbw&q=https%3A%2F%2Fwww.instagram.com%2FKrisEnigma
+                - text: "🐦 Twitter:"
+                - link "https://twitter.com/KrisEnigma" [ref=e258] [cursor=pointer]:
+                  - /url: https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbWJzblZmcXhOXy1NN2tETG44amlpQzFwc2NZQXxBQ3Jtc0trU0UyMU00akVncFNNWC1ISElVTFA0dHB2RDFWaF93cVhaTFFNcmlvUnk2bmtzUTByd1B6c2NQQ0hyTmdlZ0pRek1yTUF1UHh4dmRod3M3alhkVXFBTWlFNE5rTHZxdnBGMEZJMlk0T3V6SEhzMVl6OA&q=https%3A%2F%2Ftwitter.com%2FKrisEnigma
+                - text: "If you like video game music, check out my other channel: 🎵 Psycho Crusher:"
+                - link "https://youtube.com/PsychoCrusherVGM" [ref=e259] [cursor=pointer]:
+                  - /url: https://youtube.com/PsychoCrusherVGM
+                - text: "Subscribe and join our community. Thanks for watching and supporting my channel! Chapters: 0:00 Spoiler-free Intro 4:00 Ending 0 6:24 Ending 1 19:28 Ending 2 45:17 Ending 3 47:25 Impressions 48:20 Extras and Inspirations 1:01:25 The Start of Metafiction 1:07:04 Popular Theories 1:11:21 My Theory 1:16:51 Who is Veddge, really? 1:21:51 Outro"
+              - button "Read more" [ref=e260] [cursor=pointer]:
+                - link "Read more" [ref=e262]:
+                  - /url: /watch?v=ZK-zXRWlE9M
+        - generic [ref=e266]:
+          - heading "Videos" [level=2] [ref=e269]:
+            - link "Videos" [ref=e272] [cursor=pointer]:
+              - /url: /@KrisEnigma/videos?view=0&sort=dd&shelf_id=4
+              - generic [ref=e273]: Videos
+          - generic [ref=e275]:
+            - generic [ref=e278]:
+              - generic [ref=e280]:
+                - link [ref=e282] [cursor=pointer]:
+                  - /url: /watch?v=e133diRJ0F8
+                - generic [ref=e284] [cursor=pointer]:
+                  - generic [ref=e286]:
+                    - 'heading "BLOODBORNE EN PC ES REAL: shadPS4 hace lo que SONY NUNCA HIZO 31 minutes" [level=3] [ref=e287]':
+                      - 'link "BLOODBORNE EN PC ES REAL: shadPS4 hace lo que SONY NUNCA HIZO 31 minutes" [ref=e288]':
+                        - /url: /watch?v=e133diRJ0F8
+                        - text: "BLOODBORNE EN PC ES REAL: shadPS4 hace lo que SONY NUNCA HIZO"
+                    - generic [ref=e291]:
+                      - generic [ref=e292]: 7.9K views
+                      - generic [ref=e293]: •1 year ago
+                  - button "Action menu" [ref=e296]:
+                    - generic [ref=e299]:
+                      - img
+              - generic [ref=e301]:
+                - link [ref=e303] [cursor=pointer]:
+                  - /url: /watch?v=xI1jrNUrgAM
+                - generic [ref=e305] [cursor=pointer]:
+                  - generic [ref=e307]:
+                    - 'heading "SE ACABÓ: CONCORD se CIERRA y jugadores reciben devoluciones. RIP🙏 8 minutes, 32 seconds" [level=3] [ref=e308]':
+                      - 'link "SE ACABÓ: CONCORD se CIERRA y jugadores reciben devoluciones. RIP🙏 8 minutes, 32 seconds" [ref=e309]':
+                        - /url: /watch?v=xI1jrNUrgAM
+                        - text: "SE ACABÓ: CONCORD se CIERRA y jugadores reciben devoluciones. RIP🙏"
+                    - generic [ref=e312]:
+                      - generic [ref=e313]: 3.8K views
+                      - generic [ref=e314]: •1 year ago
+                  - button "Action menu" [ref=e317]:
+                    - generic [ref=e320]:
+                      - img
+              - generic [ref=e322]:
+                - link [ref=e324] [cursor=pointer]:
+                  - /url: /watch?v=ZJVZR08WmcE
+                - generic [ref=e326] [cursor=pointer]:
+                  - generic [ref=e328]:
+                    - heading "El FRACASO ABSOLUTO de CONCORD - Un juego que NADIE pidió 16 minutes" [level=3] [ref=e329]:
+                      - link "El FRACASO ABSOLUTO de CONCORD - Un juego que NADIE pidió 16 minutes" [ref=e330]:
+                        - /url: /watch?v=ZJVZR08WmcE
+                        - text: El FRACASO ABSOLUTO de CONCORD - Un juego que NADIE pidió
+                    - generic [ref=e333]:
+                      - generic [ref=e334]: 48K views
+                      - generic [ref=e335]: •1 year ago
+                  - button "Action menu" [ref=e338]:
+                    - generic [ref=e341]:
+                      - img
+              - generic [ref=e343]:
+                - link [ref=e345] [cursor=pointer]:
+                  - /url: /watch?v=UZhrxF8W7s8
+                - generic [ref=e347] [cursor=pointer]:
+                  - generic [ref=e349]:
+                    - 'heading "SOUL REAVER: A 25 años del SOULS original 1 hour, 9 minutes" [level=3] [ref=e350]':
+                      - 'link "SOUL REAVER: A 25 años del SOULS original 1 hour, 9 minutes" [ref=e351]':
+                        - /url: /watch?v=UZhrxF8W7s8
+                        - text: "SOUL REAVER: A 25 años del SOULS original"
+                    - generic [ref=e354]:
+                      - generic [ref=e355]: 592 views
+                      - generic [ref=e356]: •1 year ago
+                  - button "Action menu" [ref=e359]:
+                    - generic [ref=e362]:
+                      - img
+              - generic [ref=e364]:
+                - link [ref=e366] [cursor=pointer]:
+                  - /url: /watch?v=ZK-zXRWlE9M
+                - generic [ref=e368] [cursor=pointer]:
+                  - generic [ref=e369]:
+                    - generic [ref=e370]:
+                      - heading "The ENIGMA of MYHOUSE.WAD – DOOM’s MOST MYSTERIOUS Map 1 hour, 24 minutes" [level=3] [ref=e371]:
+                        - link "The ENIGMA of MYHOUSE.WAD – DOOM’s MOST MYSTERIOUS Map 1 hour, 24 minutes" [ref=e372]:
+                          - /url: /watch?v=ZK-zXRWlE9M
+                          - text: The ENIGMA of MYHOUSE.WAD – DOOM’s MOST MYSTERIOUS Map
+                      - generic [ref=e375]:
+                        - generic [ref=e376]: 3.4K views
+                        - generic [ref=e377]: •2 years ago
+                    - img "Closed captions" [ref=e382]:
+                      - generic [ref=e383]: CC
+                  - button "Action menu" [ref=e386]:
+                    - generic [ref=e389]:
+                      - img
+              - generic [ref=e391]:
+                - link [ref=e393] [cursor=pointer]:
+                  - /url: /watch?v=4_Exv2bHDms
+                - generic [ref=e395] [cursor=pointer]:
+                  - generic [ref=e396]:
+                    - generic [ref=e397]:
+                      - 'heading "7 Juegos que Definieron mi 2023: Entre el Mainstream y Joyas Ocultas 12 minutes, 8 seconds" [level=3] [ref=e398]':
+                        - 'link "7 Juegos que Definieron mi 2023: Entre el Mainstream y Joyas Ocultas 12 minutes, 8 seconds" [ref=e399]':
+                          - /url: /watch?v=4_Exv2bHDms
+                          - text: "7 Juegos que Definieron mi 2023: Entre el Mainstream y Joyas Ocultas"
+                      - generic [ref=e402]:
+                        - generic [ref=e403]: 386 views
+                        - generic [ref=e404]: •2 years ago
+                    - img "Closed captions" [ref=e409]:
+                      - generic [ref=e410]: CC
+                  - button "Action menu" [ref=e413]:
+                    - generic [ref=e416]:
+                      - img
+            - button "Next" [ref=e419] [cursor=pointer]:
+              - generic [ref=e423]:
+                - img
+        - generic [ref=e429]:
+          - generic [ref=e430]:
+            - generic [ref=e434]:
+              - img
+            - heading "Shorts" [level=2] [ref=e436]:
+              - generic [ref=e438]: Shorts
+            - button "More actions" [ref=e442] [cursor=pointer]:
+              - generic [ref=e445]:
+                - img
+          - generic [ref=e447]:
+            - generic [ref=e450]:
+              - generic [ref=e452]:
+                - link [ref=e453] [cursor=pointer]:
+                  - /url: /shorts/L_V9S-kaumQ
+                - generic [ref=e457] [cursor=pointer]:
+                  - link "El ENIGMA de MYHOUSE.WAD (Trailer)" [ref=e458]:
+                    - /url: /shorts/L_V9S-kaumQ
+                  - generic [ref=e459]: 4.6K views
+                - button "More actions" [ref=e461] [cursor=pointer]:
+                  - generic [ref=e465]:
+                    - img
+              - generic [ref=e470]:
+                - link [ref=e471] [cursor=pointer]:
+                  - /url: /shorts/s2XEaSWnsjM
+                - generic [ref=e475] [cursor=pointer]:
+                  - 'link "Archthrones es un tremendo mod para Dark Souls 3! #darksouls #darksouls3 #archthrones" [ref=e476]':
+                    - /url: /shorts/s2XEaSWnsjM
+                  - generic [ref=e477]: 13K views
+                - button "More actions" [ref=e479] [cursor=pointer]:
+                  - generic [ref=e483]:
+                    - img
+              - generic [ref=e488]:
+                - link [ref=e489] [cursor=pointer]:
+                  - /url: /shorts/h-ZJaUNpYlI
+                - generic [ref=e493] [cursor=pointer]:
+                  - 'link "Doom tendrá un port oficial para las cortadoras de pasto robóticas de Husqvarna! #doom #husqvarna" [ref=e494]':
+                    - /url: /shorts/h-ZJaUNpYlI
+                  - generic [ref=e495]: 2.6K views
+                - button "More actions" [ref=e497] [cursor=pointer]:
+                  - generic [ref=e501]:
+                    - img
+              - generic [ref=e506]:
+                - link [ref=e507] [cursor=pointer]:
+                  - /url: /shorts/PTVqWpfZCiI
+                - generic [ref=e511] [cursor=pointer]:
+                  - 'link "¿Conocías el origen de estas famosas empresas de videojuegos? Pt.2 #videojuegos #nintendo #konami" [ref=e512]':
+                    - /url: /shorts/PTVqWpfZCiI
+                  - generic [ref=e513]: 4.5K views
+                - button "More actions" [ref=e515] [cursor=pointer]:
+                  - generic [ref=e519]:
+                    - img
+              - generic [ref=e524]:
+                - link [ref=e525] [cursor=pointer]:
+                  - /url: /shorts/KYCEm9gWzJE
+                - generic [ref=e529] [cursor=pointer]:
+                  - 'link "¿Conocías el origen de estas famosas empresas de videojuegos? Pt.1 #videojuegos #sega #nintendo" [ref=e530]':
+                    - /url: /shorts/KYCEm9gWzJE
+                  - generic [ref=e531]: 7.4K views
+                - button "More actions" [ref=e533] [cursor=pointer]:
+                  - generic [ref=e537]:
+                    - img
+              - generic [ref=e542]:
+                - link [ref=e543] [cursor=pointer]:
+                  - /url: /shorts/N-1KLsN7jwo
+                - generic [ref=e547] [cursor=pointer]:
+                  - 'link "¿Quake 6 confirmado? #quake #idsoftware #bethesda #machinegames #quakecon #quake6" [ref=e548]':
+                    - /url: /shorts/N-1KLsN7jwo
+                  - generic [ref=e549]: 832 views
+                - button "More actions" [ref=e551] [cursor=pointer]:
+                  - generic [ref=e555]:
+                    - img
+            - button "Next" [ref=e561] [cursor=pointer]:
+              - generic [ref=e565]:
+                - img
+        - generic [ref=e572]:
+          - generic [ref=e573]:
+            - heading "Streams Pasados Play all" [level=2] [ref=e575]:
+              - link "Streams Pasados" [ref=e578] [cursor=pointer]:
+                - /url: /playlist?list=PLBPUXKj0KeW4Z-sDczeDYoYxveq1mX50j
+                - generic [ref=e579]: Streams Pasados
+              - link "Play all" [ref=e583] [cursor=pointer]:
+                - /url: /watch?v=libQDNJ8bA4&list=PLBPUXKj0KeW4Z-sDczeDYoYxveq1mX50j
+                - generic [ref=e587]:
+                  - img
+                - generic [ref=e588]: Play all
+            - generic [ref=e592]: "✨ ¿Te gusta lo que hago? Considera dejar una donación en la plataforma que prefieras. Puedes hacer un aporte de una vez o suscribirte para un aporte mensual: Miembro de YouTube: https://www.youtube.com/KrisEnigma/join eSponsor: http://esponsor.com/KrisEnigma/donate Ko-Fi: https://ko-fi.com/krisenigma Patreon: https://patreon.com/KrisEnigma Conéctate conmigo en mis redes sociales: 📹 TikTok: https://www.tiktok.com/@KrisEnigma 🗨️ Discord: https://dsc.gg/krisenigma 📸 Instagram: https://www.instagram.com/KrisEnigma 🐦 Twitter: https://twitter.com/KrisEnigma Si te gusta la música de videojuegos, visita mi otro canal: 🎵 Psycho Crusher: https://youtube.com/PsychoCrusherVGM Suscríbete y únete a nuestra comunidad. ¡Gracias por ver y apoyar mi canal!"
+          - generic [ref=e594]:
+            - generic [ref=e597]:
+              - generic [ref=e599]:
+                - link [ref=e601] [cursor=pointer]:
+                  - /url: /watch?v=libQDNJ8bA4
+                - generic [ref=e603] [cursor=pointer]:
+                  - generic [ref=e605]:
+                    - 'heading "🔴 Hablando encima de #TheGameAwards 2025! 4 hours, 7 minutes" [level=3] [ref=e606]':
+                      - 'link "🔴 Hablando encima de #TheGameAwards 2025! 4 hours, 7 minutes" [ref=e607]':
+                        - /url: /watch?v=libQDNJ8bA4
+                        - text: "🔴 Hablando encima de #TheGameAwards 2025!"
+                    - generic [ref=e609]:
+                      - generic "KrisEnigma" [ref=e614]:
+                        - link "KrisEnigma" [ref=e615]:
+                          - /url: /@KrisEnigma
+                      - generic [ref=e616]:
+                        - generic [ref=e617]: 146 views
+                        - generic [ref=e618]: •Streamed 4 months ago
+                  - button "Action menu" [ref=e621]:
+                    - generic [ref=e624]:
+                      - img
+              - generic [ref=e626]:
+                - link [ref=e628] [cursor=pointer]:
+                  - /url: /watch?v=IyMRQ80xUVE&pp=0gcJCQMLAYcqIYzv
+                - generic [ref=e630] [cursor=pointer]:
+                  - generic [ref=e632]:
+                    - heading "🔴 SHAW! GIT GUD! - Silksong 4 hours, 5 minutes" [level=3] [ref=e633]:
+                      - link "🔴 SHAW! GIT GUD! - Silksong 4 hours, 5 minutes" [ref=e634]:
+                        - /url: /watch?v=IyMRQ80xUVE&pp=0gcJCQMLAYcqIYzv
+                        - text: 🔴 SHAW! GIT GUD! - Silksong
+                    - generic [ref=e636]:
+                      - generic "KrisEnigma" [ref=e641]:
+                        - link "KrisEnigma" [ref=e642]:
+                          - /url: /@KrisEnigma
+                      - generic [ref=e643]:
+                        - generic [ref=e644]: 118 views
+                        - generic [ref=e645]: •Streamed 8 months ago
+                  - button "Action menu" [ref=e648]:
+                    - generic [ref=e651]:
+                      - img
+              - generic [ref=e653]:
+                - link [ref=e655] [cursor=pointer]:
+                  - /url: /watch?v=rQecJyAUSmU
+                - generic [ref=e657] [cursor=pointer]:
+                  - generic [ref=e659]:
+                    - 'heading "🔴 Parreando Demonios! - DOOM: The Dark Ages (Parte 6) 2 hours, 36 minutes" [level=3] [ref=e660]':
+                      - 'link "🔴 Parreando Demonios! - DOOM: The Dark Ages (Parte 6) 2 hours, 36 minutes" [ref=e661]':
+                        - /url: /watch?v=rQecJyAUSmU
+                        - text: "🔴 Parreando Demonios! - DOOM: The Dark Ages (Parte 6)"
+                    - generic [ref=e663]:
+                      - generic "KrisEnigma" [ref=e668]:
+                        - link "KrisEnigma" [ref=e669]:
+                          - /url: /@KrisEnigma
+                      - generic [ref=e670]:
+                        - generic [ref=e671]: 58 views
+                        - generic [ref=e672]: •Streamed 10 months ago
+                  - button "Action menu" [ref=e675]:
+                    - generic [ref=e678]:
+                      - img
+              - generic [ref=e680]:
+                - link [ref=e682] [cursor=pointer]:
+                  - /url: /watch?v=dnJS81-kxM0
+                - generic [ref=e684] [cursor=pointer]:
+                  - generic [ref=e686]:
+                    - 'heading "🔴 Parreando Demonios! - DOOM: The Dark Ages (Parte 5) 3 hours, 8 minutes" [level=3] [ref=e687]':
+                      - 'link "🔴 Parreando Demonios! - DOOM: The Dark Ages (Parte 5) 3 hours, 8 minutes" [ref=e688]':
+                        - /url: /watch?v=dnJS81-kxM0
+                        - text: "🔴 Parreando Demonios! - DOOM: The Dark Ages (Parte 5)"
+                    - generic [ref=e690]:
+                      - generic "KrisEnigma" [ref=e695]:
+                        - link "KrisEnigma" [ref=e696]:
+                          - /url: /@KrisEnigma
+                      - generic [ref=e697]:
+                        - generic [ref=e698]: 69 views
+                        - generic [ref=e699]: •Streamed 11 months ago
+                  - button "Action menu" [ref=e702]:
+                    - generic [ref=e705]:
+                      - img
+              - generic [ref=e707]:
+                - link [ref=e709] [cursor=pointer]:
+                  - /url: /watch?v=NV4tmQgu2WM
+                - generic [ref=e711] [cursor=pointer]:
+                  - generic [ref=e713]:
+                    - 'heading "🔴 El Dark Souls de los Fortnite: Elden Ring Nightreign! 2 hours, 57 minutes" [level=3] [ref=e714]':
+                      - 'link "🔴 El Dark Souls de los Fortnite: Elden Ring Nightreign! 2 hours, 57 minutes" [ref=e715]':
+                        - /url: /watch?v=NV4tmQgu2WM
+                        - text: "🔴 El Dark Souls de los Fortnite: Elden Ring Nightreign!"
+                    - generic [ref=e717]:
+                      - generic "KrisEnigma" [ref=e722]:
+                        - link "KrisEnigma" [ref=e723]:
+                          - /url: /@KrisEnigma
+                      - generic [ref=e724]:
+                        - generic [ref=e725]: 149 views
+                        - generic [ref=e726]: •Streamed 11 months ago
+                  - button "Action menu" [ref=e729]:
+                    - generic [ref=e732]:
+                      - img
+              - generic [ref=e734]:
+                - link [ref=e736] [cursor=pointer]:
+                  - /url: /watch?v=8LlBbOKf91E
+                - generic [ref=e738] [cursor=pointer]:
+                  - generic [ref=e740]:
+                    - 'heading "🔴 Parreando Demonios! - DOOM: The Dark Ages (Parte 4) 2 hours, 31 minutes" [level=3] [ref=e741]':
+                      - 'link "🔴 Parreando Demonios! - DOOM: The Dark Ages (Parte 4) 2 hours, 31 minutes" [ref=e742]':
+                        - /url: /watch?v=8LlBbOKf91E
+                        - text: "🔴 Parreando Demonios! - DOOM: The Dark Ages (Parte 4)"
+                    - generic [ref=e744]:
+                      - generic "KrisEnigma" [ref=e749]:
+                        - link "KrisEnigma" [ref=e750]:
+                          - /url: /@KrisEnigma
+                      - generic [ref=e751]:
+                        - generic [ref=e752]: 77 views
+                        - generic [ref=e753]: •Streamed 11 months ago
+                  - button "Action menu" [ref=e756]:
+                    - generic [ref=e759]:
+                      - img
+            - button "Next" [ref=e762] [cursor=pointer]:
+              - generic [ref=e766]:
+                - img
+        - generic [ref=e773]:
+          - heading "Past live streams" [level=2] [ref=e776]:
+            - link "Past live streams" [ref=e779] [cursor=pointer]:
+              - /url: /@KrisEnigma/videos?view=2&sort=dd&live_view=503&shelf_id=7
+              - generic [ref=e780]: Past live streams
+          - generic [ref=e782]:
+            - generic [ref=e785]:
+              - generic [ref=e787]:
+                - link [ref=e789] [cursor=pointer]:
+                  - /url: /watch?v=libQDNJ8bA4&pp=0gcJCQMLAYcqIYzv
+                - generic [ref=e791] [cursor=pointer]:
+                  - generic [ref=e793]:
+                    - 'heading "🔴 Hablando encima de #TheGameAwards 2025! 4 hours, 7 minutes" [level=3] [ref=e794]':
+                      - 'link "🔴 Hablando encima de #TheGameAwards 2025! 4 hours, 7 minutes" [ref=e795]':
+                        - /url: /watch?v=libQDNJ8bA4&pp=0gcJCQMLAYcqIYzv
+                        - text: "🔴 Hablando encima de #TheGameAwards 2025!"
+                    - generic [ref=e798]:
+                      - generic [ref=e799]: 146 views
+                      - generic [ref=e800]: •Streamed 4 months ago
+                  - button "Action menu" [ref=e803]:
+                    - generic [ref=e806]:
+                      - img
+              - generic [ref=e808]:
+                - link [ref=e810] [cursor=pointer]:
+                  - /url: /watch?v=IyMRQ80xUVE
+                - generic [ref=e812] [cursor=pointer]:
+                  - generic [ref=e814]:
+                    - heading "🔴 SHAW! GIT GUD! - Silksong 4 hours, 5 minutes" [level=3] [ref=e815]:
+                      - link "🔴 SHAW! GIT GUD! - Silksong 4 hours, 5 minutes" [ref=e816]:
+                        - /url: /watch?v=IyMRQ80xUVE
+                        - text: 🔴 SHAW! GIT GUD! - Silksong
+                    - generic [ref=e819]:
+                      - generic [ref=e820]: 118 views
+                      - generic [ref=e821]: •Streamed 8 months ago
+                  - button "Action menu" [ref=e824]:
+                    - generic [ref=e827]:
+                      - img
+              - generic [ref=e829]:
+                - link [ref=e831] [cursor=pointer]:
+                  - /url: /watch?v=rQecJyAUSmU
+                - generic [ref=e833] [cursor=pointer]:
+                  - generic [ref=e835]:
+                    - 'heading "🔴 Parreando Demonios! - DOOM: The Dark Ages (Parte 6) 2 hours, 36 minutes" [level=3] [ref=e836]':
+                      - 'link "🔴 Parreando Demonios! - DOOM: The Dark Ages (Parte 6) 2 hours, 36 minutes" [ref=e837]':
+                        - /url: /watch?v=rQecJyAUSmU
+                        - text: "🔴 Parreando Demonios! - DOOM: The Dark Ages (Parte 6)"
+                    - generic [ref=e840]:
+                      - generic [ref=e841]: 58 views
+                      - generic [ref=e842]: •Streamed 10 months ago
+                  - button "Action menu" [ref=e845]:
+                    - generic [ref=e848]:
+                      - img
+              - generic [ref=e850]:
+                - link [ref=e852] [cursor=pointer]:
+                  - /url: /watch?v=dnJS81-kxM0
+                - generic [ref=e854] [cursor=pointer]:
+                  - generic [ref=e856]:
+                    - 'heading "🔴 Parreando Demonios! - DOOM: The Dark Ages (Parte 5) 3 hours, 8 minutes" [level=3] [ref=e857]':
+                      - 'link "🔴 Parreando Demonios! - DOOM: The Dark Ages (Parte 5) 3 hours, 8 minutes" [ref=e858]':
+                        - /url: /watch?v=dnJS81-kxM0
+                        - text: "🔴 Parreando Demonios! - DOOM: The Dark Ages (Parte 5)"
+                    - generic [ref=e861]:
+                      - generic [ref=e862]: 69 views
+                      - generic [ref=e863]: •Streamed 11 months ago
+                  - button "Action menu" [ref=e866]:
+                    - generic [ref=e869]:
+                      - img
+              - generic [ref=e871]:
+                - link [ref=e873] [cursor=pointer]:
+                  - /url: /watch?v=NV4tmQgu2WM
+                - generic [ref=e875] [cursor=pointer]:
+                  - generic [ref=e877]:
+                    - 'heading "🔴 El Dark Souls de los Fortnite: Elden Ring Nightreign! 2 hours, 57 minutes" [level=3] [ref=e878]':
+                      - 'link "🔴 El Dark Souls de los Fortnite: Elden Ring Nightreign! 2 hours, 57 minutes" [ref=e879]':
+                        - /url: /watch?v=NV4tmQgu2WM
+                        - text: "🔴 El Dark Souls de los Fortnite: Elden Ring Nightreign!"
+                    - generic [ref=e882]:
+                      - generic [ref=e883]: 149 views
+                      - generic [ref=e884]: •Streamed 11 months ago
+                  - button "Action menu" [ref=e887]:
+                    - generic [ref=e890]:
+                      - img
+              - generic [ref=e892]:
+                - link [ref=e894] [cursor=pointer]:
+                  - /url: /watch?v=8LlBbOKf91E
+                - generic [ref=e896] [cursor=pointer]:
+                  - generic [ref=e898]:
+                    - 'heading "🔴 Parreando Demonios! - DOOM: The Dark Ages (Parte 4) 2 hours, 31 minutes" [level=3] [ref=e899]':
+                      - 'link "🔴 Parreando Demonios! - DOOM: The Dark Ages (Parte 4) 2 hours, 31 minutes" [ref=e900]':
+                        - /url: /watch?v=8LlBbOKf91E
+                        - text: "🔴 Parreando Demonios! - DOOM: The Dark Ages (Parte 4)"
+                    - generic [ref=e903]:
+                      - generic [ref=e904]: 77 views
+                      - generic [ref=e905]: •Streamed 11 months ago
+                  - button "Action menu" [ref=e908]:
+                    - generic [ref=e911]:
+                      - img
+            - button "Next" [ref=e914] [cursor=pointer]:
+              - generic [ref=e918]:
+                - img
+        - generic [ref=e925]:
+          - heading "Featured Channels" [level=2] [ref=e928]:
+            - link "Featured Channels" [ref=e931] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=e932]: Featured Channels
+          - generic [ref=e939]:
+            - link "Psycho Crusher VGM 958 subscribers" [ref=e940] [cursor=pointer]:
+              - /url: /@PsychoCrusherVGM
+              - generic [ref=e942]: Psycho Crusher VGM
+              - generic [ref=e943]: 958 subscribers
+            - button "Subscribe" [ref=e947] [cursor=pointer]:
+              - generic [ref=e948]: Subscribe
+        - generic [ref=e955]:
+          - heading "Posts" [level=2] [ref=e958]:
+            - link "Posts" [ref=e961] [cursor=pointer]:
+              - /url: /channel/UCyWZpWhIeJCyS3mVUu4S7yA/posts
+              - generic [ref=e962]: Posts
+          - 'link "KrisEnigma • 3 years ago Con los Game Awards 2022 concluidos y con el ganador definido: ¿Qué te pareció el ganador del GOTY 2022? 58 votes Vote now Like this post along with 6 other people tooltip 6 likes Dislike this post tooltip Share tooltip 2 comments tooltip" [ref=e969] [cursor=pointer]':
+            - generic [ref=e970]:
+              - link [ref=e972]:
+                - /url: /@KrisEnigma
+              - link "KrisEnigma" [ref=e975]:
+                - /url: /@KrisEnigma
+              - generic [ref=e976]: •
+              - link "3 years ago" [ref=e978]:
+                - /url: /post/UgkxMmUO0ObusrxyDg7uHOqnou9L_ySfvteQ
+            - generic [ref=e979]:
+              - generic [ref=e981]: "Con los Game Awards 2022 concluidos y con el ganador definido: ¿Qué te pareció el ganador del GOTY 2022?"
+              - generic [ref=e982]:
+                - generic [ref=e983]: 58 votes
+                - link "Vote now" [ref=e987]:
+                  - /url: /post/UgkxMmUO0ObusrxyDg7uHOqnou9L_ySfvteQ
+                  - generic [ref=e988]: Vote now
+            - generic [ref=e994]:
+              - generic [ref=e995]:
+                - link "Like this post along with 6 other people" [ref=e997]:
+                  - /url: https://accounts.google.com/ServiceLogin?service=youtube&uilel=3&passive=true&continue=https%3A%2F%2Fwww.youtube.com%2Fsignin%3Faction_handle_signin%3Dtrue%26app%3Ddesktop%26hl%3Den%26next%3D%252F&hl=en
+                  - generic [ref=e1001]:
+                    - img
+                - tooltip "tooltip"
+              - generic "6 likes" [ref=e1005]: "6"
+              - generic [ref=e1006]:
+                - link "Dislike this post" [ref=e1008]:
+                  - /url: https://accounts.google.com/ServiceLogin?service=youtube&uilel=3&passive=true&continue=https%3A%2F%2Fwww.youtube.com%2Fsignin%3Faction_handle_signin%3Dtrue%26app%3Ddesktop%26hl%3Den%26next%3D%252F&hl=en
+                  - generic [ref=e1012]:
+                    - img
+                - tooltip "tooltip"
+              - generic [ref=e1017]:
+                - button "Share" [ref=e1019]:
+                  - generic [ref=e1023]:
+                    - img
+                - tooltip "tooltip"
+              - generic [ref=e1028]:
+                - link "2 comments" [ref=e1030]:
+                  - /url: https://accounts.google.com/ServiceLogin?service=youtube&uilel=3&passive=true&continue=https%3A%2F%2Fwww.youtube.com%2Fsignin%3Faction_handle_signin%3Dtrue%26app%3Ddesktop%26hl%3Den%26next%3D%252Fpost%252FUgkxMmUO0ObusrxyDg7uHOqnou9L_ySfvteQ&hl=en
+                  - generic [ref=e1034]:
+                    - img
+                  - generic [ref=e1035]: "2"
+                - tooltip "tooltip"
+    - text: •
