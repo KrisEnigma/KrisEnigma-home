@@ -50,6 +50,13 @@
   min-height: calc(100vh - 110px);
   position: relative;
   z-index: 10;
+  gap: 1px;
+  background: linear-gradient(180deg,
+    transparent 0%,
+    rgba(0,225,175,0.18) 30%,
+    rgba(255,255,255,0.06) 50%,
+    rgba(122,83,221,0.18) 70%,
+    transparent 100%);
 }
 
 .ke-panel {
@@ -116,7 +123,7 @@
   background: radial-gradient(circle, rgba(122,83,221,0.08) 0%, transparent 70%);
 }
 
-.ke-panel-creator { border-right: 1px solid rgba(0,225,175,0.1); }
+.ke-panel-creator { border-right: none; }
 
 .ke-panel-creator::after {
   background-image:
@@ -154,37 +161,7 @@
   background-position: center, center, 38% center;
 }
 
-/* ---- Divider ---- */
-.ke-divider {
-  position: absolute;
-  left: 50%;
-  top: 0; bottom: 0;
-  width: 1px;
-  background: linear-gradient(180deg, transparent 0%, rgba(0,225,175,0.2) 25%, rgba(255,255,255,0.06) 50%, rgba(122,83,221,0.2) 75%, transparent 100%);
-  transform: translateX(-50%);
-  z-index: 20;
-  pointer-events: none;
-}
-
-.ke-divider-dot {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 32px; height: 32px;
-  border-radius: 50%;
-  background: rgba(10,10,15,0.95);
-  border: 1px solid rgba(0,225,175,0.25);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.ke-divider-dot-inner {
-  width: 8px; height: 8px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #00e1af, #7a53dd);
-}
+/* ---- Divider (gap-based, no element needed) ---- */
 
 /* ---- Panel content ---- */
 .ke-tag {
@@ -354,8 +331,15 @@
     border-right: none;
     border-bottom: 1px solid rgba(0,225,175,0.1);
   }
+  .ke-split {
+    gap: 1px;
+    background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(0,225,175,0.18) 30%,
+      rgba(122,83,221,0.18) 70%,
+      transparent 100%);
+  }
   .ke-panel { padding: 72px 32px 48px; }
-  .ke-divider { display: none; }
   .ke-top-nav { top: 12px; left: 12px; }
   .ke-top-link { font-size: 11px; padding: 8px 12px; min-height: 36px; }
   .ke-name-creator { font-size: 28px; }
