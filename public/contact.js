@@ -58,6 +58,13 @@ if (!window.__krisContactLoaded) {
           if (msg) { msg.className = 'feedback-msg success'; msg.textContent = i18n.success; }
           form.reset();
           formStartTimestamp = Date.now();
+          if (typeof window.gtag !== 'undefined') {
+            window.gtag('event', 'contact_form_submit', {
+              event_category: 'Conversion',
+              event_label: subject,
+              value: 1
+            });
+          }
         } else {
           if (msg) { msg.className = 'feedback-msg error'; msg.textContent = result.error || i18n.error; }
         }

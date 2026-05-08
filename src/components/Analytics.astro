@@ -80,5 +80,18 @@ const { gtagId } = Astro.props;
       }
     } catch (e) {}
   });
+
+  // CTA click tracking — fires for any element with data-track attribute
+  document.addEventListener('click', function(e) {
+    try {
+      var el = e.target.closest('[data-track]');
+      if (!el || typeof window.gtag === 'undefined') return;
+      window.gtag('event', el.dataset.track, {
+        event_category: 'CTA',
+        event_label: el.dataset.label || el.textContent.trim().slice(0, 50),
+        value: 1
+      });
+    } catch (e) {}
+  });
 })();
 `}></script>

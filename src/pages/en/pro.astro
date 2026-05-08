@@ -124,19 +124,19 @@ const experience = [
         </div>
 
         <div class="hero-links">
-          <a href="https://github.com/KrisEnigma" target="_blank" rel="noopener noreferrer" class="hero-btn hero-btn-outline">
+          <a href="https://github.com/KrisEnigma" target="_blank" rel="noopener noreferrer" class="hero-btn hero-btn-outline" data-track="cta_click" data-label="pro_github">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
             {t('pro.github.label')}
           </a>
-          <a href="https://linkedin.com/in/krisescobar" target="_blank" rel="noopener noreferrer" class="hero-btn hero-btn-outline">
+          <a href="https://linkedin.com/in/krisescobar" target="_blank" rel="noopener noreferrer" class="hero-btn hero-btn-outline" data-track="cta_click" data-label="pro_linkedin">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
             {t('pro.linkedin.label')}
           </a>
-          <a href="/cv.pdf" download class="hero-btn hero-btn-primary">
+          <a href="/cv.pdf" download class="hero-btn hero-btn-primary" data-track="cta_click" data-label="pro_cv_download">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             {t('pro.cv.label')}
           </a>
-          <a href="/en/contact" class="hero-btn hero-btn-ghost">{t('pro.contact.label')}</a>
+          <a href="/en/contact" class="hero-btn hero-btn-ghost" data-track="cta_click" data-label="pro_contact_cta">{t('pro.contact.label')}</a>
         </div>
       </header>
 
@@ -256,6 +256,7 @@ const experience = [
   .hero-btn-outline { color: rgba(255,255,255,0.6); border: 1px solid rgba(255,255,255,0.12); background: transparent; }
   .hero-btn-outline:hover { color: #ffffff; border-color: rgba(255,255,255,0.25); }
   .hero-btn-primary { color: #00e1af; border: 1px solid rgba(0,225,175,0.3); background: rgba(0,225,175,0.08); }
+  .hero-btn-primary:hover { box-shadow: 0 0 20px rgba(0,225,175,0.16), 0 0 6px rgba(0,225,175,0.08); }
   .hero-btn-ghost { color: rgba(255,255,255,0.4); border: 1px solid rgba(255,255,255,0.08); background: transparent; }
   /* (shared page-section styles come from global.css) */
   .projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
@@ -303,7 +304,7 @@ const experience = [
 
   @media (max-width: 640px) {
     .back-nav { top: 12px; left: 12px; gap: 6px; }
-    .back-link { font-size: 11px; padding: 4px 8px; }
+    .back-link { font-size: 11px; padding: 8px 12px; min-height: 36px; }
     .pro-inner { padding: 72px 20px 40px; }
     .pro-hero { margin-bottom: 44px; }
     .pro-hero-identity { gap: 16px; margin-bottom: 18px; }

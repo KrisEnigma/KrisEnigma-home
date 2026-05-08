@@ -35,6 +35,7 @@ export const ui = {
     'creator.sections.projects': 'Proyectos',
     'creator.contact.label': 'Contacto',
     'creator.mediakit.label': 'Media Kit',
+    'creator.reach.audience': 'Chile · México · Argentina',
     'creator.footer.tagline': 'Músico • Gamer • Creador de Contenido',
 
     // Pro
@@ -127,6 +128,7 @@ export const ui = {
     'creator.sections.projects': 'Projects',
     'creator.contact.label': 'Contact',
     'creator.mediakit.label': 'Media Kit',
+    'creator.reach.audience': 'Chile · México · Argentina',
     'creator.footer.tagline': 'Musician • Gamer • Content Creator',
 
     // Pro

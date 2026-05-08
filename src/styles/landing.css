@@ -148,8 +148,8 @@
 
 .ke-panel-pro::after {
   background-image:
-    linear-gradient(180deg, rgba(5,5,8,0.72) 0%, rgba(5,5,8,0.52) 45%, rgba(5,5,8,0.8) 100%),
-    linear-gradient(240deg, rgba(122,83,221,0.18) 0%, rgba(122,83,221,0.05) 50%, rgba(5,5,8,0.25) 100%),
+    linear-gradient(180deg, rgba(5,5,8,0.58) 0%, rgba(5,5,8,0.36) 45%, rgba(5,5,8,0.64) 100%),
+    linear-gradient(240deg, rgba(122,83,221,0.22) 0%, rgba(122,83,221,0.07) 50%, transparent 100%),
     url('/kriscode.webp');
   background-position: center, center, 38% center;
 }
@@ -206,7 +206,7 @@
   display: flex;
   gap: 16px;
   margin-bottom: 24px;
-  opacity: 0.35;
+  opacity: 0.50;
 }
 
 .ke-icon { width: 20px; height: 20px; color: rgba(255,255,255,0.8); }
@@ -227,6 +227,10 @@
   font-style: normal;
   letter-spacing: 0.04em;
   font-size: 30px;
+}
+
+.ke-name-pro {
+  font-size: 38px;
 }
 
 .ke-name-accent { color: #9b7fee; }
@@ -277,6 +281,13 @@
 }
 
 .ke-panel:hover .ke-cta { transform: translateY(-1px); opacity: 0.9; }
+
+.ke-panel:hover .ke-cta-creator {
+  box-shadow: 0 0 20px rgba(0,225,175,0.18), 0 0 6px rgba(0,225,175,0.1);
+}
+.ke-panel:hover .ke-cta-pro {
+  box-shadow: 0 0 20px rgba(122,83,221,0.22), 0 0 6px rgba(122,83,221,0.12);
+}
 
 .ke-cta-creator { background: rgba(0,225,175,0.1);  color: #00e1af; border: 1px solid rgba(0,225,175,0.25); }
 .ke-cta-pro     { background: rgba(122,83,221,0.1); color: #9b7fee; border: 1px solid rgba(122,83,221,0.25); }
@@ -346,8 +357,9 @@
   .ke-panel { padding: 72px 32px 48px; }
   .ke-divider { display: none; }
   .ke-top-nav { top: 12px; left: 12px; }
-  .ke-top-link { font-size: 11px; padding: 4px 8px; }
+  .ke-top-link { font-size: 11px; padding: 8px 12px; min-height: 36px; }
   .ke-name-creator { font-size: 28px; }
+  .ke-name-pro { font-size: 30px; }
   .ke-footer-inner { padding: 18px 20px 22px; }
   .ke-footer-links { gap: 12px; }
   .ke-panel::after {
