@@ -1,0 +1,101 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { useTranslations } from "../../i18n/utils";
+import "../../styles/landing.css";
+import Logo from "../Logo.astro";
+
+interface Props {
+  lang: 'es' | 'en';
+}
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const prefix = lang === 'en' ? '/en' : '';
+---
+
+<Layout
+  title="KrisEnigma"
+  description={lang === 'en'
+    ? "Musician, Gamer and Content Creator · AI Solutions & Full-Stack Developer"
+    : "Músico, Gamer y Creador de Contenido · AI Solutions & Full-Stack Developer"}
+  noBackground={true}
+>
+  <div class="ke-landing">
+    <div class="ke-bg-grid"></div>
+
+    <div class="ke-top-nav">
+      <a href={`${prefix}/contact`} class="ke-top-link">{t('nav.contact')}</a>
+    </div>
+
+    <div class="ke-split">
+      <!-- Panel creador -->
+      <a href={`${prefix}/creator`} class="ke-panel ke-panel-creator" aria-label={t('landing.creator.cta')} data-track="cta_click" data-label="panel_creator">
+        <div class="ke-panel-glow ke-glow-creator"></div>
+
+        <span class="ke-tag ke-tag-creator">{t('landing.creator.tag')}</span>
+
+        <div class="ke-icon-row">
+          <svg class="ke-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="4"/><path d="M10 9l5 3-5 3z"/></svg>
+          <svg class="ke-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M8 11.973c2.5-1.473 5.5-.973 7.5.527M9 15c1.5-1 4-1 5 .5M7 9c2-1 6-2 10 .5"/></svg>
+          <svg class="ke-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+        </div>
+
+        <div class="ke-name ke-name-creator"><Logo size="text-5xl lg:text-6xl" /></div>
+        <div class="ke-subtitle">{t('landing.creator.subtitle')}</div>
+
+        <div class="ke-pills">
+          <span class="ke-pill ke-pill-creator">YouTube</span>
+          <span class="ke-pill ke-pill-creator">Spotify</span>
+          <span class="ke-pill ke-pill-creator">Tercer Ojo</span>
+          <span class="ke-pill ke-pill-creator">Psycho Crusher</span>
+          <span class="ke-pill ke-pill-creator">{lang === 'en' ? '26K+ followers' : '26K+ seguidores'}</span>
+        </div>
+
+        <span class="ke-cta ke-cta-creator">{t('landing.creator.cta')}</span>
+        <span class="ke-hover-hint">{t('landing.hover')} →</span>
+      </a>
+
+      <!-- Panel profesional -->
+      <a href={`${prefix}/pro`} class="ke-panel ke-panel-pro" aria-label={t('landing.pro.cta')} data-track="cta_click" data-label="panel_pro">
+        <div class="ke-panel-glow ke-glow-pro"></div>
+
+        <span class="ke-tag ke-tag-pro">{t('landing.pro.tag')}</span>
+
+        <div class="ke-icon-row">
+          <svg class="ke-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          <svg class="ke-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          <svg class="ke-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>
+        </div>
+
+        <div class="ke-name ke-name-pro"><span class="ke-name-accent">Kris</span> Escobar</div>
+        <div class="ke-subtitle">{t('landing.pro.subtitle')}</div>
+
+        <div class="ke-pills">
+          <span class="ke-pill ke-pill-pro">ElevenLabs</span>
+          <span class="ke-pill ke-pill-pro">Node · React · Next.js</span>
+          <span class="ke-pill ke-pill-pro">Cloudflare · Firebase</span>
+          <span class="ke-pill ke-pill-pro">RAG · Ollama</span>
+          <span class="ke-pill ke-pill-pro">Solutions Engineering</span>
+        </div>
+
+        <span class="ke-cta ke-cta-pro">{t('landing.pro.cta')}</span>
+        <span class="ke-hover-hint">← {t('landing.hover')}</span>
+      </a>
+    </div>
+
+    <footer class="ke-footer">
+      <div class="ke-footer-inner">
+        <div class="ke-footer-brand">
+          <Logo />
+        </div>
+        <div class="ke-footer-links">
+          <a href={`${prefix}/creator`} class="ke-footer-link">{t('nav.creator')}</a>
+          <a href={`${prefix}/pro`} class="ke-footer-link">{t('nav.pro')}</a>
+          <a href={`${prefix}/contact`} class="ke-footer-link">{t('nav.contact')}</a>
+        </div>
+        <p class="ke-footer-copy">© <span id="currentYear"></span> KrisEnigma. {t('footer.rights')}</p>
+      </div>
+    </footer>
+  </div>
+</Layout>
+
+<script is:inline>document.getElementById('currentYear').textContent = new Date().getFullYear();</script>
