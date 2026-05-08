@@ -1,0 +1,8 @@
+/*
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.cdnfonts.com; img-src 'self' data: https: blob:; font-src 'self' https://fonts.cdnfonts.com; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://mailer.krisenigma.workers.dev; media-src 'self' https:; frame-src 'self' https://www.youtube.com https://youtube.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-XSS-Protection: 1; mode=block
+  Permissions-Policy: geolocation=(), microphone=(), camera=(), payment=(), usb=(), magnetometer=(), gyroscope=()
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
