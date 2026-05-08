@@ -165,17 +165,17 @@
 
 .page-glow-contact {
   position: fixed;
-  bottom: -60px;
+  top: -180px;
   left: 50%;
   transform: translateX(-50%);
-  width: 800px;
-  height: 400px;
+  width: 900px;
+  height: 650px;
   border-radius: 50%;
-  background:
-    radial-gradient(ellipse at 28% 50%, rgba(0,225,175,0.08) 0%, transparent 55%),
-    radial-gradient(ellipse at 72% 50%, rgba(122,83,221,0.08) 0%, transparent 55%);
+  background: radial-gradient(ellipse at 40% 35%, rgba(0,225,175,0.09) 0%, rgba(0,225,175,0.03) 38%, transparent 65%),
+              radial-gradient(ellipse at 65% 55%, rgba(122,83,221,0.10) 0%, rgba(122,83,221,0.03) 38%, transparent 65%);
   pointer-events: none;
   z-index: 3;
+  animation: glow-breathe 10s ease-in-out infinite;
 }
 
 @keyframes glow-breathe {
