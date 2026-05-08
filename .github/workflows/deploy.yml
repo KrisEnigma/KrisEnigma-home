@@ -42,6 +42,7 @@ jobs:
 
     - name: Copy home build to deployment
       run: |
+        rm -rf deployment/cronica deployment/gamesalad deployment/gastitos deployment/hud deployment/logclean deployment/mdtohtml deployment/workout deployment/functions
         cp -r home/dist/* deployment/
 
     - name: Deploy to GitHub
