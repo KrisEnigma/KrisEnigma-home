@@ -12,15 +12,14 @@ export const ui = {
     'nav.back': 'Volver',
 
     // Landing
-    'landing.creator.tag': 'Creador · Músico · Gamer',
+    'landing.creator.tag': 'Creador, músico, gamer',
     'landing.creator.name': 'KrisEnigma',
     'landing.creator.subtitle': 'Contenido de videojuegos, música y proyectos creativos desde 2005',
     'landing.creator.cta': 'Ver proyectos creativos',
-    'landing.pro.tag': 'AI Solutions · Full-Stack Dev',
+    'landing.pro.tag': 'AI Solutions, Full-Stack Dev',
     'landing.pro.name': 'Kris Escobar',
-    'landing.pro.subtitle': 'AI Solutions · Desarrollador full-stack · Proyectos en producción.',
+    'landing.pro.subtitle': 'AI Solutions, desarrollador full-stack. Proyectos en producción.',
     'landing.pro.cta': 'Ver perfil profesional',
-    'landing.hover': 'explorar',
 
     // Creator
     'creator.tagline': 'Músico · Gamer · Creador de Contenido',
@@ -28,8 +27,8 @@ export const ui = {
     'creator.bio.p2': 'Creador del enigmático juego <strong class="text-theme-primary italic font-uni-neue">Tercer Ojo</strong>, activo desde 2006 con una comunidad dedicada durante casi dos décadas. También mantengo <strong class="text-theme-primary italic font-uni-neue">Crónica</strong>, mi archivo personal con más de 900 juegos completados.',
     'creator.bio.p3': 'Con <strong class="text-theme-primary italic font-uni-neue">Psycho Crusher</strong>, mi proyecto de rock de videojuegos iniciado en 2010, he recorrido Chile llevando temazos clásicos y modernos con guitarra eléctrica. Si has estado en eventos como <strong class="text-theme-primary italic font-uni-neue">Festigame</strong> o <strong class="text-theme-primary italic font-uni-neue">Minami Convention</strong>, probablemente me has escuchado. Dos álbumes en todas las plataformas musicales.',
     'creator.bio.p4': 'He trabajado en múltiples facetas de la industria: guionista, editor, presentador en canales de cable como <strong class="text-theme-primary italic font-uni-neue">ControlVG</strong> y <strong class="text-theme-primary italic font-uni-neue">NexoPlay</strong>, e invitado en <strong class="text-theme-primary italic font-uni-neue">IGN Latam</strong>. He cubierto la E3 en Los Ángeles, entrevistando a Reggie Fils-Aimé (Nintendo of America) y Ed Boon (NetherRealm Studios), entre muchos otros.',
-    'creator.bio.p5': 'En Instagram y TikTok comparto datos rápidos y curiosidades de gaming. En YouTube analizo juegos e industria con un enfoque crítico y artístico — contenido en profundidad que me permite ir más allá de la superficie. También hago streams en Twitch y comento los eventos más importantes del año, como The Game Awards.',
-    'creator.bio.p6': 'Si buscas una voz que combine videojuegos, música y tecnología con credibilidad real y dos décadas de trayectoria, aquí estoy.',
+    'creator.bio.p5': 'En Instagram y TikTok comparto datos rápidos y curiosidades de gaming. En YouTube analizo juegos e industria con un enfoque crítico y artístico, publicando contenido en profundidad que me permite ir más allá de la superficie. También hago streams en Twitch y comento los eventos más importantes del año, como The Game Awards.',
+    'creator.bio.p6': 'Si buscas una voz que combine videojuegos, música y tecnología con credibilidad y dos décadas de trayectoria, aquí estoy.',
     'creator.sections.bio': 'Biografía',
     'creator.sections.content': 'Redes de Contenido',
     'creator.sections.projects': 'Proyectos',
@@ -40,7 +39,7 @@ export const ui = {
 
     // Pro
     'pro.tagline': 'AI Solutions & Technical Support · Full-Stack Developer',
-    'pro.bio': 'Technical builder con background full-stack — actualmente trabajando como Customer Support Specialist en ElevenLabs, una de las plataformas de voz IA líderes del mundo, con conocimiento de primera mano de sus APIs, modos de fallo y pain points de clientes en un entorno de soporte global de alto volumen. Stack que incluye Node.js, React, Next.js, TypeScript, Firebase, Supabase y Cloudflare Workers, respaldado por un historial consistente de software propio en producción.',
+    'pro.bio': 'Technical builder con background full-stack, actualmente trabajando como Customer Support Specialist en ElevenLabs, una de las plataformas de voz IA líderes del mundo, con conocimiento de primera mano de sus APIs, modos de fallo y pain points de clientes en un entorno de soporte global de alto volumen. Stack que incluye Node.js, React, Next.js, TypeScript, Firebase, Supabase y Cloudflare Workers, respaldado por un historial consistente de software propio en producción.',
     'pro.role': 'Customer Support Specialist',
     'pro.company': 'ElevenLabs',
     'pro.since': 'Desde noviembre 2024',
@@ -105,24 +104,23 @@ export const ui = {
     'nav.back': 'Back',
 
     // Landing
-    'landing.creator.tag': 'Creator · Musician · Gamer',
+    'landing.creator.tag': 'Creator, musician, gamer',
     'landing.creator.name': 'KrisEnigma',
     'landing.creator.subtitle': 'Gaming content, original music and creative projects since 2005',
     'landing.creator.cta': 'View creative projects',
-    'landing.pro.tag': 'AI Solutions · Full-Stack Dev',
+    'landing.pro.tag': 'AI Solutions, Full-Stack Dev',
     'landing.pro.name': 'Kris Escobar',
-    'landing.pro.subtitle': 'AI Solutions · Full-stack developer · Projects in production.',
+    'landing.pro.subtitle': 'AI Solutions, full-stack developer. Projects in production.',
     'landing.pro.cta': 'View professional profile',
-    'landing.hover': 'explore',
 
     // Creator
     'creator.tagline': 'Musician · Gamer · Content Creator',
-    'creator.bio.p1': 'Hey! I\'m <strong class="text-theme-primary italic font-uni-neue">KrisEnigma</strong>, a gamer and musician who lives and breathes video games and rock. Since childhood — joystick in one hand, guitar in the other — I\'ve lived through the evolution of gaming, from Atari to the current generation.',
+    'creator.bio.p1': 'Hey! I\'m <strong class="text-theme-primary italic font-uni-neue">KrisEnigma</strong>, a gamer and musician who lives and breathes video games and rock. Since childhood, with a joystick in one hand and a guitar in the other, I\'ve lived through the evolution of gaming, from Atari to the current generation.',
     'creator.bio.p2': 'Creator of the enigmatic puzzle game <strong class="text-theme-primary italic font-uni-neue">Tercer Ojo</strong>, active since 2006 with a dedicated community for nearly two decades. I also maintain <strong class="text-theme-primary italic font-uni-neue">Crónica</strong>, my personal archive of 900+ completed games.',
     'creator.bio.p3': 'With <strong class="text-theme-primary italic font-uni-neue">Psycho Crusher</strong>, my video game rock project since 2010, I\'ve toured Chile bringing classic and modern game soundtracks to life on electric guitar. If you\'ve been at events like <strong class="text-theme-primary italic font-uni-neue">Festigame</strong> or <strong class="text-theme-primary italic font-uni-neue">Minami Convention</strong>, you\'ve probably heard me. Two studio albums on all major platforms.',
     'creator.bio.p4': 'I\'ve worked across the gaming industry as scriptwriter, editor, and on-screen host for cable channels <strong class="text-theme-primary italic font-uni-neue">ControlVG</strong> and <strong class="text-theme-primary italic font-uni-neue">NexoPlay</strong>, and as a guest on <strong class="text-theme-primary italic font-uni-neue">IGN Latam</strong>. I\'ve covered E3 in Los Angeles, interviewing Reggie Fils-Aimé (Nintendo of America) and Ed Boon (NetherRealm Studios), among many others.',
-    'creator.bio.p5': 'On Instagram and TikTok I share quick gaming facts and curiosities. On YouTube I analyze games and the industry with a critical and artistic lens — long-form content that lets me go deeper. I also stream live on Twitch and cover major events like The Game Awards.',
-    'creator.bio.p6': 'If you\'re looking for a voice that combines gaming, music and technology with real credibility and two decades of history — that\'s me.',
+    'creator.bio.p5': 'On Instagram and TikTok I share quick gaming facts and curiosities. On YouTube I analyze games and the industry with a critical and artistic lens, publishing long-form content that lets me go deeper. I also stream live on Twitch and cover major events like The Game Awards.',
+    'creator.bio.p6': 'If you\'re looking for a voice that combines gaming, music and technology with credibility and two decades of history, that\'s me.',
     'creator.sections.bio': 'Biography',
     'creator.sections.content': 'Content Platforms',
     'creator.sections.projects': 'Projects',
@@ -133,7 +131,7 @@ export const ui = {
 
     // Pro
     'pro.tagline': 'AI Solutions & Technical Support · Full-Stack Developer',
-    'pro.bio': 'Technical builder with a full-stack background — currently working as a Customer Support Specialist at ElevenLabs, one of the world\'s leading AI voice platforms, with firsthand knowledge of its APIs, failure modes, and customer pain points across a high-volume global support environment. Stack spanning Node.js, React, Next.js, TypeScript, Firebase, Supabase, and Cloudflare Workers, backed by a consistent track record of building and shipping independent software in production.',
+    'pro.bio': 'Technical builder with a full-stack background, currently working as a Customer Support Specialist at ElevenLabs, one of the world\'s leading AI voice platforms, with firsthand knowledge of its APIs, failure modes, and customer pain points across a high-volume global support environment. Stack spanning Node.js, React, Next.js, TypeScript, Firebase, Supabase, and Cloudflare Workers, backed by a consistent track record of building and shipping independent software in production.',
     'pro.role': 'Customer Support Specialist',
     'pro.company': 'ElevenLabs',
     'pro.since': 'Since November 2024',
