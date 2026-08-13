@@ -7,13 +7,13 @@
 
     /* Fuentes específicas para diferentes elementos */
     .font-title {
-        font-family: 'Uni Neue', sans-serif;
+        font-family: var(--kris-font-title);
         font-style: italic;
         font-weight: 400;
     }
 
     .font-emphasized {
-        font-family: 'Uni Neue', sans-serif;
+        font-family: var(--kris-font-title);
         font-style: italic;
         font-weight: 500;
     }
@@ -23,7 +23,7 @@
         position: absolute;
         inset: -4px;
         padding: 4px;
-        background: linear-gradient(45deg, #00e1af, #7a53dd, #00e1af, #7a53dd);
+        background: linear-gradient(45deg, var(--kris-primary), var(--kris-accent), var(--kris-primary), var(--kris-accent));
         background-size: 200% 200%;
         border-radius: 50%;
         mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
@@ -43,15 +43,15 @@
     }
 
     .section-title-enhanced {
-        color: #ffffff;
+        color: var(--kris-text);
         position: relative;
         display: inline-block;
         padding: 12px 32px;
-        background: rgba(255, 255, 255, 0.05);
+        background: var(--kris-glass);
         backdrop-filter: blur(10px);
-        border-radius: 12px;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        text-shadow: 0 2px 8px rgba(0, 225, 175, 0.3);
+        border-radius: var(--kris-radius);
+        border: 1px solid var(--kris-glass-border);
+        text-shadow: 0 2px 8px color-mix(in srgb, var(--kris-primary) 30%, transparent);
     }
 
     .section-title-enhanced::before,
@@ -61,7 +61,7 @@
         top: 50%;
         width: 50px;
         height: 2px;
-        background: linear-gradient(90deg, transparent, #00e1af, #7a53dd, transparent);
+        background: linear-gradient(90deg, transparent, var(--kris-primary), var(--kris-accent), transparent);
         transform: translateY(-50%);
         animation: line-glow 3s ease-in-out infinite;
     }
@@ -77,12 +77,12 @@
     @keyframes line-glow {
         0%, 100% {
             opacity: 0.6;
-            box-shadow: 0 0 10px rgba(0, 225, 175, 0.3);
+            box-shadow: 0 0 10px color-mix(in srgb, var(--kris-primary) 30%, transparent);
         }
 
         50% {
             opacity: 1;
-            box-shadow: 0 0 20px rgba(0, 225, 175, 0.6);
+            box-shadow: 0 0 20px color-mix(in srgb, var(--kris-primary) 60%, transparent);
         }
     }
 
@@ -112,7 +112,7 @@
 
     /* Global keyboard focus ring — applies to all interactive elements */
     :focus-visible {
-        outline: 2px solid rgba(0,225,175,0.75);
+        outline: 2px solid color-mix(in srgb, var(--kris-primary) 75%, transparent);
         outline-offset: 3px;
         border-radius: 4px;
     }
@@ -130,8 +130,8 @@
 .page-grid {
   z-index: 2;
   background-image:
-    linear-gradient(rgba(0,225,175,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0,225,175,0.04) 1px, transparent 1px);
+    linear-gradient(color-mix(in srgb, var(--kris-primary) 4%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--kris-primary) 4%, transparent) 1px, transparent 1px);
   background-size: 44px 44px;
   pointer-events: none;
 }
@@ -144,7 +144,7 @@
   width: 900px;
   height: 650px;
   border-radius: 50%;
-  background: radial-gradient(ellipse at 50% 30%, rgba(0,225,175,0.10) 0%, rgba(0,225,175,0.03) 40%, transparent 70%);
+  background: radial-gradient(ellipse at 50% 30%, color-mix(in srgb, var(--kris-primary) 10%, transparent) 0%, color-mix(in srgb, var(--kris-primary) 3%, transparent) 40%, transparent 70%);
   pointer-events: none;
   z-index: 3;
   animation: glow-breathe 9s ease-in-out infinite;
@@ -157,7 +157,7 @@
   width: 700px;
   height: 580px;
   border-radius: 50%;
-  background: radial-gradient(ellipse at center, rgba(122,83,221,0.12) 0%, rgba(122,83,221,0.04) 40%, transparent 70%);
+  background: radial-gradient(ellipse at center, color-mix(in srgb, var(--kris-accent) 12%, transparent) 0%, color-mix(in srgb, var(--kris-accent) 4%, transparent) 40%, transparent 70%);
   pointer-events: none;
   z-index: 3;
   animation: glow-drift 11s ease-in-out infinite;
@@ -171,8 +171,8 @@
   width: 900px;
   height: 650px;
   border-radius: 50%;
-  background: radial-gradient(ellipse at 40% 35%, rgba(0,225,175,0.09) 0%, rgba(0,225,175,0.03) 38%, transparent 65%),
-              radial-gradient(ellipse at 65% 55%, rgba(122,83,221,0.10) 0%, rgba(122,83,221,0.03) 38%, transparent 65%);
+  background: radial-gradient(ellipse at 40% 35%, color-mix(in srgb, var(--kris-primary) 9%, transparent) 0%, color-mix(in srgb, var(--kris-primary) 3%, transparent) 38%, transparent 65%),
+              radial-gradient(ellipse at 65% 55%, color-mix(in srgb, var(--kris-accent) 10%, transparent) 0%, color-mix(in srgb, var(--kris-accent) 3%, transparent) 38%, transparent 65%);
   pointer-events: none;
   z-index: 3;
   animation: glow-breathe 10s ease-in-out infinite;
@@ -229,9 +229,9 @@
   font-size: 11px;
   padding: 4px 10px;
   border-radius: 20px;
-  background: rgba(0,225,175,0.06);
-  border: 1px solid rgba(0,225,175,0.15);
-  color: rgba(0,225,175,0.75);
+  background: color-mix(in srgb, var(--kris-primary) 6%, transparent);
+  border: 1px solid color-mix(in srgb, var(--kris-primary) 15%, transparent);
+  color: color-mix(in srgb, var(--kris-primary) 75%, transparent);
   font-weight: 600;
   letter-spacing: 0.01em;
   white-space: nowrap;
@@ -259,7 +259,7 @@
 }
 
 .crosslink-arrow {
-  color: var(--page-accent, #00e1af);
+  color: var(--page-accent, var(--kris-primary));
   white-space: nowrap;
   font-weight: 600;
   font-size: 12px;
@@ -268,11 +268,11 @@
 
 /* KrisEnigma logo baseline */
 .logo-kris {
-  color: #ffffff;
+  color: var(--kris-text);
 }
 
 .logo-enigma {
-  background: linear-gradient(-45deg, #7a53dd, #00e1af);
+  background: linear-gradient(-45deg, var(--kris-accent), var(--kris-primary));
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;

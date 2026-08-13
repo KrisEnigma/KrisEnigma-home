@@ -8,8 +8,8 @@ export default {
                 'aerovias': ['Aerovias Brasil NF', 'sans-serif'],
                 'uni-neue': ['Uni Neue', 'sans-serif'],
             }, colors: {
-                'theme-primary': '#00e1af',
-                'theme-accent': '#7a53dd',
+                'theme-primary': 'var(--kris-primary)',
+                'theme-accent': 'var(--kris-accent)',
             }, backgroundImage: {
                 'theme-bg': 'url(/bg.webp)',
             },
@@ -17,13 +17,13 @@ export default {
     }, plugins: [require('@tailwindcss/aspect-ratio'), function ({ addUtilities, addComponents }) {
         addComponents({
             '.glass-bg': {
-                background: 'rgba(255, 255, 255, 0.05)',
+                background: 'var(--kris-glass)',
                 backdropFilter: 'blur(10px)',
-                borderRadius: '12px',
-                border: '1px solid rgba(255, 255, 255, 0.1)',
+                borderRadius: 'var(--kris-radius)',
+                border: '1px solid var(--kris-glass-border)',
             },
             '.logo-enigma': {
-                background: 'linear-gradient(-45deg, #7a53dd, #00e1af)',
+                background: 'linear-gradient(-45deg, var(--kris-accent), var(--kris-primary))',
                 backgroundClip: 'text',
                 WebkitBackgroundClip: 'text',
                 color: 'transparent',
