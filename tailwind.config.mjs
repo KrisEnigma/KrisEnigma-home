@@ -11,7 +11,7 @@ export default {
                 'theme-primary': 'var(--kris-primary)',
                 'theme-accent': 'var(--kris-accent)',
             }, backgroundImage: {
-                'theme-bg': 'url(/bg.webp)',
+                'theme-bg': 'url(https://files.krisenigma.com/brand/bg.webp)',
             },
         },
     }, plugins: [require('@tailwindcss/aspect-ratio'), function ({ addUtilities, addComponents }) {
