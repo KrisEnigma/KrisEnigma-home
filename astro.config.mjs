@@ -19,7 +19,7 @@ export default defineConfig({
   image: { service: passthroughImageService() },
   vite: {
     server: {
-      // LAN hostname from home DNS (pc.lan). 4321 is blocked by Hyper-V port exclusions on Kris-PC.
+      // LAN hostname from home DNS (pc.lan). 4321 is blocked by Hyper-V port exclusions on PC.
       allowedHosts: ['pc.lan', '.lan'],
     },
     build: {
